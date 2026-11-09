@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8B7355">
+    <title>TSJ — Factory-Direct Custom Cabinetry | Better Boards, Precision Craft</title>
+    <meta name="description" content="Premium custom cabinetry made in our own factory: E0/ENF plywood cores, seamless PUR edge banding, Blum hardware, 0.1 mm precision. 20–40% below retail studios. Shipped to 120+ countries.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TSJ — Factory-Direct Custom Cabinetry">
+    <meta property="og:description" content="Better boards, precision craft, factory prices. Custom cabinetry shipped to 120+ countries.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238B7355'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23fff' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20261109">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ Header ============ -->
+<header class="site-header" id="header">
+    <div class="container header-inner">
+        <a href="./" class="logo" aria-label="TSJ home">
+            <span class="logo-mark" id="brandMark">T</span>
+            <span class="logo-text">
+                <strong id="brandName">TSJ</strong>
+                <small id="brandTagline">Custom cabinetry, factory direct</small>
+            </span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="#materials" class="nav-link">Materials</a></li>
+                <li><a href="#craft" class="nav-link">Craft</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#collections" class="nav-link">Collections</a></li>
+                <li><a href="#portfolio" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-mobile-extra">
+                <a class="nav-mobile-link" id="navMobileWhatsapp" href="#" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
+                </a>
+                <a class="nav-mobile-link" id="navMobileEmail" href="#">
+                    <i class="fa-regular fa-envelope"></i> <span>Email</span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <a class="header-phone" id="headerPhone" href="tel:+8617814674328">
+                <i class="fa-solid fa-phone"></i>
+                <span>+86 178 1467 4328</span>
+            </a>
+            <button class="btn btn-primary btn-sm" data-open-lead>Get a free quote</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="home">
+        <div class="hero-slides" id="heroSlides"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-bottom">
+            <div class="container hero-bottom-inner">
+                <div class="hero-dots" id="heroDots" role="tablist" aria-label="Slides"></div>
+                <div class="hero-proof">
+                    <span><i class="fa-solid fa-industry"></i> Own factory since 2010</span>
+                    <span><i class="fa-solid fa-globe"></i> 120+ countries</span>
+                    <span><i class="fa-solid fa-tags"></i> 20–40% below retail</span>
+                </div>
+            </div>
+        </div>
+        <button class="hero-arrow hero-arrow--prev" id="heroPrev" aria-label="Previous slide">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="hero-arrow hero-arrow--next" id="heroNext" aria-label="Next slide">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </section>
+
+    <!-- ============ Stats ============ -->
+    <section class="stat-bar" aria-label="Key numbers">
+        <div class="container">
+            <div class="stat-row" id="statsRow"></div>
+        </div>
+    </section>
+
+    <!-- ============ Materials ============ -->
+    <section class="section materials" id="materials">
+        <div class="container">
+            <div class="section-head" id="materialsHead"></div>
+            <div id="materialsBody"></div>
+        </div>
+    </section>
+
+    <!-- ============ Craft ============ -->
+    <section class="section craft" id="craft">
+        <div class="container" id="craftBody"></div>
+    </section>
+
+    <!-- ============ Pricing ============ -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="section-head" id="pricingHead"></div>
+            <div id="pricingBody"></div>
+        </div>
+    </section>
+
+    <!-- ============ Collections ============ -->
+    <section class="section collections" id="collections">
+        <div class="container">
+            <div class="section-head" id="collectionsHead"></div>
+            <div class="collection-grid" id="collectionsBody"></div>
+        </div>
+    </section>
+
+    <!-- ============ Categories ============ -->
+    <section class="section categories" id="categories">
+        <div class="container">
+            <div class="section-head" id="categoriesHead"></div>
+            <div class="category-grid" id="categoriesBody"></div>
+        </div>
+    </section>
+
+    <!-- ============ Portfolio ============ -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-head section-head--light" id="portfolioHead"></div>
+            <div class="portfolio-grid" id="portfolioBody"></div>
+        </div>
+    </section>
+
+    <!-- ============ Why us ============ -->
+    <section class="section why" id="about">
+        <div class="container">
+            <div class="why-wrap">
+                <div class="why-copy">
+                    <div class="section-head section-head--left" id="whyHead"></div>
+                    <div class="why-list" id="whyList"></div>
+                </div>
+                <div class="why-media">
+                    <img id="whyImage" src="assets/img/why-kitchen.jpg" alt="TSJ cabinetry craftsmanship" loading="lazy" decoding="async">
+                    <div class="why-badge">
+                        <strong id="whyBadgeValue">120+</strong>
+                        <span id="whyBadgeText">countries delivered</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ Process ============ -->
+    <section class="section process" id="process">
+        <div class="container">
+            <div class="section-head" id="processHead"></div>
+            <div class="steps" id="processBody"></div>
+        </div>
+    </section>
+
+    <!-- ============ CTA band ============ -->
+    <section class="cta-band">
+        <div class="container cta-band-inner" id="ctaBody"></div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section contact" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-intro">
+                <div class="section-head section-head--left" id="contactHead"></div>
+                <div class="contact-methods" id="contactMethods"></div>
+                <div class="contact-assurance">
+                    <span><i class="fa-solid fa-clock"></i> Reply within 24 hours</span>
+                    <span><i class="fa-solid fa-lock"></i> No spam, ever</span>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <h3 id="formTitle">Request a quote</h3>
+                <p id="formDesc">Tell us about your project and we'll get back to you within 24 hours.</p>
+
+                <form id="contactForm" class="lead-form" novalidate>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="cName">Full name <em>*</em></label>
+                            <input type="text" id="cName" name="name" placeholder="John Smith" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="cPhone">Phone / WhatsApp <em>*</em></label>
+                            <input type="tel" id="cPhone" name="phone" placeholder="+1 555 000 0000" autocomplete="tel" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="cEmail">Email</label>
+                            <input type="email" id="cEmail" name="email" placeholder="john@example.com" autocomplete="email">
+                        </div>
+                        <div class="field">
+                            <label for="cCountry">Country / region <em>*</em></label>
+                            <select id="cCountry" name="country" required>
+                                <option value="">Select your country</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="cRegion">City / state</label>
+                            <input type="text" id="cRegion" name="region" placeholder="City or state" autocomplete="address-level1">
+                        </div>
+                        <div class="field">
+                            <label for="cInterest">Product interest</label>
+                            <select id="cInterest" name="interest">
+                                <option value="">Select a category</option>
+                                <option value="Kitchen cabinetry">Kitchen cabinetry</option>
+                                <option value="TV &amp; media cabinets">TV &amp; media cabinets</option>
+                                <option value="Walk-in closets">Walk-in closets</option>
+                                <option value="Display &amp; wine cabinets">Display &amp; wine cabinets</option>
+                                <option value="Interior doors">Interior doors</option>
+                                <option value="Whole-home customisation">Whole-home customisation</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="cMessage">Project details</label>
+                        <textarea id="cMessage" name="message" rows="4" placeholder="Room types, approximate dimensions, style preference, timeline..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" id="contactSubmit">Send enquiry</button>
+                    <p class="form-note">We respect your privacy. Your details are only used to prepare your quote.</p>
+                    <div class="form-feedback" id="contactFeedback" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="./" class="logo logo--footer">
+                    <span class="logo-mark" id="footerMark">T</span>
+                    <span class="logo-text"><strong id="footerName">TSJ</strong></span>
+                </a>
+                <p id="footerAbout">Premium custom cabinetry crafted for homes across the United States, Canada and beyond.</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#materials">Materials</a></li>
+                        <li><a href="#craft">Craftsmanship</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#portfolio">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#categories">Kitchen cabinetry</a></li>
+                        <li><a href="#categories">Walk-in closets</a></li>
+                        <li><a href="#categories">Media cabinets</a></li>
+                        <li><a href="#categories">Interior doors</a></li>
+                        <li><a href="#categories">Whole-home</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact" id="footerContact"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footerCopyright">© 2026 TSJ. All rights reserved.</p>
+            <p class="footer-admin"><a href="admin/" rel="nofollow">Admin</a></p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============ Mobile sticky bar ============ -->
+<div class="mobile-bar">
+    <a class="mobile-bar-btn" id="mobileWhatsapp" href="#" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+    </a>
+    <a class="mobile-bar-btn" id="mobileCall" href="tel:+8617814674328">
+        <i class="fa-solid fa-phone"></i><span>Call</span>
+    </a>
+    <button class="mobile-bar-btn mobile-bar-btn--primary" data-open-lead>
+        <i class="fa-solid fa-pen-to-square"></i><span>Free quote</span>
+    </button>
+</div>
+
+<!-- ============ Lead popup ============ -->
+<div class="lead-modal" id="leadModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="lead-modal-backdrop" data-close-lead></div>
+    <div class="lead-modal-card" role="document">
+        <button class="lead-modal-close" data-close-lead aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="lead-modal-media">
+            <img id="leadModalImage" src="assets/img/hero-kitchen.jpg" alt="" loading="lazy">
+            <div class="lead-modal-media-copy">
+                <span class="lead-modal-badge" id="leadModalBadge">Free design + quote</span>
+            </div>
+        </div>
+        <div class="lead-modal-body">
+            <h3 id="leadModalTitle">Get your factory-direct price</h3>
+            <p id="leadModalDesc">Leave your name, phone number and region. A specialist will send a measured quote — no obligation.</p>
+
+            <form id="leadForm" class="lead-form" novalidate>
+                <div class="field">
+                    <label for="lName">Full name <em>*</em></label>
+                    <input type="text" id="lName" name="name" placeholder="John Smith" autocomplete="name" required>
+                </div>
+                <div class="field">
+                    <label for="lPhone">Phone / WhatsApp <em>*</em></label>
+                    <input type="tel" id="lPhone" name="phone" placeholder="+1 555 000 0000" autocomplete="tel" required>
+                </div>
+                <div class="field">
+                    <label for="lCountry">Country / region <em>*</em></label>
+                    <select id="lCountry" name="country" required>
+                        <option value="">Select your country</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="leadSubmit">Send my details</button>
+                <p class="form-note" id="leadModalNote">We reply on WhatsApp or phone within 24 hours.</p>
+                <div class="form-feedback" id="leadFeedback" role="status" aria-live="polite"></div>
+            </form>
+
+            <div class="lead-success" id="leadSuccess" hidden>
+                <div class="lead-success-icon"><i class="fa-solid fa-check"></i></div>
+                <h4 id="leadSuccessTitle">Details received — thank you!</h4>
+                <p id="leadSuccessDesc">Our specialist will reach out within 24 hours.</p>
+                <a class="btn btn-whatsapp btn-block" id="leadSuccessWhatsapp" href="#" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp now
+                </a>
+                <button class="btn btn-text btn-block" data-close-lead>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<script src="js/countries.js?v=20261109"></script>
+<script src="js/site.js?v=20261109"></script>
+</body>
+</html>

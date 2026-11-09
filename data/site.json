@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "title": "TSJ — Factory-Direct Custom Cabinetry | Better Boards, Precision Craft",
+    "description": "Premium custom cabinetry made in our own factory: E0/ENF plywood cores, seamless PUR edge banding, Blum hardware, 0.1 mm precision. 20–40% below retail studios. Shipped to 120+ countries.",
+    "updatedAt": "2026-11-09"
+  },
+  "brand": {
+    "mark": "T",
+    "name": "TSJ",
+    "tagline": "Custom cabinetry, factory direct"
+  },
+  "contact": {
+    "email": "lsjxiaocao@163.com",
+    "phone": "+86 178 1467 4328",
+    "whatsapp": "8617814674328",
+    "address": "Foshan, Guangdong, China",
+    "hours": "Mon–Sat · 09:00–18:00 (GMT+8)"
+  },
+  "leadSettings": {
+    "recipientEmail": "lsjxiaocao@163.com",
+    "provider": "formsubmit",
+    "webhookUrl": "",
+    "emailjsServiceId": "",
+    "emailjsTemplateId": "",
+    "emailjsPublicKey": "",
+    "web3formsKey": "",
+    "successMessage": "Thank you — your details have been sent. A project specialist will contact you within 24 hours.",
+    "errorMessage": "We couldn't send automatically. Please tap WhatsApp or email us and we'll reply right away."
+  },
+  "popup": {
+    "enabled": true,
+    "delaySeconds": 10,
+    "frequency": "session",
+    "badge": "Free design + quote · 24h reply",
+    "title": "Get your factory-direct price",
+    "desc": "Leave your name, phone number and region. A project specialist will send you a measured quote — no obligation, no spam.",
+    "image": "assets/img/hero-kitchen.jpg",
+    "submitText": "Send my details",
+    "note": "We reply on WhatsApp or phone within 24 hours.",
+    "successTitle": "Details received — thank you!",
+    "successDesc": "Our specialist will reach out within 24 hours. Prefer to talk now? Message us on WhatsApp."
+  },
+  "hero": {
+    "slides": [
+      {
+        "eyebrow": "Factory direct since 2010",
+        "title": "Better boards. Precision craft.",
+        "titleAccent": "Factory prices.",
+        "desc": "18 mm E0 plywood cores, seamless PUR edge banding and 0.1 mm joinery — built in our own 32,000 m² factory and shipped straight to your door.",
+        "image": "assets/img/hero-living.jpg",
+        "primaryText": "Get a free quote",
+        "primaryHref": "#contact",
+        "secondaryText": "See materials & craft",
+        "secondaryHref": "#materials"
+      },
+      {
+        "eyebrow": "Material quality",
+        "title": "The board inside decides",
+        "titleAccent": "how long it lasts",
+        "desc": "Moisture-proof, formaldehyde-safe E0 / ENF panels with 4H+ surfaces — tested for 20 years of daily family use.",
+        "image": "assets/img/hero-kitchen.jpg",
+        "primaryText": "Talk to a specialist",
+        "primaryHref": "#contact",
+        "secondaryText": "Our process",
+        "secondaryHref": "#process"
+      },
+      {
+        "eyebrow": "Save 20–40%",
+        "title": "No showroom. No middlemen.",
+        "titleAccent": "Just our price.",
+        "desc": "You buy from the factory that builds it — same specification, itemised quote, up to 40% below retail kitchen studios.",
+        "image": "assets/img/hero-wardrobe.jpg",
+        "primaryText": "See price comparison",
+        "primaryHref": "#pricing",
+        "secondaryText": "Our projects",
+        "secondaryHref": "#portfolio"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "value": "16+",
+      "label": "Years building cabinetry"
+    },
+    {
+      "value": "32,000 m²",
+      "label": "Own factory floor"
+    },
+    {
+      "value": "120+",
+      "label": "Countries delivered"
+    },
+    {
+      "value": "20–40%",
+      "label": "Below retail studios"
+    }
+  ],
+  "materials": {
+    "eyebrow": "Material quality",
+    "title": "Your cabinets are only as good as",
+    "titleAccent": "the board inside",
+    "desc": "Most quotes hide the spec. We publish it. Every carcass, edge and finish below is what we actually ship — and what your quote is measured against.",
+    "image": "assets/img/board-detail.jpg",
+    "cards": [
+      {
+        "icon": "fas fa-layer-group",
+        "title": "Multi-layer plywood core",
+        "desc": "18 mm hardwood plywood, cross-laminated in 11 layers. Twice the screw-holding strength of particle board, so doors stay aligned for years."
+      },
+      {
+        "icon": "fas fa-droplet",
+        "title": "Moisture-proof green core",
+        "desc": "720 kg/m³ HDF with a wax-infused core for bathrooms, laundry rooms and vanities. 24-hour water swelling under 8%."
+      },
+      {
+        "icon": "fas fa-leaf",
+        "title": "E0 / ENF formaldehyde",
+        "desc": "Emission ≤ 0.025 mg/m³ — lower than most panels sold as “green”. Safe for nurseries, bedrooms and closed kitchens."
+      },
+      {
+        "icon": "fas fa-wand-magic-sparkles",
+        "title": "Seamless PUR edge banding",
+        "desc": "1 mm ABS edge, reactive PUR hot-melt, laser-trimmed flush. No glue line, no lifting — even at 60% humidity."
+      },
+      {
+        "icon": "fas fa-shield-halved",
+        "title": "Blum & Hettich hardware",
+        "desc": "Hinges and runners tested to 80,000 open-close cycles. Soft-close on every door and drawer — standard, not an upgrade."
+      },
+      {
+        "icon": "fas fa-tree",
+        "title": "Kiln-dried solid wood",
+        "desc": "Oak, walnut and ash doors dried to 8–10% moisture content, joined with floating tenons to stop seasonal cracking."
+      }
+    ],
+    "specs": [
+      {
+        "label": "Carcass core",
+        "value": "18 mm multi-layer plywood · E0 / CARB P2"
+      },
+      {
+        "label": "Door panels",
+        "value": "18–22 mm HDF, solid oak, walnut or ash"
+      },
+      {
+        "label": "Back panel",
+        "value": "9 mm moisture-resistant MDF, grooved-in (not stapled)"
+      },
+      {
+        "label": "Edge banding",
+        "value": "1 mm ABS · PUR hot-melt · 0.2 mm visible seam"
+      },
+      {
+        "label": "Surface finish",
+        "value": "PET, HPL, PU lacquer or natural veneer · 4H+ scratch"
+      },
+      {
+        "label": "Adhesive",
+        "value": "Formaldehyde-free PUR · D4 waterproof grade"
+      },
+      {
+        "label": "Hardware",
+        "value": "Blum / Hettich soft-close · 80,000 cycles"
+      },
+      {
+        "label": "Warranty",
+        "value": "10 years carcass · 5 years hardware"
+      }
+    ],
+    "badges": [
+      "CARB P2",
+      "E0 / ENF",
+      "ISO 9001:2015",
+      "FSC® Mix",
+      "SGS tested",
+      "D4 waterproof"
+    ]
+  },
+  "craft": {
+    "eyebrow": "Craftsmanship",
+    "title": "Precision you can measure,",
+    "titleAccent": "finish you can feel",
+    "desc": "Cabinetry is won or lost in millimetres and glue lines. Here is exactly how our production line controls both.",
+    "image": "assets/img/kitchen-bright.jpg",
+    "points": [
+      {
+        "value": "0.1 mm",
+        "label": "CNC cutting tolerance"
+      },
+      {
+        "value": "12",
+        "label": "QC checkpoints per unit"
+      },
+      {
+        "value": "6 sides",
+        "label": "Fully sealed panels"
+      },
+      {
+        "value": "80,000",
+        "label": "Hardware test cycles"
+      }
+    ],
+    "details": [
+      {
+        "title": "Nest-cut with matched grain",
+        "desc": "Panels are nested on CNC beds to 0.1 mm, and door fronts are grain-matched before a single board is cut."
+      },
+      {
+        "title": "Seamless PUR edges",
+        "desc": "Every edge is bonded with reactive PUR, trimmed flush, then hand-inspected under raking light — no visible glue line."
+      },
+      {
+        "title": "Dry-fit before packing",
+        "desc": "Each cabinet is assembled, aligned and labelled by room, then flat-packed with ISTA-3A corner protection."
+      },
+      {
+        "title": "Hand-finished surfaces",
+        "desc": "Matte PET and PU lacquer are sanded between coats for a 4H+ surface and 2,000-hour UV fade resistance."
+      },
+      {
+        "title": "Twelve sign-offs",
+        "desc": "From board intake to carton sealing, twelve checkpoints. A unit that fails is rebuilt — never patched."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Price advantage",
+    "title": "Same specification,",
+    "titleAccent": "up to 40% less",
+    "desc": "No showroom rent, no dealer margin, no brand premium. You pay for board, hardware and labour — and you can see every line of it.",
+    "columnA": "Typical retail studio",
+    "columnB": "TSJ factory direct",
+    "rows": [
+      {
+        "item": "Kitchen — 10 ft L-shape (12 units)",
+        "retail": "$13,800",
+        "tsj": "$8,600",
+        "save": "38%"
+      },
+      {
+        "item": "Walk-in closet — 8 ft run",
+        "retail": "$6,400",
+        "tsj": "$4,300",
+        "save": "33%"
+      },
+      {
+        "item": "Media wall — 3.2 m",
+        "retail": "$5,200",
+        "tsj": "$3,450",
+        "save": "34%"
+      },
+      {
+        "item": "Whole-home package",
+        "retail": "$31,000",
+        "tsj": "$19,800",
+        "save": "36%"
+      }
+    ],
+    "bullets": [
+      "You buy from the factory that builds it — no showroom rent, no dealer margin, no brand premium.",
+      "Quotes are itemised by cabinet, so you can compare line by line with any local studio.",
+      "Container consolidation keeps freight per unit low, and we quote door-to-door with duties guidance.",
+      "Your price is locked for 60 days — and we never swap in a cheaper board after you order."
+    ],
+    "note": "Indicative 2026 guide prices in USD for comparable specifications. Final quote depends on size, finish and hardware."
+  },
+  "collections": {
+    "eyebrow": "2026 collection",
+    "title": "New arrivals,",
+    "titleAccent": "timeless appeal",
+    "desc": "Thoughtfully engineered pieces that maximise storage without compromising the line of the room.",
+    "cards": [
+      {
+        "tag": "Kitchen",
+        "title": "Modern European Kitchen",
+        "image": "assets/img/kitchen-bright.jpg",
+        "link": "#contact"
+      },
+      {
+        "tag": "Living room",
+        "title": "Built-in Media Wall",
+        "image": "assets/img/media-wall.jpg",
+        "link": "#contact"
+      },
+      {
+        "tag": "Bedroom",
+        "title": "Walk-in Wardrobe Suite",
+        "image": "assets/img/hero-wardrobe.jpg",
+        "link": "#contact"
+      }
+    ]
+  },
+  "categories": {
+    "eyebrow": "What we craft",
+    "title": "Custom cabinetry for",
+    "titleAccent": "every corner",
+    "desc": "From kitchen to closet, we design and build cabinetry that fits your space, your climate and your life.",
+    "items": [
+      {
+        "title": "TV & media cabinets",
+        "desc": "Entertainment centres engineered around your screen, with cable routing and generous hidden storage.",
+        "image": "assets/img/media-wall.jpg"
+      },
+      {
+        "title": "Walk-in closets",
+        "desc": "Boutique-worthy wardrobes with adjustable rails, drawers and integrated lighting.",
+        "image": "assets/img/hero-wardrobe.jpg"
+      },
+      {
+        "title": "Kitchen cabinetry",
+        "desc": "Complete kitchen systems — cabinets, countertops and accessories designed as one unit.",
+        "image": "assets/img/hero-kitchen.jpg"
+      },
+      {
+        "title": "Display & wine cabinets",
+        "desc": "Statement storage that showcases your collection and keeps everything beautifully organised.",
+        "image": "assets/img/display-wine.jpg"
+      },
+      {
+        "title": "Interior doors",
+        "desc": "Custom-crafted doors that bring warmth, privacy and architectural character to every room.",
+        "image": "assets/img/interior-doors.jpg"
+      }
+    ],
+    "ctaTitle": "Whole-home customisation",
+    "ctaDesc": "Wardrobes, vanities, mudroom built-ins, bookcases, laundry cabinets, wall panelling, skirting boards — every surface, every room, one board spec.",
+    "ctaButton": "Start your project"
+  },
+  "portfolio": {
+    "eyebrow": "Our work",
+    "title": "Trusted by homeowners",
+    "titleAccent": "across the globe",
+    "desc": "Every year we deliver custom cabinetry to thousands of homes worldwide — including projects across the United States and Canada.",
+    "items": [
+      {
+        "location": "Germany",
+        "title": "Custom bookcase library",
+        "units": "973 units",
+        "image": "assets/img/shelf-library.jpg"
+      },
+      {
+        "location": "Canada",
+        "title": "Modern kitchen suite",
+        "units": "495 units",
+        "image": "assets/img/kitchen-dark.jpg"
+      },
+      {
+        "location": "Australia",
+        "title": "Whole-home renovation",
+        "units": "608 units",
+        "image": "assets/img/living-warm.jpg"
+      },
+      {
+        "location": "United States",
+        "title": "Luxury villa build-out",
+        "units": "693 units",
+        "image": "assets/img/villa.jpg"
+      },
+      {
+        "location": "United States",
+        "title": "Coastal custom home",
+        "units": "354 units",
+        "image": "assets/img/living-coastal.jpg"
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "The TSJ difference",
+    "title": "Why homeowners",
+    "titleAccent": "choose us",
+    "desc": "Verifiable materials, factory-direct pricing and one specialist from first drawing to final hinge adjustment.",
+    "image": "assets/img/why-kitchen.jpg",
+    "badgeValue": "120+",
+    "badgeText": "countries delivered",
+    "items": [
+      {
+        "icon": "fa-regular fa-credit-card",
+        "title": "Factory-direct pricing",
+        "desc": "Save 20–40% by buying from the source. No showroom, no middleman, no retail markup — an itemised, honest quote."
+      },
+      {
+        "icon": "fa-regular fa-circle-check",
+        "title": "One-stop simplicity",
+        "desc": "Design, manufacture, shipping and installation guidance handled by one team. You never coordinate five vendors."
+      },
+      {
+        "icon": "fa-regular fa-user",
+        "title": "Dedicated specialist",
+        "desc": "One named project specialist, door-to-door shipping with tracking, and detailed installation support on call."
+      },
+      {
+        "icon": "fa-solid fa-shield-halved",
+        "title": "16 years of mastery",
+        "desc": "Since 2010 we have refined one product: cabinetry. Our boards, edges and hardware are all specified above industry standard."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "The process",
+    "title": "From floor plan",
+    "titleAccent": "to finished home",
+    "desc": "A simple, transparent process designed around you.",
+    "steps": [
+      {
+        "title": "Share your vision",
+        "desc": "Send your floor plan, inspiration photos and requirements. We'll discuss style, budget and timeline."
+      },
+      {
+        "title": "Design & quote",
+        "desc": "Our team creates detailed drawings and an itemised quote — typically within 3–5 business days."
+      },
+      {
+        "title": "Craft & ship",
+        "desc": "Your cabinetry is precision-manufactured, quality-checked and shipped door-to-door with full tracking."
+      },
+      {
+        "title": "Install & enjoy",
+        "desc": "Receive detailed installation guides and live support, then enjoy your beautifully transformed home."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to transform your home?",
+    "desc": "Send us your floor plan and we'll create a personalised design and quote — obligation free.",
+    "button": "Get your free quote",
+    "emailButton": "Email us directly"
+  },
+  "contactSection": {
+    "eyebrow": "Get in touch",
+    "title": "Let's start",
+    "titleAccent": "the conversation",
+    "desc": "Whether you're planning a full-home renovation or a single-room refresh, our team is ready to help. Fill in the form or reach us directly.",
+    "formTitle": "Request a quote",
+    "formDesc": "Tell us about your project and we'll get back to you within 24 hours."
+  },
+  "footer": {
+    "about": "Premium custom cabinetry crafted for homes across the United States, Canada and beyond. Factory-direct quality since 2010.",
+    "copyright": "© 2026 TSJ. All rights reserved."
+  }
+}

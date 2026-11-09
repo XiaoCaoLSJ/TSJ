@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>TSJ 内容管理后台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="admin.css?v=20261109">
+</head>
+<body>
+
+<!-- ================= Login ================= -->
+<div class="login-screen" id="loginView">
+    <form class="login-card" id="loginForm" autocomplete="off">
+        <div class="login-brand">
+            <span class="login-mark">T</span>
+            <div>
+                <strong>TSJ Admin</strong>
+                <small>网站内容管理后台</small>
+            </div>
+        </div>
+        <label class="fld">
+            <span>账号</span>
+            <input type="text" id="loginUser" placeholder="账号" autocomplete="username" required>
+        </label>
+        <label class="fld">
+            <span>密码</span>
+            <input type="password" id="loginPass" placeholder="密码" autocomplete="current-password" required>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">登录</button>
+        <p class="login-error" id="loginError" role="alert"></p>
+        <p class="login-hint">仅限授权人员使用。登录状态保留 12 小时。</p>
+    </form>
+</div>
+
+<!-- ================= App ================= -->
+<div class="app" id="appView" hidden>
+    <aside class="sidebar">
+        <div class="sidebar-head">
+            <span class="login-mark">T</span>
+            <div>
+                <strong>TSJ Admin</strong>
+                <small id="sidebarRepo">未连接仓库</small>
+            </div>
+        </div>
+
+        <nav class="side-nav" id="sideNav"></nav>
+
+        <div class="sidebar-foot">
+            <button class="side-item" data-view="github"><i class="fa-solid fa-plug"></i> 连接与发布</button>
+            <button class="side-item" data-view="json"><i class="fa-solid fa-code"></i> 高级（JSON）</button>
+            <button class="side-item side-item--danger" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> 退出登录</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="topbar-title">
+                <h1 id="panelTitle">站点信息</h1>
+                <p id="panelSub">修改后点击「保存并发布」，网页刷新即可看到最新内容。</p>
+            </div>
+            <div class="topbar-actions">
+                <a class="btn btn-ghost btn-sm" id="previewLink" href="../" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> 预览网站
+                </a>
+                <button class="btn btn-ghost btn-sm" id="reloadBtn">
+                    <i class="fa-solid fa-rotate"></i> 重新加载
+                </button>
+                <button class="btn btn-primary btn-sm" id="saveBtn">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> 保存并发布
+                </button>
+            </div>
+        </header>
+
+        <div class="status-bar" id="statusBar"></div>
+        <div class="panel" id="panel"></div>
+        <div class="panel-foot">
+            <button class="btn btn-primary" id="saveBtnBottom">保存并发布</button>
+            <span id="saveHint">发布后 GitHub Pages 约 30–60 秒生效，网页刷新即可看到。</span>
+        </div>
+    </main>
+</div>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<script src="admin.js?v=20261109"></script>
+</body>
+</html>
