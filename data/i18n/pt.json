@@ -3,7 +3,7 @@
     "lang": "pt",
     "source": "en",
     "engine": "google-gtx + mymemory fallback",
-    "generatedAt": "2026-11-09T07:31:53.585Z",
+    "generatedAt": "2026-11-09T07:47:23.897Z",
     "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
     "auto": {
       "meta.title": "9ccf8dd7",
@@ -70,7 +70,7 @@
       "popup.note": "fd467cad",
       "popup.successTitle": "4a4d5d92",
       "popup.successDesc": "7f11dd5b",
-      "hero.slides.0.eyebrow": "4acb2c2f",
+      "hero.slides.0.eyebrow": "8fe7610e",
       "hero.slides.0.title": "53328d22",
       "hero.slides.0.titleAccent": "24259cb5",
       "hero.slides.0.desc": "6e1ff08a",
@@ -313,7 +313,7 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "Direto da fábrica desde 2010",
+        "eyebrow": "Direto da fábrica desde 2010 · 32.000 m²",
         "title": "Placas melhores. Artesanato de precisão.",
         "titleAccent": "Preços de fábrica.",
         "desc": "Núcleos de compensado E0 de 18 mm, bordas de PUR sem costura e marcenaria de 0,1 mm — construídos em nossa própria fábrica de 32.000 m² e enviados diretamente para sua porta.",
