@@ -721,6 +721,7 @@
                 _subject: subject,
                 _template: 'table',
                 _captcha: 'false',
+                _replyto: payload.email || '',
                 Name: payload.name,
                 Phone: payload.phone,
                 Country: payload.country,

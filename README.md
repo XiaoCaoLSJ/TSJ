@@ -31,19 +31,19 @@ admin/admin.css       后台样式
 - 密码：`2027fortune!`
 - 登录状态保留 12 小时（只存在本机浏览器）。
 
-**首次使用必须先配置 GitHub Token（重要）**
+**Token 已内置：用账号密码登录即可，不需要手动粘贴**
 
-GitHub Pages 是纯静态托管，没有服务器可写文件，所以后台通过 GitHub API 把内容提交回仓库。步骤：
+GitHub Pages 是纯静态托管，没有服务器可写文件，所以后台通过 GitHub API 把内容提交回仓库。为了让登录后立刻就能发布，Token 以**密文**形式内置在 `admin/vault.js`：
 
-1. 后台左侧「连接与发布」→ 按页面提示在 GitHub 创建 Fine-grained Token：
-   - Repository access：Only select repositories → `XiaoCaoLSJ/TSJ`
-   - Permissions → Repository permissions → **Contents: Read and write**
-2. 把 Token 粘贴进去，点「保存连接」→「测试连接」。
-3. 之后每次修改点右上角「保存并发布」，内容写入 `data/site.json`，GitHub Pages 自动重新构建。
+- 加密方式：PBKDF2-SHA256（240,000 次）派生密钥 + AES-256-GCM，密钥就是后台登录密码。
+- 登录成功后浏览器自动解密、自动连接 `XiaoCaoLSJ/TSJ`，右上角状态显示「已连接 … 内置 Token 已自动解锁」即可直接「保存并发布」。
+- 解密出的 Token 只放在浏览器 sessionStorage（关掉标签页即消失），不会写入文件。
+- 换 Token：后台「连接与发布」→ 把新 Token 填到「GitHub Token」框 → 点「用上方 Token 更新内置配置」→ 会自动加密并提交 `admin/vault.js`。之后所有电脑都用新 Token。
+- 若某次登录提示「内置 Token 未解锁」（例如换了密码），点「解锁内置 Token」输入密码，或直接手填 Token 也能发布。
 
-Token 只保存在本机浏览器 localStorage，不会写进网站文件，也不会出现在源码里。换电脑或清了浏览器缓存需要重新填一次。
+> 安全前提：仓库是公开的，`vault.js` 里只有密文，**密钥强度 = 后台密码强度**。请不要把后台密码发到公开渠道；如需更换密码，告诉我重新生成登录哈希与 vault 即可。
 
-**没有 Token 时**：仍可编辑和「下载 JSON」，手动把 JSON 覆盖到 `data/site.json` 再提交。
+**没有 Token 时**（比如密文对不上）：仍可编辑和「下载 JSON」，手动把 JSON 覆盖到 `data/site.json` 再提交。
 
 ## 三、10 秒弹窗与线索（手机号 / 姓名 / 地区）
 
@@ -108,7 +108,7 @@ Token 只保存在本机浏览器 localStorage，不会写进网站文件，也�
 ## 六、安全边界说明（请知悉）
 
 - 后台登录是前端校验（静态站点无法做服务端鉴权），能挡住普通访客，但懂技术的人可以看到后台界面。
-- 真正的安全边界是 GitHub Token：没有 Token 谁也改不了仓库内容。Token 只在你自己的浏览器里，请勿截图外发、勿写进代码或聊天记录。
+- 真正的安全边界是 GitHub Token：没有 Token 谁也改不了仓库内容。本项目的 Token 以密码派生的密文存放（`admin/vault.js`），只有知道后台密码的人能解出，因此**请务必使用足够强的后台密码**，并且只给 Token 授予本仓库的 `Contents: Read and write` 权限、设置 90 天有效期，把风险限制在最小范围。
 - 建议把 Token 有效期设为 90 天，到期后在 GitHub 重新生成并更新一次。
 - 若需要更严格的后台权限，就得引入一个真实后端（如 Cloudflare Access + Worker、Supabase Auth），可以再做。
 

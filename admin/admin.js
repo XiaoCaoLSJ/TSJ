@@ -14,7 +14,9 @@
 
     var SESSION_KEY = 'tsj_admin_session';
     var GH_KEY = 'tsj_admin_github';
+    var TOKEN_KEY = 'tsj_admin_token';
     var SESSION_HOURS = 12;
+    var VAULT_PATH = 'admin/vault.js';
 
     var SITE_PATH = 'data/site.json';
     var UPLOAD_DIR = 'assets/uploads';
@@ -23,7 +25,8 @@
         owner: 'XiaoCaoLSJ',
         repo: 'TSJ',
         branch: 'main',
-        token: ''
+        token: '',
+        builtin: false
     };
 
     var SECTIONS = [
@@ -190,6 +193,80 @@
             .catch(function () { return null; });
     }
 
+    function b64ToBytes(b64) {
+        var bin = atob(b64);
+        var out = new Uint8Array(bin.length);
+        for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+        return out;
+    }
+
+    function bytesToB64(bytes) {
+        var bin = '';
+        for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+        return btoa(bin);
+    }
+
+    function deriveKey(password, saltBytes, iterations) {
+        var subtle = window.crypto && window.crypto.subtle;
+        if (!subtle) return Promise.resolve(null);
+        return subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey'])
+            .then(function (base) {
+                return subtle.deriveKey({
+                    name: 'PBKDF2',
+                    salt: saltBytes,
+                    iterations: iterations || 240000,
+                    hash: 'SHA-256'
+                }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+            })
+            .catch(function () { return null; });
+    }
+
+    function vaultUnlock(password) {
+        var v = window.TSJ_VAULT;
+        var subtle = window.crypto && window.crypto.subtle;
+        if (!v || !v.ct || !subtle) return Promise.resolve('');
+        return deriveKey(password, b64ToBytes(v.salt), v.iter).then(function (key) {
+            if (!key) return '';
+            return subtle.decrypt({ name: 'AES-GCM', iv: b64ToBytes(v.iv) }, key, b64ToBytes(v.ct))
+                .then(function (buf) { return new TextDecoder().decode(buf); })
+                .catch(function () { return ''; });
+        });
+    }
+
+    function vaultSeal(password, token) {
+        var salt = window.crypto.getRandomValues(new Uint8Array(16));
+        var iv = window.crypto.getRandomValues(new Uint8Array(12));
+        var iter = 240000;
+        return deriveKey(password, salt, iter).then(function (key) {
+            if (!key) throw new Error('当前环境不支持 Web Crypto');
+            return window.crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, key, new TextEncoder().encode(token));
+        }).then(function (ct) {
+            return {
+                v: 1, alg: 'AES-GCM', kdf: 'PBKDF2-SHA256', iter: iter,
+                salt: bytesToB64(salt), iv: bytesToB64(iv), ct: bytesToB64(new Uint8Array(ct))
+            };
+        });
+    }
+
+    function applyBuiltinToken(token) {
+        if (!token) return;
+        state.gh.token = token;
+        state.gh.builtin = true;
+        try { sessionStorage.setItem(TOKEN_KEY, token); } catch (e) { /* ignore */ }
+    }
+
+    function unlockBuiltinToken(password) {
+        if (password) {
+            return vaultUnlock(password).then(function (token) {
+                if (token) applyBuiltinToken(token);
+            });
+        }
+        var cached = '';
+        try { cached = sessionStorage.getItem(TOKEN_KEY) || ''; } catch (e) { /* ignore */ }
+        if (cached) applyBuiltinToken(cached);
+        return Promise.resolve();
+    }
+
     function sessionValid() {
         try {
             var raw = localStorage.getItem(SESSION_KEY);
@@ -229,8 +306,9 @@
                     error.textContent = '账号或密码错误。';
                     return;
                 }
+                state.pw = pass;
                 startSession();
-                showApp();
+                showApp(pass);
             });
         });
     }
@@ -238,13 +316,15 @@
     /* ------------------------------------------------------------------
      * Boot
      * ---------------------------------------------------------------- */
-    function showApp() {
+    function showApp(password) {
         $('#loginView').hidden = true;
         $('#appView').hidden = false;
         loadGhSettings();
         renderSidebar();
         bindTopbar();
-        loadConfig();
+        unlockBuiltinToken(password).then(function () {
+            loadConfig();
+        });
     }
 
     function bindTopbar() {
@@ -256,6 +336,7 @@
         });
         $('#logoutBtn').addEventListener('click', function () {
             localStorage.removeItem(SESSION_KEY);
+            try { sessionStorage.removeItem(TOKEN_KEY); } catch (e) { /* ignore */ }
             location.reload();
         });
         $$('.side-item[data-view]').forEach(function (btn) {
@@ -268,10 +349,40 @@
             var raw = localStorage.getItem(GH_KEY);
             if (raw) state.gh = Object.assign({}, DEFAULT_GH, JSON.parse(raw));
         } catch (e) { /* ignore */ }
+        state.gh.builtin = false;
     }
 
     function saveGhSettings() {
-        localStorage.setItem(GH_KEY, JSON.stringify(state.gh));
+        var copy = Object.assign({}, state.gh);
+        if (copy.builtin) copy.token = '';
+        localStorage.setItem(GH_KEY, JSON.stringify(copy));
+    }
+
+    function putFile(path, text, message) {
+        var branch = state.gh.branch || 'main';
+        return fetch(ghUrl(path) + '?ref=' + encodeURIComponent(branch) + '&t=' + Date.now(), {
+            headers: ghHeaders(),
+            cache: 'no-store'
+        }).then(function (res) {
+            return res.ok ? res.json() : null;
+        }).then(function (data) {
+            var body = { message: message, content: toB64(text), branch: branch };
+            if (data && data.sha) body.sha = data.sha;
+            return fetch(ghUrl(path), {
+                method: 'PUT',
+                headers: ghHeaders(),
+                body: JSON.stringify(body)
+            }).then(function (res) {
+                return res.json().then(function (out) {
+                    if (!res.ok) {
+                        var err = new Error(out.message || ('HTTP ' + res.status));
+                        err.status = res.status;
+                        throw err;
+                    }
+                    return out;
+                });
+            });
+        });
     }
 
     function renderSidebar() {
@@ -380,9 +491,12 @@
             : (state.lastSaved ? '上次发布：' + state.lastSaved : '修改后点击「保存并发布」，网页刷新即可看到最新内容。');
 
         if (!state.gh.token) {
-            setStatus('warn', '未配置 GitHub Token：只能本地编辑和下载 JSON，无法直接发布。请到「连接与发布」配置。');
+            setStatus('warn', window.TSJ_VAULT
+                ? '内置 Token 未解锁：到「连接与发布」点「解锁内置 Token」（需输入后台密码），或直接手填 Token。'
+                : '未配置 GitHub Token：只能本地编辑和下载 JSON，无法直接发布。请到「连接与发布」配置。');
         } else if (state.remoteOk) {
-            setStatus('ok', '已连接 ' + state.gh.owner + '/' + state.gh.repo + '@' + state.gh.branch + ' · ' + hint);
+            setStatus('ok', '已连接 ' + state.gh.owner + '/' + state.gh.repo + '@' + state.gh.branch + ' · ' + hint +
+                (state.gh.builtin ? '（内置 Token 已自动解锁）' : ''));
         } else {
             setStatus('warn', '已填写 Token 但尚未读取仓库：保存时会自动同步。');
         }
@@ -816,7 +930,16 @@
             '<button class="btn btn-ghost btn-sm" id="ghTest">测试连接</button>' +
             '<button class="btn btn-ghost btn-sm" id="ghDownload"><i class="fa-solid fa-download"></i> 下载 JSON</button>' +
             '</div>' +
-            '<p class="hint">Token 只保存在当前浏览器的 localStorage，不会写入网站文件。</p>' +
+            '<p class="hint">上方手填的 Token 只保存在当前浏览器的 localStorage。</p>' +
+            '<div class="divider"></div>' +
+            '<h4>内置 Token（登录即用，免手填）</h4>' +
+            '<p class="muted">当前状态：<b id="ghBuiltinState"></b></p>' +
+            '<p class="hint">内置 Token 以密文形式存放在 <code>' + VAULT_PATH + '</code>，用后台密码（PBKDF2 + AES-GCM）加密。' +
+            '用密码登录后后台会自动解锁，不需要每次粘贴。更换 Token 时把新 Token 填到上方输入框，再点下面的按钮即可重新加密写回仓库。</p>' +
+            '<div class="row-actions">' +
+            '<button class="btn btn-primary btn-sm" id="ghUnlockBtn"><i class="fa-solid fa-key"></i> 解锁内置 Token</button>' +
+            '<button class="btn btn-ghost btn-sm" id="ghSealBtn"><i class="fa-solid fa-lock"></i> 用上方 Token 更新内置配置</button>' +
+            '</div>' +
             '<div class="divider"></div>' +
             '<h4>Token 创建步骤</h4>' +
             '<ol class="steps-list">' +
@@ -831,13 +954,87 @@
         $('#ghOwner').value = state.gh.owner;
         $('#ghRepo').value = state.gh.repo;
         $('#ghBranch').value = state.gh.branch;
-        $('#ghToken').value = state.gh.token;
+        $('#ghToken').value = state.gh.builtin ? '' : state.gh.token;
+
+        var stateEl = $('#ghBuiltinState');
+        if (state.gh.builtin) {
+            stateEl.textContent = '已解锁（' + state.gh.owner + '/' + state.gh.repo + '，登录后自动生效）';
+            stateEl.style.color = '#2f7d4f';
+        } else if (window.TSJ_VAULT) {
+            stateEl.textContent = '已内置但未解锁（当前浏览器不支持 Web Crypto，或密码与加密时不一致），请在下方手填 Token';
+            stateEl.style.color = '#a15c1f';
+        } else {
+            stateEl.textContent = '未配置内置 Token，请手填后点「用上方 Token 更新内置配置」';
+            stateEl.style.color = '#a15c1f';
+        }
+
+        $('#ghUnlockBtn').addEventListener('click', function () {
+            var btn = this;
+            var pw = state.pw;
+            if (!pw) pw = window.prompt('请输入后台登录密码，用于解锁内置 Token');
+            if (!pw) return;
+            btn.disabled = true;
+            sha256Hex(pw).then(function (hash) {
+                var ok = hash ? hash === AUTH_HASH : pw === atob(AUTH_PLAIN_B64);
+                if (!ok) throw new Error('密码不正确');
+                return vaultUnlock(pw);
+            }).then(function (token) {
+                if (!token) throw new Error('解锁失败（内置配置可能已被重新加密）');
+                state.pw = pw;
+                applyBuiltinToken(token);
+                toast('已解锁内置 Token，可以直接发布', 'success');
+                renderPanel();
+                loadConfig(true);
+            }).catch(function (err) {
+                toast(err.message, 'error');
+            }).then(function () {
+                btn.disabled = false;
+            });
+        });
+
+        $('#ghSealBtn').addEventListener('click', function () {
+            var btn = this;
+            var token = $('#ghToken').value.trim();
+            if (!token || token.length < 20) { toast('请先在上方填入新的 GitHub Token', 'error'); return; }
+            if (!state.gh.builtin && !state.gh.token) { /* token 来自输入框 */ }
+            var pw = state.pw;
+            if (!pw) pw = window.prompt('请输入后台登录密码（用于加密 Token）');
+            if (!pw) return;
+
+            btn.disabled = true;
+            sha256Hex(pw).then(function (hash) {
+                var ok = hash ? hash === AUTH_HASH : pw === atob(AUTH_PLAIN_B64);
+                if (!ok) throw new Error('密码不正确');
+                return vaultSeal(pw, token);
+            }).then(function (vault) {
+                var text = '/* encrypted token vault — generated, do not edit by hand */\n' +
+                    'window.TSJ_VAULT = ' + JSON.stringify(vault) + ';\n';
+                return putFile(VAULT_PATH, text, 'chore: update encrypted token vault');
+            }).then(function () {
+                state.pw = pw;
+                state.gh.token = token;
+                state.gh.builtin = true;
+                try { sessionStorage.setItem(TOKEN_KEY, token); } catch (e) { /* ignore */ }
+                saveGhSettings();
+                toast('内置 Token 已更新，之后登录无需再手填', 'success');
+                renderPanel();
+                updateSaveState();
+            }).catch(function (err) {
+                toast('更新失败：' + err.message, 'error');
+            }).then(function () {
+                btn.disabled = false;
+            });
+        });
 
         $('#ghSave').addEventListener('click', function () {
             state.gh.owner = $('#ghOwner').value.trim();
             state.gh.repo = $('#ghRepo').value.trim();
-            state.gh.branch = $('#ghBranch').value.trim() || 'master';
-            state.gh.token = $('#ghToken').value.trim();
+            state.gh.branch = $('#ghBranch').value.trim() || 'main';
+            var typed = $('#ghToken').value.trim();
+            if (typed) {
+                state.gh.token = typed;
+                state.gh.builtin = false;
+            }
             saveGhSettings();
             renderSidebar();
             toast('连接信息已保存', 'success');
@@ -845,7 +1042,7 @@
         });
 
         $('#ghTest').addEventListener('click', function () {
-            if (!state.gh.token) { toast('请先填写 Token', 'error'); return; }
+            if (!state.gh.token) { toast('请先填写 Token（或先登录以解锁内置 Token）', 'error'); return; }
             $('#ghTest').classList.add('is-loading');
             fetch(ghUrl(SITE_PATH) + '?ref=' + encodeURIComponent(state.gh.branch || 'master') + '&t=' + Date.now(), {
                 headers: ghHeaders(),
