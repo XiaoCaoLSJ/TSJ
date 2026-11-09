@@ -1266,6 +1266,12 @@
         return (cfg && cfg.source) || 'en';
     }
 
+    var SKIP_I18N_KEYS = {
+        icon: 1, image: 1, href: 1, url: 1, email: 1, phone: 1, whatsapp: 1, value: 1,
+        code: 1, mark: 1, provider: 1, frequency: 1, retail: 1, tsj: 1, save: 1,
+        label: 1, dir: 1, recipientEmail: 1, webhook: 1
+    };
+
     function collectText(node, keys, out) {
         if (Array.isArray(node)) {
             node.forEach(function (v, i) { collectText(v, keys.concat(i), out); });
@@ -1273,7 +1279,8 @@
         }
         if (node && typeof node === 'object') {
             Object.keys(node).forEach(function (k) {
-                if (k === '_meta') return;
+                if (k === '_meta' || k === 'i18n') return;
+                if (SKIP_I18N_KEYS[k]) return;
                 collectText(node[k], keys.concat(k), out);
             });
             return;
