@@ -118,8 +118,23 @@
         return base;
     }
 
+    function applyAlternates() {
+        $$('link[data-i18n-hreflang]').forEach(function (l) { l.remove(); });
+        if (!/^https?:$/.test(location.protocol)) return;
+        langList().forEach(function (l) {
+            var link = document.createElement('link');
+            link.rel = 'alternate';
+            link.hreflang = l.code;
+            link.setAttribute('data-i18n-hreflang', '1');
+            link.href = location.origin + location.pathname +
+                (l.code === SOURCE_LANG ? '' : '?lang=' + encodeURIComponent(l.code));
+            document.head.appendChild(link);
+        });
+    }
+
     function applyLangAttributes() {
         var info = langInfo(LANG);
+        applyAlternates();
         var dir = (info && info.dir) || (/^(ar|fa|he|ur)$/.test(LANG) ? 'rtl' : 'ltr');
         document.documentElement.lang = LANG;
         document.documentElement.dir = dir;
