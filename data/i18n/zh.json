@@ -1,0 +1,599 @@
+{
+  "_meta": {
+    "lang": "zh",
+    "source": "en",
+    "engine": "google-gtx + mymemory fallback",
+    "generatedAt": "2026-11-09T07:31:54.303Z",
+    "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
+    "auto": {
+      "meta.title": "9ccf8dd7",
+      "meta.description": "020908cb",
+      "meta.updatedAt": "791e2e14",
+      "ui.skip": "c7af44e6",
+      "ui.navMaterials": "d3ccdb89",
+      "ui.navCraft": "c8f02361",
+      "ui.navPricing": "b4d17ded",
+      "ui.navCollections": "9ae6a966",
+      "ui.navProjects": "64fda4d7",
+      "ui.navContact": "73ac94c3",
+      "ui.quote": "f9d637c2",
+      "ui.formName": "9010932f",
+      "ui.formPhone": "ed504c20",
+      "ui.formEmail": "43352167",
+      "ui.formCountry": "1a3a3920",
+      "ui.formRegion": "d4a2fd42",
+      "ui.formInterest": "112a2576",
+      "ui.formMessage": "5e13f188",
+      "ui.phName": "9ca62dc7",
+      "ui.phPhone": "28c7db60",
+      "ui.phEmail": "091b0ca1",
+      "ui.phCountry": "69d0557e",
+      "ui.phRegion": "f2f7c692",
+      "ui.phInterest": "571309be",
+      "ui.phMessage": "5437a0b1",
+      "ui.send": "2326e532",
+      "ui.privacy": "caabb44d",
+      "ui.footerExplore": "4d9eb2dc",
+      "ui.footerProducts": "cb2c4cad",
+      "ui.footerContact": "73ac94c3",
+      "ui.prodKitchen": "ecc07cb6",
+      "ui.prodClosets": "3215cff5",
+      "ui.prodMedia": "cc5d6d6c",
+      "ui.prodDoors": "c25f49c4",
+      "ui.prodWhole": "ff614338",
+      "ui.interestKitchen": "ecc07cb6",
+      "ui.interestMedia": "6ed5f7aa",
+      "ui.interestClosets": "3215cff5",
+      "ui.interestDisplay": "758c9f59",
+      "ui.interestDoors": "c25f49c4",
+      "ui.interestWhole": "96966c9c",
+      "ui.barWhatsapp": "b1332787",
+      "ui.barCall": "341dd0c9",
+      "ui.barQuote": "561539cb",
+      "ui.leadName": "9010932f",
+      "ui.leadPhone": "ed504c20",
+      "ui.leadCountry": "1a3a3920",
+      "ui.leadSubmit": "86f852c9",
+      "ui.proofFactory": "587338fe",
+      "ui.proofCountries": "3585f9d5",
+      "ui.proofPrices": "8a3745e9",
+      "brand.name": "3b569e0e",
+      "brand.tagline": "88b1d188",
+      "contact.address": "72086f27",
+      "contact.hours": "b923f4bc",
+      "leadSettings.successMessage": "52d99c5f",
+      "leadSettings.errorMessage": "4491c7dc",
+      "popup.badge": "a26a1dad",
+      "popup.title": "93886ceb",
+      "popup.desc": "a615f8bc",
+      "popup.submitText": "86f852c9",
+      "popup.note": "fd467cad",
+      "popup.successTitle": "4a4d5d92",
+      "popup.successDesc": "7f11dd5b",
+      "hero.slides.0.eyebrow": "4acb2c2f",
+      "hero.slides.0.title": "53328d22",
+      "hero.slides.0.titleAccent": "24259cb5",
+      "hero.slides.0.desc": "6e1ff08a",
+      "hero.slides.0.primaryText": "f9d637c2",
+      "hero.slides.0.primaryHref": "fd3ed73a",
+      "hero.slides.0.secondaryText": "63976176",
+      "hero.slides.0.secondaryHref": "1c1d9bdc",
+      "hero.slides.1.eyebrow": "0673dcd1",
+      "hero.slides.1.title": "88a985d9",
+      "hero.slides.1.titleAccent": "ea276677",
+      "hero.slides.1.desc": "513a1140",
+      "hero.slides.1.primaryText": "5a0dbc7c",
+      "hero.slides.1.primaryHref": "fd3ed73a",
+      "hero.slides.1.secondaryText": "f3963ad0",
+      "hero.slides.1.secondaryHref": "ab333eff",
+      "hero.slides.2.eyebrow": "909ed376",
+      "hero.slides.2.title": "206c66d8",
+      "hero.slides.2.titleAccent": "756f2056",
+      "hero.slides.2.desc": "496eb3f1",
+      "hero.slides.2.primaryText": "7ba26d16",
+      "hero.slides.2.primaryHref": "0927ef74",
+      "hero.slides.2.secondaryText": "f52e7b01",
+      "hero.slides.2.secondaryHref": "f871c70a",
+      "materials.eyebrow": "0673dcd1",
+      "materials.title": "633671d8",
+      "materials.titleAccent": "e9f53010",
+      "materials.desc": "77dcdb76",
+      "materials.cards.0.title": "e8c8b87f",
+      "materials.cards.0.desc": "ff4e2b83",
+      "materials.cards.1.title": "98dab952",
+      "materials.cards.1.desc": "9ae59b1d",
+      "materials.cards.2.title": "dd6cb082",
+      "materials.cards.2.desc": "a2e9ac83",
+      "materials.cards.3.title": "4100885f",
+      "materials.cards.3.desc": "ed18e27c",
+      "materials.cards.4.title": "310d9372",
+      "materials.cards.4.desc": "fe26f769",
+      "materials.cards.5.title": "b597334a",
+      "materials.cards.5.desc": "f886bba7",
+      "materials.badges.0": "9afa9819",
+      "materials.badges.1": "5d0666ea",
+      "materials.badges.2": "a7b09ed6",
+      "materials.badges.3": "0b0c612d",
+      "materials.badges.4": "eb7b1e09",
+      "materials.badges.5": "fd3fd958",
+      "craft.eyebrow": "845c6070",
+      "craft.title": "b1396986",
+      "craft.titleAccent": "a7f8d435",
+      "craft.desc": "ba956860",
+      "craft.details.0.title": "975f6b05",
+      "craft.details.0.desc": "5194e9b7",
+      "craft.details.1.title": "b804d5f7",
+      "craft.details.1.desc": "82bfc8e1",
+      "craft.details.2.title": "5f77b224",
+      "craft.details.2.desc": "de4fe51d",
+      "craft.details.3.title": "a7fcdda7",
+      "craft.details.3.desc": "fb65db47",
+      "craft.details.4.title": "e0aaf072",
+      "craft.details.4.desc": "06906145",
+      "pricing.eyebrow": "6165c6fb",
+      "pricing.title": "6535a776",
+      "pricing.titleAccent": "c413228b",
+      "pricing.desc": "6951d93c",
+      "pricing.columnA": "1b3a4c08",
+      "pricing.columnB": "8a24d27d",
+      "pricing.rows.0.item": "fefef8d5",
+      "pricing.rows.1.item": "2d2b582f",
+      "pricing.rows.2.item": "54207143",
+      "pricing.rows.3.item": "134e1e38",
+      "pricing.bullets.0": "583c68bb",
+      "pricing.bullets.1": "1fee084d",
+      "pricing.bullets.2": "d1184a6a",
+      "pricing.bullets.3": "f2d08e9e",
+      "pricing.note": "3336437a",
+      "collections.eyebrow": "5a69f2fd",
+      "collections.title": "c38dc5f7",
+      "collections.titleAccent": "c937ed80",
+      "collections.desc": "b1b52311",
+      "collections.cards.0.tag": "ba872bcf",
+      "collections.cards.0.title": "9fa18fa7",
+      "collections.cards.0.link": "fd3ed73a",
+      "collections.cards.1.tag": "b2947d9b",
+      "collections.cards.1.title": "78c64c37",
+      "collections.cards.1.link": "fd3ed73a",
+      "collections.cards.2.tag": "c9dcf817",
+      "collections.cards.2.title": "1595fdd0",
+      "collections.cards.2.link": "fd3ed73a",
+      "categories.eyebrow": "66e5a657",
+      "categories.title": "257fa34c",
+      "categories.titleAccent": "256e8c71",
+      "categories.desc": "f9c124d0",
+      "categories.items.0.title": "6ed5f7aa",
+      "categories.items.0.desc": "41a01c2a",
+      "categories.items.1.title": "3215cff5",
+      "categories.items.1.desc": "ec3baf14",
+      "categories.items.2.title": "ecc07cb6",
+      "categories.items.2.desc": "27b6e07d",
+      "categories.items.3.title": "758c9f59",
+      "categories.items.3.desc": "9a89e2f1",
+      "categories.items.4.title": "c25f49c4",
+      "categories.items.4.desc": "04301287",
+      "categories.ctaTitle": "96966c9c",
+      "categories.ctaDesc": "2a5e9040",
+      "categories.ctaButton": "aee6d147",
+      "portfolio.eyebrow": "4a638376",
+      "portfolio.title": "d691897c",
+      "portfolio.titleAccent": "3918027a",
+      "portfolio.desc": "d8007fd1",
+      "portfolio.items.0.location": "263d0c7e",
+      "portfolio.items.0.title": "25222c64",
+      "portfolio.items.0.units": "c53f801d",
+      "portfolio.items.1.location": "5cf10bfb",
+      "portfolio.items.1.title": "9abb848e",
+      "portfolio.items.1.units": "a2ba904e",
+      "portfolio.items.2.location": "65e98669",
+      "portfolio.items.2.title": "6fdc971d",
+      "portfolio.items.2.units": "6fbedbc6",
+      "portfolio.items.3.location": "1c3065ac",
+      "portfolio.items.3.title": "d6a046d1",
+      "portfolio.items.3.units": "c0feb326",
+      "portfolio.items.4.location": "1c3065ac",
+      "portfolio.items.4.title": "1847ecc2",
+      "portfolio.items.4.units": "eb2f14d0",
+      "why.eyebrow": "3109aff4",
+      "why.title": "c3cc4f94",
+      "why.titleAccent": "10fd29f4",
+      "why.desc": "89202847",
+      "why.badgeValue": "e6c63d5f",
+      "why.badgeText": "0bf7a855",
+      "why.items.0.title": "32f7352f",
+      "why.items.0.desc": "0a06dcd2",
+      "why.items.1.title": "23360723",
+      "why.items.1.desc": "55621475",
+      "why.items.2.title": "ce75d183",
+      "why.items.2.desc": "b8329a25",
+      "why.items.3.title": "823ee134",
+      "why.items.3.desc": "aab533f6",
+      "process.eyebrow": "189c0889",
+      "process.title": "47301246",
+      "process.titleAccent": "bb395521",
+      "process.desc": "d7555cfc",
+      "process.steps.0.title": "698f9965",
+      "process.steps.0.desc": "fdd45e60",
+      "process.steps.1.title": "c647d315",
+      "process.steps.1.desc": "af657696",
+      "process.steps.2.title": "8ffe8b17",
+      "process.steps.2.desc": "08f9ee1b",
+      "process.steps.3.title": "fa53d4dd",
+      "process.steps.3.desc": "0095ac0c",
+      "cta.title": "f046b198",
+      "cta.desc": "a8eabc94",
+      "cta.button": "5d779e40",
+      "cta.emailButton": "7e3b6f01",
+      "contactSection.eyebrow": "65d4952d",
+      "contactSection.title": "7da1fbd8",
+      "contactSection.titleAccent": "a6a6bf83",
+      "contactSection.desc": "fae567a3",
+      "contactSection.formTitle": "432887d9",
+      "contactSection.formDesc": "07c10e1a",
+      "footer.about": "a322516f",
+      "footer.copyright": "818b75c9"
+    }
+  },
+  "meta": {
+    "title": "TSJ — 工厂直销定制橱柜 | 更好的板材，精密的工艺",
+    "description": "我们自己的工厂制造的优质定制橱柜：E0/ENF 胶合板芯、无缝 PUR 封边、Blum 硬件、0.1 毫米精度。比零售工作室低 20-40%。运送到 120 多个国家/地区。",
+    "updatedAt": "2026-11-09"
+  },
+  "ui": {
+    "skip": "跳至内容",
+    "navMaterials": "板材",
+    "navCraft": "工艺",
+    "navPricing": "价格",
+    "navCollections": "系列",
+    "navProjects": "案例",
+    "navContact": "联系我们",
+    "quote": "获取免费报价",
+    "formName": "姓名",
+    "formPhone": "电话/WhatsApp",
+    "formEmail": "电子邮件",
+    "formCountry": "国家/地区",
+    "formRegion": "城市/州",
+    "formInterest": "产品兴趣",
+    "formMessage": "项目详情",
+    "phName": "约翰·史密斯",
+    "phPhone": "+1 555 000 0000",
+    "phEmail": "约翰@example.com",
+    "phCountry": "选择您的国家",
+    "phRegion": "城市或州",
+    "phInterest": "选择一个类别",
+    "phMessage": "房间类型、大概尺寸、风格偏好、时间表……",
+    "send": "发送询问",
+    "privacy": "我们尊重您的隐私。您的详细信息仅用于准备您的报价。",
+    "footerExplore": "探索",
+    "footerProducts": "产品",
+    "footerContact": "接触",
+    "prodKitchen": "厨房橱柜",
+    "prodClosets": "步入式衣柜",
+    "prodMedia": "媒体柜",
+    "prodDoors": "室内门",
+    "prodWhole": "全屋",
+    "interestKitchen": "厨房橱柜",
+    "interestMedia": "电视和媒体柜",
+    "interestClosets": "步入式衣柜",
+    "interestDisplay": "展示柜和酒柜",
+    "interestDoors": "室内门",
+    "interestWhole": "全屋定制",
+    "barWhatsapp": "WhatsApp",
+    "barCall": "称呼",
+    "barQuote": "免费报价",
+    "leadName": "姓名",
+    "leadPhone": "手机 / WhatsApp",
+    "leadCountry": "国家 / 地区",
+    "leadSubmit": "提交我的信息",
+    "proofFactory": "自2010年起拥有自己的工厂",
+    "proofCountries": "120多个国家",
+    "proofPrices": "比零售价低 20–40%"
+  },
+  "brand": {
+    "name": "TSJ",
+    "tagline": "定制橱柜，厂家直销"
+  },
+  "contact": {
+    "address": "中国广东省佛山市",
+    "hours": "周一至周六 · 09:00–18:00 (GMT+8)"
+  },
+  "leadSettings": {
+    "successMessage": "谢谢 - 您的详细信息已发送。项目专员将在24小时内与您联系。",
+    "errorMessage": "我们无法自动发送。请点击 WhatsApp 或给我们发送电子邮件，我们会立即回复。"
+  },
+  "popup": {
+    "badge": "免费设计+报价·24小时回复",
+    "title": "获取工厂直销价格",
+    "desc": "留下您的姓名、电话号码和地区。项目专家将向您发送一份经过衡量的报价——没有义务，也没有垃圾邮件。",
+    "submitText": "发送我的详细信息",
+    "note": "我们会在 24 小时内通过 WhatsApp 或电话回复。",
+    "successTitle": "详细信息已收到 - 谢谢！",
+    "successDesc": "我们的专家将在 24 小时内与您联系。现在想谈谈吗？通过 WhatsApp 给我们留言。"
+  },
+  "hero": {
+    "slides": [
+      {
+        "eyebrow": "2010年起厂家直销",
+        "title": "更好的板材。精密的工艺。",
+        "titleAccent": "出厂价。",
+        "desc": "18 毫米 E0 胶合板芯材、无缝 PUR 封边和 0.1 毫米细木工 — 在我们自己的 32,000 平方米工厂中建造，并直接运送到您家门口。",
+        "primaryText": "获取免费报价",
+        "primaryHref": "＃接触",
+        "secondaryText": "查看材料和工艺",
+        "secondaryHref": "＃材料"
+      },
+      {
+        "eyebrow": "材质品质",
+        "title": "柜子好不好，",
+        "titleAccent": "全看里面的板材",
+        "desc": "防潮、甲醛安全的 E0 / ENF 面板，具有 4H+ 表面 - 经过 20 年家庭日常使用测试。",
+        "primaryText": "与专家交谈",
+        "primaryHref": "＃接触",
+        "secondaryText": "我们的流程",
+        "secondaryHref": "＃过程"
+      },
+      {
+        "eyebrow": "节省 20–40%",
+        "title": "没有陈列室。没有中间商。",
+        "titleAccent": "只是我们的价格。",
+        "desc": "您从制造它的工厂购买 — 相同规格、逐项报价，比零售厨房工作室低 40%。",
+        "primaryText": "查看价格比较",
+        "primaryHref": "#定价",
+        "secondaryText": "我们的项目",
+        "secondaryHref": "＃文件夹"
+      }
+    ]
+  },
+  "materials": {
+    "eyebrow": "材质品质",
+    "title": "您的橱柜有多好，",
+    "titleAccent": "取决于里面的板材",
+    "desc": "大多数报价隐藏了规格。我们发布它。下面的每一个柜体、边缘和饰面都是我们实际发货的——以及您的报价的衡量标准。",
+    "cards": [
+      {
+        "title": "多层胶合板芯材",
+        "desc": "18 毫米硬木胶合板，交叉层压 11 层。螺钉固定强度是刨花板的两倍，因此门可以保持对齐多年。"
+      },
+      {
+        "title": "防潮绿芯",
+        "desc": "720 公斤/立方米 HDF，带有注蜡芯，适用于浴室、洗衣房和梳妆台。 24小时吸水膨胀率在8%以下。"
+      },
+      {
+        "title": "E0/ENF甲醛",
+        "desc": "排放量 ≤ 0.025 毫克/立方米 — 低于大多数作为“绿色”出售的面板。适用于托儿所、卧室和封闭式厨房。"
+      },
+      {
+        "title": "无缝 PUR 封边条",
+        "desc": "1 毫米 ABS 边缘，反应性 PUR 热熔胶，激光修整齐平。无胶层，无翘起——即使在 60% 的湿度下也是如此。"
+      },
+      {
+        "title": "百隆海蒂诗五金",
+        "desc": "铰链和滑轨经过 80,000 次开闭循环测试。每扇门和抽屉均配有软关闭装置——标准配置，而非升级版本。"
+      },
+      {
+        "title": "窑干实木",
+        "desc": "橡木、胡桃木和白蜡木门干燥至含水量 8-10%，并用浮动榫头连接以防止季节性开裂。"
+      }
+    ],
+    "badges": [
+      "碳水化合物P2",
+      "E0/ENF",
+      "ISO 9001:2015",
+      "FSC® 混合",
+      "SGS 测试",
+      "D4级防水"
+    ]
+  },
+  "craft": {
+    "eyebrow": "工艺",
+    "title": "可以测量的精度，",
+    "titleAccent": "可以触摸的质感",
+    "desc": "橱柜的成败取决于毫米和胶线。这正是我们的生产线如何控制这两者的。",
+    "details": [
+      {
+        "title": "嵌套切割与匹配的纹理",
+        "desc": "面板在 CNC 床上嵌套至 0.1 毫米，并且在切割单板之前门前部进行纹理匹配。"
+      },
+      {
+        "title": "无缝 PUR 边缘",
+        "desc": "每个边缘都用反应性 PUR 粘合，齐平修剪，然后在倾斜灯下进行手工检查 - 无可见的胶线。"
+      },
+      {
+        "title": "包装前干燥贴合",
+        "desc": "每个机柜均按房间进行组装、对齐和标记，然后采用 ISTA-3A 角保护进行平板包装。"
+      },
+      {
+        "title": "手工完成的表面",
+        "desc": "哑光 PET 和 PU 漆在涂层之间进行打磨，可实现 4H+ 表面和 2,000 小时的防紫外线褪色。"
+      },
+      {
+        "title": "十二签核",
+        "desc": "从纸板进料到纸箱封箱，十二个检查点。一个失败的单元会被重建——永远不会被修补。"
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "价格优势",
+    "title": "相同规格，",
+    "titleAccent": "最多减少 40%",
+    "desc": "没有展厅租金，没有经销商利润，没有品牌溢价。你支付董事会、硬件和劳动力的费用——你可以看到它的每一行。",
+    "columnA": "典型的零售工作室",
+    "columnB": "TSJ厂家直销",
+    "rows": [
+      {
+        "item": "厨房 — 10 英尺 L 形（12 个单元）"
+      },
+      {
+        "item": "步入式衣柜 — 8 英尺长"
+      },
+      {
+        "item": "媒体墙 — 3.2 m"
+      },
+      {
+        "item": "全屋套餐"
+      }
+    ],
+    "bullets": [
+      "你从制造它的工厂购买——没有陈列室租金，没有经销商利润，没有品牌溢价。",
+      "报价按柜子逐项列出，因此您可以与任何本地工作室进行逐行比较。",
+      "集装箱拼箱使每件货物的运费保持在较低水平，我们可以提供门到门报价并提供关税指导。",
+      "您的价格锁定 60 天 - 在您订购后我们绝不会更换更便宜的主板。"
+    ],
+    "note": "类似规格的 2026 年指示性指导价格（美元）。最终报价取决于尺寸、表面处理和硬件。"
+  },
+  "collections": {
+    "eyebrow": "2026年系列",
+    "title": "新来者，",
+    "titleAccent": "永恒的魅力",
+    "desc": "精心设计的部件可在不影响房间线条的情况下最大限度地提高存储空间。",
+    "cards": [
+      {
+        "tag": "厨房",
+        "title": "现代欧式厨房",
+        "link": "＃接触"
+      },
+      {
+        "tag": "客厅",
+        "title": "内置媒体墙",
+        "link": "＃接触"
+      },
+      {
+        "tag": "卧室",
+        "title": "步入式衣柜套房",
+        "link": "＃接触"
+      }
+    ]
+  },
+  "categories": {
+    "eyebrow": "我们制作什么",
+    "title": "定制橱柜",
+    "titleAccent": "每个角落",
+    "desc": "从厨房到衣柜，我们设计和制造适合您的空间、气候和生活的橱柜。",
+    "items": [
+      {
+        "title": "电视和媒体柜",
+        "desc": "娱乐中心围绕您的屏幕设计，配有电缆布线和宽敞的隐藏存储空间。"
+      },
+      {
+        "title": "步入式衣柜",
+        "desc": "精品衣柜配有可调节导轨、抽屉和集成照明。"
+      },
+      {
+        "title": "厨房橱柜",
+        "desc": "完整的厨房系统——橱柜、台面和配件设计为一体。"
+      },
+      {
+        "title": "展示柜和酒柜",
+        "desc": "个性化储物空间可展示您的藏品，让所有物品井井有条。"
+      },
+      {
+        "title": "室内门",
+        "desc": "定制门为每个房间带来温暖、隐私和建筑特色。"
+      }
+    ],
+    "ctaTitle": "全屋定制",
+    "ctaDesc": "衣柜、梳妆台、内置泥房、书柜、洗衣柜、墙板、踢脚板——每个表面、每个房间、一种板材规格。",
+    "ctaButton": "开始你的项目"
+  },
+  "portfolio": {
+    "eyebrow": "我们的工作",
+    "title": "深受业主信赖",
+    "titleAccent": "遍布全球",
+    "desc": "每年我们都会为全球数千个家庭提供定制橱柜，其中包括美国和加拿大的项目。",
+    "items": [
+      {
+        "location": "德国",
+        "title": "定制书柜图书馆",
+        "units": "973 单位"
+      },
+      {
+        "location": "加拿大",
+        "title": "现代厨房套房",
+        "units": "495 单位"
+      },
+      {
+        "location": "澳大利亚",
+        "title": "全屋装修",
+        "units": "608 单位"
+      },
+      {
+        "location": "美国",
+        "title": "豪华别墅建造",
+        "units": "693 单位"
+      },
+      {
+        "location": "美国",
+        "title": "沿海定制住宅",
+        "units": "354 单位"
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "TSJ 的区别",
+    "title": "为什么房主",
+    "titleAccent": "选择我们",
+    "desc": "可验证的材料、工厂直接定价以及从第一次绘图到最终铰链调整的一名专家。",
+    "badgeValue": "120+",
+    "badgeText": "交付国家",
+    "items": [
+      {
+        "title": "厂家直销定价",
+        "desc": "从源头购买可节省 20-40%。没有陈列室，没有中间商，没有零售加价——逐项列出的诚实报价。"
+      },
+      {
+        "title": "一站式简单",
+        "desc": "设计、制造、运输和安装指导由一个团队负责。你永远不会协调五个供应商。"
+      },
+      {
+        "title": "专职专家",
+        "desc": "一名指定的项目专家，提供带跟踪的门到门运输以及随叫随到的详细安装支持。"
+      },
+      {
+        "title": "16年的精通",
+        "desc": "自 2010 年以来，我们改进了一种产品：橱柜。我们的板材、边缘和硬件均高于行业标准。"
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "过程",
+    "title": "从平面图来看",
+    "titleAccent": "到家完成",
+    "desc": "为您设计的简单、透明的流程。",
+    "steps": [
+      {
+        "title": "分享您的愿景",
+        "desc": "发送您的平面图、灵感照片和要求。我们将讨论风格、预算和时间表。"
+      },
+      {
+        "title": "设计与报价",
+        "desc": "我们的团队通常会在 3 至 5 个工作日内创建详细的图纸和逐项报价。"
+      },
+      {
+        "title": "工艺与船舶",
+        "desc": "您的橱柜经过精密制造、质量检查并送货上门，全程跟踪。"
+      },
+      {
+        "title": "安装并享受",
+        "desc": "接收详细的安装指南和现场支持，然后享受您改造后的美丽家园。"
+      }
+    ]
+  },
+  "cta": {
+    "title": "准备好改造你的家了吗？",
+    "desc": "将您的平面图发送给我们，我们将免费创建个性化设计和报价。",
+    "button": "获取免费报价",
+    "emailButton": "直接给我们发电子邮件"
+  },
+  "contactSection": {
+    "eyebrow": "联系我们",
+    "title": "让我们开始吧",
+    "titleAccent": "谈话",
+    "desc": "无论您是计划进行全屋翻新还是单间翻新，我们的团队都随时准备为您提供帮助。填写表格或直接联系我们。",
+    "formTitle": "索取报价",
+    "formDesc": "告诉我们您的项目，我们将在 24 小时内回复您。"
+  },
+  "footer": {
+    "about": "为美国、加拿大及其他地区的家庭精心打造的优质定制橱柜。自 2010 年起厂家直销品质。",
+    "copyright": "© 2026 TSJ。版权所有。"
+  }
+}

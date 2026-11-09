@@ -6,8 +6,15 @@
     'use strict';
 
     var CONFIG_URL = 'data/site.json';
-    var SITE = null;
+    var I18N_BASE = 'data/i18n/';
+    var LANG_KEY = 'tsj_lang';
+    var SITE = null;          // merged (master + current language overlay)
+    var MASTER = null;        // master config as stored in data/site.json
+    var OVERLAY = null;       // current language overlay
+    var LANG = 'en';
+    var SOURCE_LANG = 'en';
     var LEAD_BUSY = false;
+    var SLIDER_TIMER = null;
 
     /* Minimal fallback so the page is never blank if the JSON cannot load */
     var FALLBACK = {
@@ -54,6 +61,160 @@
         var node = $(sel);
         if (node && value != null) node.textContent = value;
     }
+    /* ---------------- i18n ---------------- */
+    function langList() {
+        var langs = (MASTER && MASTER.i18n && MASTER.i18n.languages) || [];
+        return langs.length ? langs : [{ code: 'en', label: 'English' }];
+    }
+
+    function langInfo(code) {
+        var hit = null;
+        langList().forEach(function (l) { if (l.code === code) hit = l; });
+        return hit;
+    }
+
+    function resolveLang() {
+        var list = langList();
+        var has = function (c) { return c && list.some(function (l) { return l.code === c; }); };
+        var q = '';
+        try { q = new URLSearchParams(location.search).get('lang') || ''; } catch (e) { q = ''; }
+        var saved = '';
+        try { saved = localStorage.getItem(LANG_KEY) || ''; } catch (e) { saved = ''; }
+        if (has(q)) return q;
+        if (has(saved)) return saved;
+        var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        if (has(nav)) return nav;
+        if (nav === 'zh') return has('zh') ? 'zh' : SOURCE_LANG;
+        return SOURCE_LANG;
+    }
+
+    function mergeDeep(base, over) {
+        if (Array.isArray(base) && Array.isArray(over)) {
+            return base.map(function (item, i) {
+                return over[i] === undefined ? item : mergeDeep(item, over[i]);
+            });
+        }
+        if (base && typeof base === 'object' && over && typeof over === 'object') {
+            var out = {};
+            Object.keys(base).forEach(function (k) {
+                out[k] = over[k] === undefined ? base[k] : mergeDeep(base[k], over[k]);
+            });
+            Object.keys(over).forEach(function (k) {
+                if (out[k] === undefined) out[k] = over[k];
+            });
+            return out;
+        }
+        if (typeof over === 'string' && over.trim()) return over;
+        return base;
+    }
+
+    function applyLangAttributes() {
+        var info = langInfo(LANG);
+        var dir = (info && info.dir) || (/^(ar|fa|he|ur)$/.test(LANG) ? 'rtl' : 'ltr');
+        document.documentElement.lang = LANG;
+        document.documentElement.dir = dir;
+    }
+
+    function loadOverlay(code) {
+        if (!code || code === SOURCE_LANG) return Promise.resolve({});
+        return fetch(I18N_BASE + code + '.json?v=' + Date.now(), { cache: 'no-store' })
+            .then(function (res) { return res.ok ? res.json() : {}; })
+            .catch(function () { return {}; });
+    }
+
+    function shortLabel(code) {
+        var info = langInfo(code);
+        if (code === 'zh') return '中文';
+        return code.toUpperCase();
+    }
+
+    function renderLangSwitch() {
+        ['#langSwitch', '#langSwitchMobile'].forEach(function (sel) {
+            var host = $(sel);
+            if (!host) return;
+            host.innerHTML = '';
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'lang-btn';
+            btn.setAttribute('aria-haspopup', 'true');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.innerHTML = '<i class="fa-solid fa-globe"></i><span>' + esc(shortLabel(LANG)) +
+                '</span><i class="fa-solid fa-chevron-down lang-caret"></i>';
+
+            var menu = document.createElement('div');
+            menu.className = 'lang-menu';
+            menu.setAttribute('role', 'listbox');
+            langList().forEach(function (l) {
+                var item = document.createElement('button');
+                item.type = 'button';
+                item.className = 'lang-item' + (l.code === LANG ? ' is-current' : '');
+                item.setAttribute('role', 'option');
+                item.setAttribute('aria-selected', l.code === LANG ? 'true' : 'false');
+                item.innerHTML = '<span>' + esc(l.label) + '</span>' + (l.code === LANG ? '<i class="fa-solid fa-check"></i>' : '');
+                item.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    host.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    setLang(l.code);
+                });
+                menu.appendChild(item);
+            });
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = host.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+
+            host.appendChild(btn);
+            host.appendChild(menu);
+        });
+
+        if (!document.body.dataset.langBound) {
+            document.body.dataset.langBound = '1';
+            document.addEventListener('click', function () {
+                $$('.lang.is-open').forEach(function (el) { el.classList.remove('is-open'); });
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') $$('.lang.is-open').forEach(function (el) { el.classList.remove('is-open'); });
+            });
+        }
+    }
+
+    function setLang(code) {
+        if (!code || code === LANG) return;
+        LANG = code;
+        try { localStorage.setItem(LANG_KEY, code); } catch (e) { /* ignore */ }
+        try {
+            var url = new URL(location.href);
+            if (code === SOURCE_LANG) url.searchParams.delete('lang');
+            else url.searchParams.set('lang', code);
+            history.replaceState(null, '', url.pathname + (url.search ? url.search : '') + url.hash);
+        } catch (e) { /* ignore */ }
+        loadOverlay(code).then(function (over) {
+            OVERLAY = over;
+            SITE = mergeDeep(MASTER, OVERLAY);
+            window.TSJ_SITE = SITE;
+            applyLangAttributes();
+            render();
+            document.documentElement.classList.add('lang-switching');
+            setTimeout(function () { document.documentElement.classList.remove('lang-switching'); }, 30);
+        });
+    }
+
+    function applyI18n() {
+        $$('[data-i18n]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n');
+            var val = get(SITE, key.split('.'), '');
+            if (typeof val === 'string' && val) el.textContent = val;
+        });
+        $$('[data-i18n-ph]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n-ph');
+            var val = get(SITE, key.split('.'), '');
+            if (typeof val === 'string' && val) el.setAttribute('placeholder', val);
+        });
+    }
+
     function get(obj, path, fallback) {
         var cur = obj;
         for (var i = 0; i < path.length; i++) {
@@ -452,10 +613,16 @@
             return '<option value="' + esc(parts[0]) + '" data-dial="' + esc(parts[1] || '') + '">' + esc(parts[0]) + '</option>';
         }).join('');
 
+        var selectLabel = get(SITE, ['ui', 'phCountry'], 'Select your country');
+
         ['#lCountry', '#cCountry'].forEach(function (sel) {
             var node = $(sel);
             if (!node) return;
-            node.innerHTML = '<option value="">Select your country</option>' + options;
+            var current = node.value;
+            node.innerHTML = '<option value="">' + esc(selectLabel) + '</option>' + options;
+            if (current) node.value = current;
+            if (node.dataset.bound) return;
+            node.dataset.bound = '1';
             node.addEventListener('change', function () {
                 var opt = node.options[node.selectedIndex];
                 var dial = opt ? opt.getAttribute('data-dial') : '';
@@ -470,6 +637,7 @@
     function initSlider() {
         var slides = $$('.hero-slide');
         var dots = $$('.hero-dot');
+        if (SLIDER_TIMER) { clearInterval(SLIDER_TIMER); SLIDER_TIMER = null; }
         if (slides.length < 2) return;
 
         var index = 0;
@@ -492,6 +660,7 @@
         function start() {
             stop();
             timer = setInterval(function () { go(index + 1); }, 7000);
+            SLIDER_TIMER = timer;
         }
         function stop() { if (timer) clearInterval(timer); timer = null; }
 
@@ -508,7 +677,8 @@
         });
 
         var hero = $('.hero');
-        if (hero) {
+        if (hero && !hero.dataset.sliderBound) {
+            hero.dataset.sliderBound = '1';
             hero.addEventListener('mouseenter', stop);
             hero.addEventListener('mouseleave', start);
 
@@ -520,9 +690,12 @@
             }, { passive: true });
         }
 
-        document.addEventListener('visibilitychange', function () {
-            document.hidden ? stop() : start();
-        });
+        if (!document.body.dataset.sliderVisBound) {
+            document.body.dataset.sliderVisBound = '1';
+            document.addEventListener('visibilitychange', function () {
+                if (SLIDER_TIMER) { document.hidden ? clearInterval(SLIDER_TIMER) : null; }
+            });
+        }
 
         start();
     }
@@ -622,6 +795,8 @@
     }
 
     function initLeadModal() {
+        if (document.body.dataset.leadBound) return;
+        document.body.dataset.leadBound = '1';
         document.addEventListener('click', function (e) {
             var opener = e.target.closest('[data-open-lead]');
             if (opener) {
@@ -825,7 +1000,8 @@
 
     function initLeadForm() {
         var form = $('#leadForm');
-        if (!form) return;
+        if (!form || form.dataset.bound) return;
+        form.dataset.bound = '1';
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -868,7 +1044,8 @@
 
     function initContactForm() {
         var form = $('#contactForm');
-        if (!form) return;
+        if (!form || form.dataset.bound) return;
+        form.dataset.bound = '1';
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -922,12 +1099,27 @@
         renderContactSection();
         renderFooter();
         renderPopup();
+        applyI18n();
+        renderLangSwitch();
         fillCountries();
         initSlider();
         initLeadModal();
         initLeadForm();
         initContactForm();
         revealize();
+    }
+
+    function boot(master) {
+        MASTER = master;
+        SOURCE_LANG = (MASTER.i18n && MASTER.i18n.source) || 'en';
+        LANG = resolveLang();
+        applyLangAttributes();
+        return loadOverlay(LANG).then(function (over) {
+            OVERLAY = over;
+            SITE = mergeDeep(MASTER, OVERLAY);
+            window.TSJ_SITE = SITE;
+            render();
+        });
     }
 
     function load() {
@@ -937,15 +1129,11 @@
                 return res.json();
             })
             .then(function (json) {
-                SITE = Object.assign({}, FALLBACK, json);
-                window.TSJ_SITE = SITE;
-                render();
+                return boot(mergeDeep(FALLBACK, json));
             })
             .catch(function (err) {
                 console.warn('[TSJ] falling back to built-in content:', err && err.message);
-                SITE = FALLBACK;
-                window.TSJ_SITE = SITE;
-                render();
+                return boot(FALLBACK);
             });
     }
 

@@ -1,0 +1,599 @@
+{
+  "_meta": {
+    "lang": "pt",
+    "source": "en",
+    "engine": "google-gtx + mymemory fallback",
+    "generatedAt": "2026-11-09T07:31:53.585Z",
+    "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
+    "auto": {
+      "meta.title": "9ccf8dd7",
+      "meta.description": "020908cb",
+      "meta.updatedAt": "791e2e14",
+      "ui.skip": "c7af44e6",
+      "ui.navMaterials": "d3ccdb89",
+      "ui.navCraft": "c8f02361",
+      "ui.navPricing": "b4d17ded",
+      "ui.navCollections": "9ae6a966",
+      "ui.navProjects": "64fda4d7",
+      "ui.navContact": "73ac94c3",
+      "ui.quote": "f9d637c2",
+      "ui.formName": "9010932f",
+      "ui.formPhone": "ed504c20",
+      "ui.formEmail": "43352167",
+      "ui.formCountry": "1a3a3920",
+      "ui.formRegion": "d4a2fd42",
+      "ui.formInterest": "112a2576",
+      "ui.formMessage": "5e13f188",
+      "ui.phName": "9ca62dc7",
+      "ui.phPhone": "28c7db60",
+      "ui.phEmail": "091b0ca1",
+      "ui.phCountry": "69d0557e",
+      "ui.phRegion": "f2f7c692",
+      "ui.phInterest": "571309be",
+      "ui.phMessage": "5437a0b1",
+      "ui.send": "2326e532",
+      "ui.privacy": "caabb44d",
+      "ui.footerExplore": "4d9eb2dc",
+      "ui.footerProducts": "cb2c4cad",
+      "ui.footerContact": "73ac94c3",
+      "ui.prodKitchen": "ecc07cb6",
+      "ui.prodClosets": "3215cff5",
+      "ui.prodMedia": "cc5d6d6c",
+      "ui.prodDoors": "c25f49c4",
+      "ui.prodWhole": "ff614338",
+      "ui.interestKitchen": "ecc07cb6",
+      "ui.interestMedia": "6ed5f7aa",
+      "ui.interestClosets": "3215cff5",
+      "ui.interestDisplay": "758c9f59",
+      "ui.interestDoors": "c25f49c4",
+      "ui.interestWhole": "96966c9c",
+      "ui.barWhatsapp": "b1332787",
+      "ui.barCall": "341dd0c9",
+      "ui.barQuote": "561539cb",
+      "ui.leadName": "9010932f",
+      "ui.leadPhone": "ed504c20",
+      "ui.leadCountry": "1a3a3920",
+      "ui.leadSubmit": "86f852c9",
+      "ui.proofFactory": "587338fe",
+      "ui.proofCountries": "3585f9d5",
+      "ui.proofPrices": "8a3745e9",
+      "brand.name": "3b569e0e",
+      "brand.tagline": "88b1d188",
+      "contact.address": "72086f27",
+      "contact.hours": "b923f4bc",
+      "leadSettings.successMessage": "52d99c5f",
+      "leadSettings.errorMessage": "4491c7dc",
+      "popup.badge": "a26a1dad",
+      "popup.title": "93886ceb",
+      "popup.desc": "a615f8bc",
+      "popup.submitText": "86f852c9",
+      "popup.note": "fd467cad",
+      "popup.successTitle": "4a4d5d92",
+      "popup.successDesc": "7f11dd5b",
+      "hero.slides.0.eyebrow": "4acb2c2f",
+      "hero.slides.0.title": "53328d22",
+      "hero.slides.0.titleAccent": "24259cb5",
+      "hero.slides.0.desc": "6e1ff08a",
+      "hero.slides.0.primaryText": "f9d637c2",
+      "hero.slides.0.primaryHref": "fd3ed73a",
+      "hero.slides.0.secondaryText": "63976176",
+      "hero.slides.0.secondaryHref": "1c1d9bdc",
+      "hero.slides.1.eyebrow": "0673dcd1",
+      "hero.slides.1.title": "88a985d9",
+      "hero.slides.1.titleAccent": "ea276677",
+      "hero.slides.1.desc": "513a1140",
+      "hero.slides.1.primaryText": "5a0dbc7c",
+      "hero.slides.1.primaryHref": "fd3ed73a",
+      "hero.slides.1.secondaryText": "f3963ad0",
+      "hero.slides.1.secondaryHref": "ab333eff",
+      "hero.slides.2.eyebrow": "909ed376",
+      "hero.slides.2.title": "206c66d8",
+      "hero.slides.2.titleAccent": "756f2056",
+      "hero.slides.2.desc": "496eb3f1",
+      "hero.slides.2.primaryText": "7ba26d16",
+      "hero.slides.2.primaryHref": "0927ef74",
+      "hero.slides.2.secondaryText": "f52e7b01",
+      "hero.slides.2.secondaryHref": "f871c70a",
+      "materials.eyebrow": "0673dcd1",
+      "materials.title": "633671d8",
+      "materials.titleAccent": "e9f53010",
+      "materials.desc": "77dcdb76",
+      "materials.cards.0.title": "e8c8b87f",
+      "materials.cards.0.desc": "ff4e2b83",
+      "materials.cards.1.title": "98dab952",
+      "materials.cards.1.desc": "9ae59b1d",
+      "materials.cards.2.title": "dd6cb082",
+      "materials.cards.2.desc": "a2e9ac83",
+      "materials.cards.3.title": "4100885f",
+      "materials.cards.3.desc": "ed18e27c",
+      "materials.cards.4.title": "310d9372",
+      "materials.cards.4.desc": "fe26f769",
+      "materials.cards.5.title": "b597334a",
+      "materials.cards.5.desc": "f886bba7",
+      "materials.badges.0": "9afa9819",
+      "materials.badges.1": "5d0666ea",
+      "materials.badges.2": "a7b09ed6",
+      "materials.badges.3": "0b0c612d",
+      "materials.badges.4": "eb7b1e09",
+      "materials.badges.5": "fd3fd958",
+      "craft.eyebrow": "845c6070",
+      "craft.title": "b1396986",
+      "craft.titleAccent": "a7f8d435",
+      "craft.desc": "ba956860",
+      "craft.details.0.title": "975f6b05",
+      "craft.details.0.desc": "5194e9b7",
+      "craft.details.1.title": "b804d5f7",
+      "craft.details.1.desc": "82bfc8e1",
+      "craft.details.2.title": "5f77b224",
+      "craft.details.2.desc": "de4fe51d",
+      "craft.details.3.title": "a7fcdda7",
+      "craft.details.3.desc": "fb65db47",
+      "craft.details.4.title": "e0aaf072",
+      "craft.details.4.desc": "06906145",
+      "pricing.eyebrow": "6165c6fb",
+      "pricing.title": "6535a776",
+      "pricing.titleAccent": "c413228b",
+      "pricing.desc": "6951d93c",
+      "pricing.columnA": "1b3a4c08",
+      "pricing.columnB": "8a24d27d",
+      "pricing.rows.0.item": "fefef8d5",
+      "pricing.rows.1.item": "2d2b582f",
+      "pricing.rows.2.item": "54207143",
+      "pricing.rows.3.item": "134e1e38",
+      "pricing.bullets.0": "583c68bb",
+      "pricing.bullets.1": "1fee084d",
+      "pricing.bullets.2": "d1184a6a",
+      "pricing.bullets.3": "f2d08e9e",
+      "pricing.note": "3336437a",
+      "collections.eyebrow": "5a69f2fd",
+      "collections.title": "c38dc5f7",
+      "collections.titleAccent": "c937ed80",
+      "collections.desc": "b1b52311",
+      "collections.cards.0.tag": "ba872bcf",
+      "collections.cards.0.title": "9fa18fa7",
+      "collections.cards.0.link": "fd3ed73a",
+      "collections.cards.1.tag": "b2947d9b",
+      "collections.cards.1.title": "78c64c37",
+      "collections.cards.1.link": "fd3ed73a",
+      "collections.cards.2.tag": "c9dcf817",
+      "collections.cards.2.title": "1595fdd0",
+      "collections.cards.2.link": "fd3ed73a",
+      "categories.eyebrow": "66e5a657",
+      "categories.title": "257fa34c",
+      "categories.titleAccent": "256e8c71",
+      "categories.desc": "f9c124d0",
+      "categories.items.0.title": "6ed5f7aa",
+      "categories.items.0.desc": "41a01c2a",
+      "categories.items.1.title": "3215cff5",
+      "categories.items.1.desc": "ec3baf14",
+      "categories.items.2.title": "ecc07cb6",
+      "categories.items.2.desc": "27b6e07d",
+      "categories.items.3.title": "758c9f59",
+      "categories.items.3.desc": "9a89e2f1",
+      "categories.items.4.title": "c25f49c4",
+      "categories.items.4.desc": "04301287",
+      "categories.ctaTitle": "96966c9c",
+      "categories.ctaDesc": "2a5e9040",
+      "categories.ctaButton": "aee6d147",
+      "portfolio.eyebrow": "4a638376",
+      "portfolio.title": "d691897c",
+      "portfolio.titleAccent": "3918027a",
+      "portfolio.desc": "d8007fd1",
+      "portfolio.items.0.location": "263d0c7e",
+      "portfolio.items.0.title": "25222c64",
+      "portfolio.items.0.units": "c53f801d",
+      "portfolio.items.1.location": "5cf10bfb",
+      "portfolio.items.1.title": "9abb848e",
+      "portfolio.items.1.units": "a2ba904e",
+      "portfolio.items.2.location": "65e98669",
+      "portfolio.items.2.title": "6fdc971d",
+      "portfolio.items.2.units": "6fbedbc6",
+      "portfolio.items.3.location": "1c3065ac",
+      "portfolio.items.3.title": "d6a046d1",
+      "portfolio.items.3.units": "c0feb326",
+      "portfolio.items.4.location": "1c3065ac",
+      "portfolio.items.4.title": "1847ecc2",
+      "portfolio.items.4.units": "eb2f14d0",
+      "why.eyebrow": "3109aff4",
+      "why.title": "c3cc4f94",
+      "why.titleAccent": "10fd29f4",
+      "why.desc": "89202847",
+      "why.badgeValue": "e6c63d5f",
+      "why.badgeText": "0bf7a855",
+      "why.items.0.title": "32f7352f",
+      "why.items.0.desc": "0a06dcd2",
+      "why.items.1.title": "23360723",
+      "why.items.1.desc": "55621475",
+      "why.items.2.title": "ce75d183",
+      "why.items.2.desc": "b8329a25",
+      "why.items.3.title": "823ee134",
+      "why.items.3.desc": "aab533f6",
+      "process.eyebrow": "189c0889",
+      "process.title": "47301246",
+      "process.titleAccent": "bb395521",
+      "process.desc": "d7555cfc",
+      "process.steps.0.title": "698f9965",
+      "process.steps.0.desc": "fdd45e60",
+      "process.steps.1.title": "c647d315",
+      "process.steps.1.desc": "af657696",
+      "process.steps.2.title": "8ffe8b17",
+      "process.steps.2.desc": "08f9ee1b",
+      "process.steps.3.title": "fa53d4dd",
+      "process.steps.3.desc": "0095ac0c",
+      "cta.title": "f046b198",
+      "cta.desc": "a8eabc94",
+      "cta.button": "5d779e40",
+      "cta.emailButton": "7e3b6f01",
+      "contactSection.eyebrow": "65d4952d",
+      "contactSection.title": "7da1fbd8",
+      "contactSection.titleAccent": "a6a6bf83",
+      "contactSection.desc": "fae567a3",
+      "contactSection.formTitle": "432887d9",
+      "contactSection.formDesc": "07c10e1a",
+      "footer.about": "a322516f",
+      "footer.copyright": "818b75c9"
+    }
+  },
+  "meta": {
+    "title": "TSJ — Armários personalizados direto da fábrica | Melhores pranchas, artesanato de precisão",
+    "description": "Armários personalizados premium feitos em nossa própria fábrica: núcleos de compensado E0/ENF, orlas de PUR sem costura, ferragens Blum, precisão de 0,1 mm. 20–40% abaixo dos estúdios de varejo. Enviado para mais de 120 países.",
+    "updatedAt": "09/11/2026"
+  },
+  "ui": {
+    "skip": "Pular para o conteúdo",
+    "navMaterials": "Materiais",
+    "navCraft": "Arte",
+    "navPricing": "Preços",
+    "navCollections": "Coleções",
+    "navProjects": "Projetos",
+    "navContact": "Contato",
+    "quote": "Faça um orçamento grátis",
+    "formName": "Nome completo",
+    "formPhone": "Telefone/WhatsApp",
+    "formEmail": "E-mail",
+    "formCountry": "País/região",
+    "formRegion": "Cidade/estado",
+    "formInterest": "Interesse no produto",
+    "formMessage": "Detalhes do projeto",
+    "phName": "João Smith",
+    "phPhone": "+1 555 000 0000",
+    "phEmail": "john@exemplo.com",
+    "phCountry": "Selecione seu país",
+    "phRegion": "Cidade ou estado",
+    "phInterest": "Selecione uma categoria",
+    "phMessage": "Tipos de quartos, dimensões aproximadas, preferência de estilo, cronograma...",
+    "send": "Enviar consulta",
+    "privacy": "Respeitamos sua privacidade. Os seus dados são utilizados apenas para preparar o seu orçamento.",
+    "footerExplore": "Explorar",
+    "footerProducts": "Produtos",
+    "footerContact": "Contato",
+    "prodKitchen": "Armários de cozinha",
+    "prodClosets": "Armários walk-in",
+    "prodMedia": "Armários de mídia",
+    "prodDoors": "Portas interiores",
+    "prodWhole": "Casa inteira",
+    "interestKitchen": "Armários de cozinha",
+    "interestMedia": "Armários de TV e mídia",
+    "interestClosets": "Armários walk-in",
+    "interestDisplay": "Expositores e armários para vinhos",
+    "interestDoors": "Portas interiores",
+    "interestWhole": "Personalização de toda a casa",
+    "barWhatsapp": "WhatsApp",
+    "barCall": "Chamar",
+    "barQuote": "Orçamento grátis",
+    "leadName": "Nome completo",
+    "leadPhone": "Telefone/WhatsApp",
+    "leadCountry": "País/região",
+    "leadSubmit": "Enviar meus dados",
+    "proofFactory": "Fábrica própria desde 2010",
+    "proofCountries": "Mais de 120 países",
+    "proofPrices": "20–40% abaixo do varejo"
+  },
+  "brand": {
+    "name": "TSJ",
+    "tagline": "Armários personalizados, direto da fábrica"
+  },
+  "contact": {
+    "address": "Foshan, Guangdong, China",
+    "hours": "Seg–Sáb · 09h00–18h00 (GMT+8)"
+  },
+  "leadSettings": {
+    "successMessage": "Obrigado - seus dados foram enviados. Um especialista do projeto entrará em contato com você dentro de 24 horas.",
+    "errorMessage": "Não foi possível enviar automaticamente. Toque em WhatsApp ou envie-nos um e-mail e responderemos imediatamente."
+  },
+  "popup": {
+    "badge": "Design grátis + orçamento · Resposta 24h",
+    "title": "Obtenha seu preço direto da fábrica",
+    "desc": "Deixe seu nome, telefone e região. Um especialista em projeto enviará a você um orçamento medido – sem compromisso, sem spam.",
+    "submitText": "Enviar meus dados",
+    "note": "Respondemos por WhatsApp ou telefone em até 24 horas.",
+    "successTitle": "Detalhes recebidos – obrigado!",
+    "successDesc": "Nosso especialista entrará em contato dentro de 24 horas. Prefere conversar agora? Envie-nos uma mensagem no WhatsApp."
+  },
+  "hero": {
+    "slides": [
+      {
+        "eyebrow": "Direto da fábrica desde 2010",
+        "title": "Placas melhores. Artesanato de precisão.",
+        "titleAccent": "Preços de fábrica.",
+        "desc": "Núcleos de compensado E0 de 18 mm, bordas de PUR sem costura e marcenaria de 0,1 mm — construídos em nossa própria fábrica de 32.000 m² e enviados diretamente para sua porta.",
+        "primaryText": "Faça um orçamento grátis",
+        "primaryHref": "#contato",
+        "secondaryText": "Veja materiais e artesanato",
+        "secondaryHref": "#materiais"
+      },
+      {
+        "eyebrow": "Qualidade dos materiais",
+        "title": "O conselho dentro decide",
+        "titleAccent": "quanto tempo dura",
+        "desc": "Painéis E0 / ENF à prova de umidade e seguros para formaldeído com superfícies 4H+ - testados por 20 anos de uso familiar diário.",
+        "primaryText": "Fale com um especialista",
+        "primaryHref": "#contato",
+        "secondaryText": "Nosso processo",
+        "secondaryHref": "#processo"
+      },
+      {
+        "eyebrow": "Economize 20–40%",
+        "title": "Sem showroom. Sem intermediários.",
+        "titleAccent": "Apenas o nosso preço.",
+        "desc": "Você compra da fábrica que o constrói – mesma especificação, orçamento detalhado, até 40% abaixo dos estúdios de cozinha de varejo.",
+        "primaryText": "Veja comparação de preços",
+        "primaryHref": "#preço",
+        "secondaryText": "Nossos projetos",
+        "secondaryHref": "#portfólio"
+      }
+    ]
+  },
+  "materials": {
+    "eyebrow": "Qualidade dos materiais",
+    "title": "Seus armários são tão bons quanto",
+    "titleAccent": "a placa dentro",
+    "desc": "A maioria das citações esconde as especificações. Nós publicamos. Cada carcaça, borda e acabamento abaixo é o que realmente enviamos - e com o qual sua cotação é avaliada.",
+    "cards": [
+      {
+        "title": "Núcleo de compensado multicamadas",
+        "desc": "Contraplacado de madeira nobre de 18 mm, laminado cruzado em 11 camadas. O dobro da resistência de fixação dos parafusos do painel de partículas, para que as portas permaneçam alinhadas durante anos."
+      },
+      {
+        "title": "Núcleo verde à prova de umidade",
+        "desc": "HDF de 720 kg/m³ com núcleo infundido em cera para banheiros, lavanderias e penteadeiras. Inchaço da água em 24 horas abaixo de 8%."
+      },
+      {
+        "title": "E0/ENF formaldeído",
+        "desc": "Emissão ≤ 0,025 mg/m³ — inferior à maioria dos painéis vendidos como “verdes”. Seguro para creches, quartos e cozinhas fechadas."
+      },
+      {
+        "title": "Borda de borda PUR sem costura",
+        "desc": "Borda em ABS de 1 mm, hot-melt em PUR reativo, nivelado com corte a laser. Sem linha de cola, sem levantamento – mesmo com 60% de umidade."
+      },
+      {
+        "title": "Ferragens Blum & Hettich",
+        "desc": "Dobradiças e corrediças testadas em 80.000 ciclos de abertura e fechamento. Fechamento suave em todas as portas e gavetas – padrão, não uma atualização."
+      },
+      {
+        "title": "Madeira maciça seca em estufa",
+        "desc": "Portas de carvalho, nogueira e freixo secaram até atingir um teor de umidade de 8 a 10%, unidas com espigas flutuantes para evitar rachaduras sazonais."
+      }
+    ],
+    "badges": [
+      "CARBONO P2",
+      "E0 / ENF",
+      "ISO 9001:2015",
+      "Mistura FSC®",
+      "SGS testado",
+      "D4 à prova d'água"
+    ]
+  },
+  "craft": {
+    "eyebrow": "Artesanato",
+    "title": "Precisão que você pode medir,",
+    "titleAccent": "terminar você pode sentir",
+    "desc": "Os armários ganham ou perdem em milímetros e linhas de cola. Aqui está exatamente como nossa linha de produção controla ambos.",
+    "details": [
+      {
+        "title": "Corte ninho com grão correspondente",
+        "desc": "Os painéis são aninhados em bases CNC até 0,1 mm e as frentes das portas são ajustadas à granulação antes de uma única placa ser cortada."
+      },
+      {
+        "title": "Bordas PUR perfeitas",
+        "desc": "Cada borda é colada com PUR reativo, aparada nivelada e depois inspecionada manualmente sob luz de inclinação - sem linha de cola visível."
+      },
+      {
+        "title": "Ajuste a seco antes de embalar",
+        "desc": "Cada gabinete é montado, alinhado e rotulado por ambiente e, em seguida, embalado com proteção de canto ISTA-3A."
+      },
+      {
+        "title": "Superfícies acabadas à mão",
+        "desc": "As lacas PET e PU foscas são lixadas entre demãos para uma superfície 4H+ e resistência ao desbotamento UV de 2.000 horas."
+      },
+      {
+        "title": "Doze aprovações",
+        "desc": "Da entrada da placa até a selagem da caixa, doze pontos de verificação. Uma unidade que falha é reconstruída – nunca corrigida."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Vantagem de preço",
+    "title": "Mesma especificação,",
+    "titleAccent": "até 40% menos",
+    "desc": "Sem aluguel de showroom, sem margem de revendedor, sem prêmio de marca. Você paga pela placa, hardware e mão de obra – e pode ver cada linha disso.",
+    "columnA": "Estúdio de varejo típico",
+    "columnB": "TSJ direto da fábrica",
+    "rows": [
+      {
+        "item": "Cozinha – formato L de 10 pés (12 unidades)"
+      },
+      {
+        "item": "Armário walk-in – corrida de 2,5 metros"
+      },
+      {
+        "item": "Parede de mídia — 3,2 m"
+      },
+      {
+        "item": "Pacote para toda a casa"
+      }
+    ],
+    "bullets": [
+      "Você compra da fábrica que o constrói – sem aluguel de showroom, sem margem de revendedor, sem prêmio de marca.",
+      "As cotações são discriminadas por gabinete, para que você possa comparar linha por linha com qualquer estúdio local.",
+      "A consolidação de contêineres mantém o frete por unidade baixo e fazemos orçamentos porta a porta com orientação de tarifas.",
+      "Seu preço fica bloqueado por 60 dias – e nunca trocamos por uma prancha mais barata após você fazer o pedido."
+    ],
+    "note": "Preços de orientação indicativos para 2026 em dólares americanos para especificações comparáveis. O orçamento final depende do tamanho, acabamento e ferragens."
+  },
+  "collections": {
+    "eyebrow": "Coleção 2026",
+    "title": "Novidades,",
+    "titleAccent": "apelo atemporal",
+    "desc": "Peças cuidadosamente projetadas que maximizam o armazenamento sem comprometer a linha do ambiente.",
+    "cards": [
+      {
+        "tag": "Cozinha",
+        "title": "Cozinha Europeia Moderna",
+        "link": "#contato"
+      },
+      {
+        "tag": "Sala de estar",
+        "title": "Parede de mídia integrada",
+        "link": "#contato"
+      },
+      {
+        "tag": "Quarto",
+        "title": "Suíte com guarda-roupa",
+        "link": "#contato"
+      }
+    ]
+  },
+  "categories": {
+    "eyebrow": "O que criamos",
+    "title": "Armários personalizados para",
+    "titleAccent": "cada canto",
+    "desc": "Da cozinha ao armário, projetamos e construímos armários que se adaptam ao seu espaço, ao seu clima e à sua vida.",
+    "items": [
+      {
+        "title": "Armários de TV e mídia",
+        "desc": "Centros de entretenimento projetados em torno da sua tela, com roteamento de cabos e armazenamento oculto generoso."
+      },
+      {
+        "title": "Armários walk-in",
+        "desc": "Roupeiros dignos de boutique com calhas ajustáveis, gavetas e iluminação integrada."
+      },
+      {
+        "title": "Armários de cozinha",
+        "desc": "Sistemas completos de cozinha – armários, bancadas e acessórios projetados como uma unidade."
+      },
+      {
+        "title": "Expositores e armários para vinhos",
+        "desc": "Armazenamento de extratos que mostra sua coleção e mantém tudo lindamente organizado."
+      },
+      {
+        "title": "Portas interiores",
+        "desc": "Portas personalizadas que trazem calor, privacidade e caráter arquitetônico a todos os ambientes."
+      }
+    ],
+    "ctaTitle": "Personalização de toda a casa",
+    "ctaDesc": "Roupeiros, penteadeiras, mudrooms embutidos, estantes de livros, armários de lavanderia, painéis de parede, rodapés - cada superfície, cada cômodo, uma especificação de placa.",
+    "ctaButton": "Comece seu projeto"
+  },
+  "portfolio": {
+    "eyebrow": "Nosso trabalho",
+    "title": "Confiado pelos proprietários",
+    "titleAccent": "em todo o mundo",
+    "desc": "Todos os anos entregamos armários personalizados para milhares de residências em todo o mundo — incluindo projetos nos Estados Unidos e no Canadá.",
+    "items": [
+      {
+        "location": "Alemanha",
+        "title": "Biblioteca de estantes personalizadas",
+        "units": "973 unidades"
+      },
+      {
+        "location": "Canadá",
+        "title": "Suíte de cozinha moderna",
+        "units": "495 unidades"
+      },
+      {
+        "location": "Austrália",
+        "title": "Renovação de toda a casa",
+        "units": "608 unidades"
+      },
+      {
+        "location": "Estados Unidos",
+        "title": "Construção de villa de luxo",
+        "units": "693 unidades"
+      },
+      {
+        "location": "Estados Unidos",
+        "title": "Casa costeira personalizada",
+        "units": "354 unidades"
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "A diferença do TSJ",
+    "title": "Por que proprietários",
+    "titleAccent": "escolha-nos",
+    "desc": "Materiais verificáveis, preços direto da fábrica e um especialista desde o primeiro desenho até o ajuste final da dobradiça.",
+    "badgeValue": "120+",
+    "badgeText": "países entregues",
+    "items": [
+      {
+        "title": "Preços direto da fábrica",
+        "desc": "Economize 20–40% comprando na fonte. Sem showroom, sem intermediários, sem marcação de varejo – uma cotação detalhada e honesta."
+      },
+      {
+        "title": "Simplicidade completa",
+        "desc": "Orientação de projeto, fabricação, envio e instalação realizada por uma equipe. Você nunca coordena cinco fornecedores."
+      },
+      {
+        "title": "Especialista dedicado",
+        "desc": "Um especialista de projeto nomeado, envio porta a porta com rastreamento e suporte de instalação detalhado de plantão."
+      },
+      {
+        "title": "16 anos de maestria",
+        "desc": "Desde 2010 refinamos um produto: armários. Nossas placas, bordas e ferragens são todas especificadas acima dos padrões da indústria."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "O processo",
+    "title": "Da planta baixa",
+    "titleAccent": "terminar em casa",
+    "desc": "Um processo simples e transparente projetado para você.",
+    "steps": [
+      {
+        "title": "Compartilhe sua visão",
+        "desc": "Envie sua planta baixa, fotos de inspiração e requisitos. Discutiremos estilo, orçamento e cronograma."
+      },
+      {
+        "title": "Projeto e orçamento",
+        "desc": "Nossa equipe cria desenhos detalhados e um orçamento detalhado – normalmente dentro de 3 a 5 dias úteis."
+      },
+      {
+        "title": "Artesanato e navio",
+        "desc": "Seus armários são fabricados com precisão, com qualidade verificada e enviados porta a porta com rastreamento completo."
+      },
+      {
+        "title": "Instale e aproveite",
+        "desc": "Receba guias de instalação detalhados e suporte ao vivo e aproveite sua casa lindamente transformada."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto para transformar sua casa?",
+    "desc": "Envie-nos a sua planta baixa e criaremos um design e um orçamento personalizados - sem compromisso.",
+    "button": "Faça seu orçamento grátis",
+    "emailButton": "Envie-nos um e-mail diretamente"
+  },
+  "contactSection": {
+    "eyebrow": "Entre em contato",
+    "title": "Vamos começar",
+    "titleAccent": "a conversa",
+    "desc": "Esteja você planejando uma reforma completa em sua casa ou uma reforma em um único cômodo, nossa equipe está pronta para ajudar. Preencha o formulário ou entre em contato conosco diretamente.",
+    "formTitle": "Solicite um orçamento",
+    "formDesc": "Conte-nos sobre seu projeto e entraremos em contato em até 24 horas."
+  },
+  "footer": {
+    "about": "Armários personalizados premium criados para residências nos Estados Unidos, Canadá e outros lugares. Qualidade direta da fábrica desde 2010.",
+    "copyright": "© 2026 TSJ. Todos os direitos reservados."
+  }
+}

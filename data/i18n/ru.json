@@ -1,0 +1,599 @@
+{
+  "_meta": {
+    "lang": "ru",
+    "source": "en",
+    "engine": "google-gtx + mymemory fallback",
+    "generatedAt": "2026-11-09T07:31:52.152Z",
+    "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
+    "auto": {
+      "meta.title": "9ccf8dd7",
+      "meta.description": "020908cb",
+      "meta.updatedAt": "791e2e14",
+      "ui.skip": "c7af44e6",
+      "ui.navMaterials": "d3ccdb89",
+      "ui.navCraft": "c8f02361",
+      "ui.navPricing": "b4d17ded",
+      "ui.navCollections": "9ae6a966",
+      "ui.navProjects": "64fda4d7",
+      "ui.navContact": "73ac94c3",
+      "ui.quote": "f9d637c2",
+      "ui.formName": "9010932f",
+      "ui.formPhone": "ed504c20",
+      "ui.formEmail": "43352167",
+      "ui.formCountry": "1a3a3920",
+      "ui.formRegion": "d4a2fd42",
+      "ui.formInterest": "112a2576",
+      "ui.formMessage": "5e13f188",
+      "ui.phName": "9ca62dc7",
+      "ui.phPhone": "28c7db60",
+      "ui.phEmail": "091b0ca1",
+      "ui.phCountry": "69d0557e",
+      "ui.phRegion": "f2f7c692",
+      "ui.phInterest": "571309be",
+      "ui.phMessage": "5437a0b1",
+      "ui.send": "2326e532",
+      "ui.privacy": "caabb44d",
+      "ui.footerExplore": "4d9eb2dc",
+      "ui.footerProducts": "cb2c4cad",
+      "ui.footerContact": "73ac94c3",
+      "ui.prodKitchen": "ecc07cb6",
+      "ui.prodClosets": "3215cff5",
+      "ui.prodMedia": "cc5d6d6c",
+      "ui.prodDoors": "c25f49c4",
+      "ui.prodWhole": "ff614338",
+      "ui.interestKitchen": "ecc07cb6",
+      "ui.interestMedia": "6ed5f7aa",
+      "ui.interestClosets": "3215cff5",
+      "ui.interestDisplay": "758c9f59",
+      "ui.interestDoors": "c25f49c4",
+      "ui.interestWhole": "96966c9c",
+      "ui.barWhatsapp": "b1332787",
+      "ui.barCall": "341dd0c9",
+      "ui.barQuote": "561539cb",
+      "ui.leadName": "9010932f",
+      "ui.leadPhone": "ed504c20",
+      "ui.leadCountry": "1a3a3920",
+      "ui.leadSubmit": "86f852c9",
+      "ui.proofFactory": "587338fe",
+      "ui.proofCountries": "3585f9d5",
+      "ui.proofPrices": "8a3745e9",
+      "brand.name": "3b569e0e",
+      "brand.tagline": "88b1d188",
+      "contact.address": "72086f27",
+      "contact.hours": "b923f4bc",
+      "leadSettings.successMessage": "52d99c5f",
+      "leadSettings.errorMessage": "4491c7dc",
+      "popup.badge": "a26a1dad",
+      "popup.title": "93886ceb",
+      "popup.desc": "a615f8bc",
+      "popup.submitText": "86f852c9",
+      "popup.note": "fd467cad",
+      "popup.successTitle": "4a4d5d92",
+      "popup.successDesc": "7f11dd5b",
+      "hero.slides.0.eyebrow": "4acb2c2f",
+      "hero.slides.0.title": "53328d22",
+      "hero.slides.0.titleAccent": "24259cb5",
+      "hero.slides.0.desc": "6e1ff08a",
+      "hero.slides.0.primaryText": "f9d637c2",
+      "hero.slides.0.primaryHref": "fd3ed73a",
+      "hero.slides.0.secondaryText": "63976176",
+      "hero.slides.0.secondaryHref": "1c1d9bdc",
+      "hero.slides.1.eyebrow": "0673dcd1",
+      "hero.slides.1.title": "88a985d9",
+      "hero.slides.1.titleAccent": "ea276677",
+      "hero.slides.1.desc": "513a1140",
+      "hero.slides.1.primaryText": "5a0dbc7c",
+      "hero.slides.1.primaryHref": "fd3ed73a",
+      "hero.slides.1.secondaryText": "f3963ad0",
+      "hero.slides.1.secondaryHref": "ab333eff",
+      "hero.slides.2.eyebrow": "909ed376",
+      "hero.slides.2.title": "206c66d8",
+      "hero.slides.2.titleAccent": "756f2056",
+      "hero.slides.2.desc": "496eb3f1",
+      "hero.slides.2.primaryText": "7ba26d16",
+      "hero.slides.2.primaryHref": "0927ef74",
+      "hero.slides.2.secondaryText": "f52e7b01",
+      "hero.slides.2.secondaryHref": "f871c70a",
+      "materials.eyebrow": "0673dcd1",
+      "materials.title": "633671d8",
+      "materials.titleAccent": "e9f53010",
+      "materials.desc": "77dcdb76",
+      "materials.cards.0.title": "e8c8b87f",
+      "materials.cards.0.desc": "ff4e2b83",
+      "materials.cards.1.title": "98dab952",
+      "materials.cards.1.desc": "9ae59b1d",
+      "materials.cards.2.title": "dd6cb082",
+      "materials.cards.2.desc": "a2e9ac83",
+      "materials.cards.3.title": "4100885f",
+      "materials.cards.3.desc": "ed18e27c",
+      "materials.cards.4.title": "310d9372",
+      "materials.cards.4.desc": "fe26f769",
+      "materials.cards.5.title": "b597334a",
+      "materials.cards.5.desc": "f886bba7",
+      "materials.badges.0": "9afa9819",
+      "materials.badges.1": "5d0666ea",
+      "materials.badges.2": "a7b09ed6",
+      "materials.badges.3": "0b0c612d",
+      "materials.badges.4": "eb7b1e09",
+      "materials.badges.5": "fd3fd958",
+      "craft.eyebrow": "845c6070",
+      "craft.title": "b1396986",
+      "craft.titleAccent": "a7f8d435",
+      "craft.desc": "ba956860",
+      "craft.details.0.title": "975f6b05",
+      "craft.details.0.desc": "5194e9b7",
+      "craft.details.1.title": "b804d5f7",
+      "craft.details.1.desc": "82bfc8e1",
+      "craft.details.2.title": "5f77b224",
+      "craft.details.2.desc": "de4fe51d",
+      "craft.details.3.title": "a7fcdda7",
+      "craft.details.3.desc": "fb65db47",
+      "craft.details.4.title": "e0aaf072",
+      "craft.details.4.desc": "06906145",
+      "pricing.eyebrow": "6165c6fb",
+      "pricing.title": "6535a776",
+      "pricing.titleAccent": "c413228b",
+      "pricing.desc": "6951d93c",
+      "pricing.columnA": "1b3a4c08",
+      "pricing.columnB": "8a24d27d",
+      "pricing.rows.0.item": "fefef8d5",
+      "pricing.rows.1.item": "2d2b582f",
+      "pricing.rows.2.item": "54207143",
+      "pricing.rows.3.item": "134e1e38",
+      "pricing.bullets.0": "583c68bb",
+      "pricing.bullets.1": "1fee084d",
+      "pricing.bullets.2": "d1184a6a",
+      "pricing.bullets.3": "f2d08e9e",
+      "pricing.note": "3336437a",
+      "collections.eyebrow": "5a69f2fd",
+      "collections.title": "c38dc5f7",
+      "collections.titleAccent": "c937ed80",
+      "collections.desc": "b1b52311",
+      "collections.cards.0.tag": "ba872bcf",
+      "collections.cards.0.title": "9fa18fa7",
+      "collections.cards.0.link": "fd3ed73a",
+      "collections.cards.1.tag": "b2947d9b",
+      "collections.cards.1.title": "78c64c37",
+      "collections.cards.1.link": "fd3ed73a",
+      "collections.cards.2.tag": "c9dcf817",
+      "collections.cards.2.title": "1595fdd0",
+      "collections.cards.2.link": "fd3ed73a",
+      "categories.eyebrow": "66e5a657",
+      "categories.title": "257fa34c",
+      "categories.titleAccent": "256e8c71",
+      "categories.desc": "f9c124d0",
+      "categories.items.0.title": "6ed5f7aa",
+      "categories.items.0.desc": "41a01c2a",
+      "categories.items.1.title": "3215cff5",
+      "categories.items.1.desc": "ec3baf14",
+      "categories.items.2.title": "ecc07cb6",
+      "categories.items.2.desc": "27b6e07d",
+      "categories.items.3.title": "758c9f59",
+      "categories.items.3.desc": "9a89e2f1",
+      "categories.items.4.title": "c25f49c4",
+      "categories.items.4.desc": "04301287",
+      "categories.ctaTitle": "96966c9c",
+      "categories.ctaDesc": "2a5e9040",
+      "categories.ctaButton": "aee6d147",
+      "portfolio.eyebrow": "4a638376",
+      "portfolio.title": "d691897c",
+      "portfolio.titleAccent": "3918027a",
+      "portfolio.desc": "d8007fd1",
+      "portfolio.items.0.location": "263d0c7e",
+      "portfolio.items.0.title": "25222c64",
+      "portfolio.items.0.units": "c53f801d",
+      "portfolio.items.1.location": "5cf10bfb",
+      "portfolio.items.1.title": "9abb848e",
+      "portfolio.items.1.units": "a2ba904e",
+      "portfolio.items.2.location": "65e98669",
+      "portfolio.items.2.title": "6fdc971d",
+      "portfolio.items.2.units": "6fbedbc6",
+      "portfolio.items.3.location": "1c3065ac",
+      "portfolio.items.3.title": "d6a046d1",
+      "portfolio.items.3.units": "c0feb326",
+      "portfolio.items.4.location": "1c3065ac",
+      "portfolio.items.4.title": "1847ecc2",
+      "portfolio.items.4.units": "eb2f14d0",
+      "why.eyebrow": "3109aff4",
+      "why.title": "c3cc4f94",
+      "why.titleAccent": "10fd29f4",
+      "why.desc": "89202847",
+      "why.badgeValue": "e6c63d5f",
+      "why.badgeText": "0bf7a855",
+      "why.items.0.title": "32f7352f",
+      "why.items.0.desc": "0a06dcd2",
+      "why.items.1.title": "23360723",
+      "why.items.1.desc": "55621475",
+      "why.items.2.title": "ce75d183",
+      "why.items.2.desc": "b8329a25",
+      "why.items.3.title": "823ee134",
+      "why.items.3.desc": "aab533f6",
+      "process.eyebrow": "189c0889",
+      "process.title": "47301246",
+      "process.titleAccent": "bb395521",
+      "process.desc": "d7555cfc",
+      "process.steps.0.title": "698f9965",
+      "process.steps.0.desc": "fdd45e60",
+      "process.steps.1.title": "c647d315",
+      "process.steps.1.desc": "af657696",
+      "process.steps.2.title": "8ffe8b17",
+      "process.steps.2.desc": "08f9ee1b",
+      "process.steps.3.title": "fa53d4dd",
+      "process.steps.3.desc": "0095ac0c",
+      "cta.title": "f046b198",
+      "cta.desc": "a8eabc94",
+      "cta.button": "5d779e40",
+      "cta.emailButton": "7e3b6f01",
+      "contactSection.eyebrow": "65d4952d",
+      "contactSection.title": "7da1fbd8",
+      "contactSection.titleAccent": "a6a6bf83",
+      "contactSection.desc": "fae567a3",
+      "contactSection.formTitle": "432887d9",
+      "contactSection.formDesc": "07c10e1a",
+      "footer.about": "a322516f",
+      "footer.copyright": "818b75c9"
+    }
+  },
+  "meta": {
+    "title": "TSJ — Изготовление шкафов на заказ | Лучшие доски, Precision Craft",
+    "description": "Мебель премиум-класса на заказ, изготовленная на нашей собственной фабрике: основа из фанеры E0/ENF, бесшовная кромка из полиуретана, фурнитура Blum, точность 0,1 мм. На 20–40% ниже розничных студий. Отправлено в более чем 120 стран.",
+    "updatedAt": "09.11.2026"
+  },
+  "ui": {
+    "skip": "Перейти к содержимому",
+    "navMaterials": "Материалы",
+    "navCraft": "Ремесло",
+    "navPricing": "Цены",
+    "navCollections": "Коллекции",
+    "navProjects": "Проекты",
+    "navContact": "Контакт",
+    "quote": "Получить бесплатное предложение",
+    "formName": "Полное имя",
+    "formPhone": "Телефон/Ватсап",
+    "formEmail": "Электронная почта",
+    "formCountry": "Страна/регион",
+    "formRegion": "Город/штат",
+    "formInterest": "Интерес к продукту",
+    "formMessage": "Детали проекта",
+    "phName": "Джон Смит",
+    "phPhone": "+1 555 000 0000",
+    "phEmail": "john@example.com",
+    "phCountry": "Выберите свою страну",
+    "phRegion": "Город или штат",
+    "phInterest": "Выберите категорию",
+    "phMessage": "Типы комнат, примерные размеры, предпочтения по стилю, сроки...",
+    "send": "Отправить запрос",
+    "privacy": "Мы уважаем вашу конфиденциальность. Ваши данные используются только для подготовки вашего предложения.",
+    "footerExplore": "Исследовать",
+    "footerProducts": "Продукты",
+    "footerContact": "Контакт",
+    "prodKitchen": "Кухонная мебель",
+    "prodClosets": "Гардеробные",
+    "prodMedia": "Медиа-кабинеты",
+    "prodDoors": "Межкомнатные двери",
+    "prodWhole": "Весь дом",
+    "interestKitchen": "Кухонная мебель",
+    "interestMedia": "ТВ и медиа шкафы",
+    "interestClosets": "Гардеробные",
+    "interestDisplay": "Витрины и винные шкафы",
+    "interestDoors": "Межкомнатные двери",
+    "interestWhole": "Персонализация всего дома",
+    "barWhatsapp": "WhatsApp",
+    "barCall": "Вызов",
+    "barQuote": "Бесплатная цитата",
+    "leadName": "Полное имя",
+    "leadPhone": "Телефон/Ватсап",
+    "leadCountry": "Страна/регион",
+    "leadSubmit": "Отправить мои данные",
+    "proofFactory": "Собственный завод с 2010 года.",
+    "proofCountries": "120+ стран",
+    "proofPrices": "на 20–40 % ниже розничной цены"
+  },
+  "brand": {
+    "name": "ТСЖ",
+    "tagline": "Шкафы на заказ, напрямую с фабрики"
+  },
+  "contact": {
+    "address": "Фошань, Гуандун, Китай",
+    "hours": "Пн–Сб · 09:00–18:00 (GMT+8)"
+  },
+  "leadSettings": {
+    "successMessage": "Спасибо — ваши данные отправлены. Специалист проекта свяжется с вами в течение 24 часов.",
+    "errorMessage": "Мы не смогли отправить автоматически. Пожалуйста, нажмите WhatsApp или напишите нам, и мы ответим сразу."
+  },
+  "popup": {
+    "badge": "Бесплатный дизайн + предложение · Ответ 24 часа",
+    "title": "Получите цену напрямую с завода",
+    "desc": "Оставьте свое имя, номер телефона и регион. Специалист проекта вышлет вам расчетную цену — никаких обязательств и никакого спама.",
+    "submitText": "Отправить мои данные",
+    "note": "Мы ответим на WhatsApp или по телефону в течение 24 часов.",
+    "successTitle": "Детали получили — спасибо!",
+    "successDesc": "Наш специалист свяжется с вами в течение 24 часов. Предпочитаете поговорить сейчас? Напишите нам в WhatsApp."
+  },
+  "hero": {
+    "slides": [
+      {
+        "eyebrow": "Прямая поставка с фабрики с 2010 года.",
+        "title": "Лучше доски. Точное ремесло.",
+        "titleAccent": "Заводские цены.",
+        "desc": "Сердечники из фанеры E0 толщиной 18 мм, бесшовная кромка из полиуретана и столярные изделия толщиной 0,1 мм — изготовлены на нашей собственной фабрике площадью 32 000 м² и доставлены прямо к вашей двери.",
+        "primaryText": "Получить бесплатное предложение",
+        "primaryHref": "#контакт",
+        "secondaryText": "Посмотреть материалы и поделки",
+        "secondaryHref": "#материалы"
+      },
+      {
+        "eyebrow": "Качество материала",
+        "title": "Совет внутри решает",
+        "titleAccent": "как долго это длится",
+        "desc": "Влагостойкие, формальдегидбезопасные панели E0/ENF с поверхностями 4H+ — проверено 20 годами ежедневного семейного использования.",
+        "primaryText": "Поговорите со специалистом",
+        "primaryHref": "#контакт",
+        "secondaryText": "Наш процесс",
+        "secondaryHref": "#процесс"
+      },
+      {
+        "eyebrow": "Сэкономьте 20–40 %",
+        "title": "Нет выставочного зала. Никаких посредников.",
+        "titleAccent": "Только наша цена.",
+        "desc": "Вы покупаете у фабрики, которая его производит — те же характеристики, детализированная цена, скидка до 40% ниже, чем у розничных кухонь-студий.",
+        "primaryText": "Посмотреть сравнение цен",
+        "primaryHref": "#цены",
+        "secondaryText": "Наши проекты",
+        "secondaryHref": "#портфель"
+      }
+    ]
+  },
+  "materials": {
+    "eyebrow": "Качество материала",
+    "title": "Ваши шкафы хороши настолько, насколько хороши",
+    "titleAccent": "доска внутри",
+    "desc": "Большинство цитат скрывают спецификацию. Мы публикуем это. Каждый каркас, кромка и отделка ниже — это то, что мы на самом деле поставляем, и на основании чего оценивается ваша цена.",
+    "cards": [
+      {
+        "title": "Сердечник из многослойной фанеры",
+        "desc": "Фанера твердых пород толщиной 18 мм, перекрестно ламинированная в 11 слоев. Прочность крепления шурупов в два раза выше, чем у ДСП, поэтому двери остаются ровными в течение многих лет."
+      },
+      {
+        "title": "Влагостойкий зеленый сердечник",
+        "desc": "HDF плотностью 720 кг/м³ с наполнителем, пропитанным воском, для ванных комнат, прачечных и туалетных столиков. 24-часовое набухание воды ниже 8%."
+      },
+      {
+        "title": "E0/ENF формальдегид",
+        "desc": "Выбросы ≤ 0,025 мг/м³ — ниже, чем у большинства панелей, продаваемых как «зеленые». Безопасно для детских комнат, спален и закрытых кухонь."
+      },
+      {
+        "title": "Бесшовная кромка из полиуретана",
+        "desc": "Кромка из АБС-пластика толщиной 1 мм, реактивный термоплавкий полиуретан, заподлицо с лазерной обрезкой. Никакой клеевой линии, никакого подъема — даже при влажности 60%."
+      },
+      {
+        "title": "Фурнитура Blum & Hettich.",
+        "desc": "Петли и направляющие проверены на 80 000 циклов открытия-закрытия. Плавное закрывание каждой дверцы и ящика — стандартная комплектация, а не модернизация."
+      },
+      {
+        "title": "Твердая древесина камерной сушки",
+        "desc": "Двери из дуба, ореха и ясеня, высушенные до влажности 8–10%, соединены плавающими шипами для предотвращения сезонного растрескивания."
+      }
+    ],
+    "badges": [
+      "КАРБЕР P2",
+      "Е0 / ЭНФ",
+      "ИСО 9001:2015",
+      "FSC® Микс",
+      "SGS протестировано",
+      "D4 водонепроницаемый"
+    ]
+  },
+  "craft": {
+    "eyebrow": "Мастерство",
+    "title": "Точность, которую можно измерить,",
+    "titleAccent": "закончить, ты можешь почувствовать",
+    "desc": "Краснодеревщики выигрывают или проигрывают в миллиметрах и линиях клея. Вот как наша производственная линия контролирует и то, и другое.",
+    "details": [
+      {
+        "title": "Гнездовой срез с совпадающим зерном",
+        "desc": "Панели размещаются на станинах с ЧПУ с точностью до 0,1 мм, а перед распиловкой одной доски выравниваются текстуры дверных фасадов."
+      },
+      {
+        "title": "Бесшовные кромки из полиуретана",
+        "desc": "Каждый край приклеен реактивным полиуретаном, обрезан заподлицо, затем проверен вручную под световым лучом — видимой линии клея нет."
+      },
+      {
+        "title": "Сухая посадка перед упаковкой",
+        "desc": "Каждый шкаф собирается, выравнивается и маркируется по помещению, а затем упаковывается в плоскую упаковку с угловой защитой ISTA-3A."
+      },
+      {
+        "title": "Поверхности, обработанные вручную",
+        "desc": "Матовый ПЭТ и ПУ лак шлифуется между слоями для получения поверхности 4H+ и стойкости к выцветанию под воздействием ультрафиолета в течение 2000 часов."
+      },
+      {
+        "title": "Двенадцать подписей",
+        "desc": "От приема картона до запечатывания коробки — двенадцать контрольных точек. Устройство, вышедшее из строя, восстанавливается, а не исправляется."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Ценовое преимущество",
+    "title": "Та же спецификация,",
+    "titleAccent": "до 40% меньше",
+    "desc": "Никакой аренды выставочного зала, никакой дилерской наценки, никакой премии за бренд. Вы платите за плату, оборудование и работу — и вы можете видеть каждую строчку.",
+    "columnA": "Типичная розничная студия",
+    "columnB": "TSJ напрямую с завода",
+    "rows": [
+      {
+        "item": "Кухня — 10 футов Г-образной формы (12 ед.)"
+      },
+      {
+        "item": "Гардеробная — длина 8 футов"
+      },
+      {
+        "item": "Медиастена — 3,2 м"
+      },
+      {
+        "item": "Пакет «Весь дом»"
+      }
+    ],
+    "bullets": [
+      "Вы покупаете у завода, который его производит — без арендной платы за выставочный зал, без дилерской наценки, без надбавки к бренду.",
+      "Котировки детализированы по кабинетам, поэтому вы можете сравнить их построчно с ценами любой местной студии.",
+      "Консолидация контейнеров позволяет снизить стоимость перевозки на единицу груза, и мы предлагаем доставку от двери до двери с указанием пошлин.",
+      "Ваша цена зафиксирована на 60 дней — и мы никогда не заменим плату на более дешевую после вашего заказа."
+    ],
+    "note": "Ориентировочные ориентировочные цены на 2026 год в долларах США для сопоставимых характеристик. Окончательная цена зависит от размера, отделки и оборудования."
+  },
+  "collections": {
+    "eyebrow": "коллекция 2026 года",
+    "title": "Новые поступления,",
+    "titleAccent": "вечная привлекательность",
+    "desc": "Тщательно продуманные элементы позволяют максимально увеличить пространство для хранения вещей, не нарушая при этом линию комнаты.",
+    "cards": [
+      {
+        "tag": "Кухня",
+        "title": "Современная Европейская Кухня",
+        "link": "#контакт"
+      },
+      {
+        "tag": "Гостиная",
+        "title": "Встроенная медиастена",
+        "link": "#контакт"
+      },
+      {
+        "tag": "Спальня",
+        "title": "Люкс с гардеробной",
+        "link": "#контакт"
+      }
+    ]
+  },
+  "categories": {
+    "eyebrow": "Что мы создаём",
+    "title": "Шкаф на заказ для",
+    "titleAccent": "каждый угол",
+    "desc": "От кухни до гардеробной — мы проектируем и изготавливаем шкафы, которые подойдут вашему пространству, вашему климату и вашей жизни.",
+    "items": [
+      {
+        "title": "ТВ и медиа шкафы",
+        "desc": "Развлекательные центры, спроектированные вокруг вашего экрана, с прокладкой кабелей и вместительным скрытым хранилищем."
+      },
+      {
+        "title": "Гардеробные",
+        "desc": "Достойные бутика шкафы с регулируемыми направляющими, ящиками и встроенным освещением."
+      },
+      {
+        "title": "Кухонная мебель",
+        "desc": "Комплексные кухонные системы — шкафы, столешницы и аксессуары, спроектированные как единое целое."
+      },
+      {
+        "title": "Витрины и винные шкафы",
+        "desc": "Хранилище для записей, которое демонстрирует вашу коллекцию и сохраняет все в прекрасной организации."
+      },
+      {
+        "title": "Межкомнатные двери",
+        "desc": "Двери, изготовленные по индивидуальному заказу, привносят тепло, уединение и архитектурный характер в каждую комнату."
+      }
+    ],
+    "ctaTitle": "Персонализация всего дома",
+    "ctaDesc": "Шкафы, туалетные столики, встроенные шкафы для прихожих, книжные шкафы, шкафы для белья, стеновые панели, плинтусы — каждая поверхность, каждая комната, одна доска.",
+    "ctaButton": "Начни свой проект"
+  },
+  "portfolio": {
+    "eyebrow": "Наша работа",
+    "title": "Нам доверяют домовладельцы",
+    "titleAccent": "по всему миру",
+    "desc": "Каждый год мы доставляем мебель по индивидуальному заказу в тысячи домов по всему миру, включая проекты в США и Канаде.",
+    "items": [
+      {
+        "location": "Германия",
+        "title": "Библиотека книжного шкафа на заказ",
+        "units": "973 единицы"
+      },
+      {
+        "location": "Канада",
+        "title": "Современный кухонный гарнитур",
+        "units": "495 единиц"
+      },
+      {
+        "location": "Австралия",
+        "title": "Ремонт всего дома",
+        "units": "608 единиц"
+      },
+      {
+        "location": "Соединенные Штаты",
+        "title": "Постройка роскошной виллы",
+        "units": "693 единицы"
+      },
+      {
+        "location": "Соединенные Штаты",
+        "title": "Прибрежный индивидуальный дом",
+        "units": "354 единицы"
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "Разница ТСЖ",
+    "title": "Почему домовладельцы",
+    "titleAccent": "выберите нас",
+    "desc": "Проверяемые материалы, цены напрямую с завода и один специалист от первого чертежа до окончательной регулировки петель.",
+    "badgeValue": "120+",
+    "badgeText": "страны доставлены",
+    "items": [
+      {
+        "title": "Прямые цены с завода",
+        "desc": "Сэкономьте 20–40 %, покупая у источника. Никакого выставочного зала, никаких посредников, никаких розничных наценок — подробное и честное предложение."
+      },
+      {
+        "title": "Универсальная простота",
+        "desc": "Руководство по проектированию, производству, доставке и установке осуществляется одной командой. Вы никогда не координируете работу пяти поставщиков."
+      },
+      {
+        "title": "Выделенный специалист",
+        "desc": "Один назначенный специалист по проекту, доставка от двери до двери с отслеживанием и подробная поддержка по установке по вызову."
+      },
+      {
+        "title": "16 лет мастерства",
+        "desc": "С 2010 года мы усовершенствовали один продукт: столярные изделия. Наши доски, кромки и оборудование соответствуют отраслевым стандартам."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Процесс",
+    "title": "Из плана этажа",
+    "titleAccent": "закончить дом",
+    "desc": "Простой и прозрачный процесс, разработанный специально для вас.",
+    "steps": [
+      {
+        "title": "Поделитесь своим видением",
+        "desc": "Отправьте свой план этажа, вдохновляющие фотографии и требования. Обсудим стиль, бюджет и сроки."
+      },
+      {
+        "title": "Дизайн и предложение",
+        "desc": "Наша команда создает подробные чертежи и подробное ценовое предложение — обычно в течение 3–5 рабочих дней."
+      },
+      {
+        "title": "Крафт и корабль",
+        "desc": "Ваша мебель изготовлена ​​с высокой точностью, проверена на качество и доставлена ​​«от двери до двери» с полным отслеживанием."
+      },
+      {
+        "title": "Установите и наслаждайтесь",
+        "desc": "Получите подробные руководства по установке и живую поддержку, а затем наслаждайтесь своим прекрасно преображенным домом."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Готовы преобразить свой дом?",
+    "desc": "Отправьте нам свой план этажа, и мы бесплатно разработаем индивидуальный дизайн и расчет стоимости.",
+    "button": "Получите бесплатное предложение",
+    "emailButton": "Напишите нам напрямую"
+  },
+  "contactSection": {
+    "eyebrow": "Свяжитесь с нами",
+    "title": "Давайте начнем",
+    "titleAccent": "разговор",
+    "desc": "Планируете ли вы капитальный ремонт дома или обновление одной комнаты, наша команда готова помочь. Заполните форму или свяжитесь с нами напрямую.",
+    "formTitle": "Запросить ценовое предложение",
+    "formDesc": "Расскажите нам о своем проекте, и мы свяжемся с вами в течение 24 часов."
+  },
+  "footer": {
+    "about": "Изготовленная по индивидуальному заказу мебель премиум-класса для домов в США, Канаде и за их пределами. Заводское качество с 2010 года.",
+    "copyright": "© 2026 ТСЖ. Все права защищены."
+  }
+}

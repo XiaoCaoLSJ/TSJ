@@ -15,10 +15,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261109">
+    <link rel="stylesheet" href="css/style.css?v=20261111">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="ui.skip">Skip to content</a>
 
 <!-- ============ Header ============ -->
 <header class="site-header" id="header">
@@ -33,12 +33,12 @@
 
         <nav class="nav" id="nav" aria-label="Main navigation">
             <ul class="nav-list">
-                <li><a href="#materials" class="nav-link">Materials</a></li>
-                <li><a href="#craft" class="nav-link">Craft</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
-                <li><a href="#collections" class="nav-link">Collections</a></li>
-                <li><a href="#portfolio" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#materials" class="nav-link" data-i18n="ui.navMaterials">Materials</a></li>
+                <li><a href="#craft" class="nav-link" data-i18n="ui.navCraft">Craft</a></li>
+                <li><a href="#pricing" class="nav-link" data-i18n="ui.navPricing">Pricing</a></li>
+                <li><a href="#collections" class="nav-link" data-i18n="ui.navCollections">Collections</a></li>
+                <li><a href="#portfolio" class="nav-link" data-i18n="ui.navProjects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="ui.navContact">Contact</a></li>
             </ul>
             <div class="nav-mobile-extra">
                 <a class="nav-mobile-link" id="navMobileWhatsapp" href="#" target="_blank" rel="noopener">
@@ -47,6 +47,7 @@
                 <a class="nav-mobile-link" id="navMobileEmail" href="#">
                     <i class="fa-regular fa-envelope"></i> <span>Email</span>
                 </a>
+                <div class="lang" id="langSwitchMobile"></div>
             </div>
         </nav>
 
@@ -55,7 +56,8 @@
                 <i class="fa-solid fa-phone"></i>
                 <span>+86 178 1467 4328</span>
             </a>
-            <button class="btn btn-primary btn-sm" data-open-lead>Get a free quote</button>
+            <div class="lang" id="langSwitch"></div>
+            <button class="btn btn-primary btn-sm" data-open-lead data-i18n="ui.quote">Get a free quote</button>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -73,9 +75,9 @@
             <div class="container hero-bottom-inner">
                 <div class="hero-dots" id="heroDots" role="tablist" aria-label="Slides"></div>
                 <div class="hero-proof">
-                    <span><i class="fa-solid fa-industry"></i> Own factory since 2010</span>
-                    <span><i class="fa-solid fa-globe"></i> 120+ countries</span>
-                    <span><i class="fa-solid fa-tags"></i> 20–40% below retail</span>
+                    <span><i class="fa-solid fa-industry"></i> <span data-i18n="ui.proofFactory">Own factory since 2010</span></span>
+                    <span><i class="fa-solid fa-globe"></i> <span data-i18n="ui.proofCountries">120+ countries</span></span>
+                    <span><i class="fa-solid fa-tags"></i> <span data-i18n="ui.proofPrices">20–40% below retail</span></span>
                 </div>
             </div>
         </div>
@@ -190,50 +192,50 @@
                 <form id="contactForm" class="lead-form" novalidate>
                     <div class="form-row">
                         <div class="field">
-                            <label for="cName">Full name <em>*</em></label>
-                            <input type="text" id="cName" name="name" placeholder="John Smith" autocomplete="name" required>
+                            <label for="cName"><span data-i18n="ui.formName">Full name</span> <em>*</em></label>
+                            <input type="text" id="cName" name="name" placeholder="John Smith" data-i18n-ph="ui.phName" autocomplete="name" required>
                         </div>
                         <div class="field">
-                            <label for="cPhone">Phone / WhatsApp <em>*</em></label>
-                            <input type="tel" id="cPhone" name="phone" placeholder="+1 555 000 0000" autocomplete="tel" required>
+                            <label for="cPhone"><span data-i18n="ui.formPhone">Phone / WhatsApp</span> <em>*</em></label>
+                            <input type="tel" id="cPhone" name="phone" placeholder="+1 555 000 0000" data-i18n-ph="ui.phPhone" autocomplete="tel" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="field">
-                            <label for="cEmail">Email</label>
-                            <input type="email" id="cEmail" name="email" placeholder="john@example.com" autocomplete="email">
+                            <label for="cEmail" data-i18n="ui.formEmail">Email</label>
+                            <input type="email" id="cEmail" name="email" placeholder="john@example.com" data-i18n-ph="ui.phEmail" autocomplete="email">
                         </div>
                         <div class="field">
-                            <label for="cCountry">Country / region <em>*</em></label>
+                            <label for="cCountry"><span data-i18n="ui.formCountry">Country / region</span> <em>*</em></label>
                             <select id="cCountry" name="country" required>
-                                <option value="">Select your country</option>
+                                <option value="" data-i18n="ui.phCountry">Select your country</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="field">
-                            <label for="cRegion">City / state</label>
-                            <input type="text" id="cRegion" name="region" placeholder="City or state" autocomplete="address-level1">
+                            <label for="cRegion" data-i18n="ui.formRegion">City / state</label>
+                            <input type="text" id="cRegion" name="region" placeholder="City or state" data-i18n-ph="ui.phRegion" autocomplete="address-level1">
                         </div>
                         <div class="field">
-                            <label for="cInterest">Product interest</label>
+                            <label for="cInterest" data-i18n="ui.formInterest">Product interest</label>
                             <select id="cInterest" name="interest">
-                                <option value="">Select a category</option>
-                                <option value="Kitchen cabinetry">Kitchen cabinetry</option>
-                                <option value="TV &amp; media cabinets">TV &amp; media cabinets</option>
-                                <option value="Walk-in closets">Walk-in closets</option>
-                                <option value="Display &amp; wine cabinets">Display &amp; wine cabinets</option>
-                                <option value="Interior doors">Interior doors</option>
-                                <option value="Whole-home customisation">Whole-home customisation</option>
+                                <option value="" data-i18n="ui.phInterest">Select a category</option>
+                                <option value="Kitchen cabinetry" data-i18n="ui.interestKitchen">Kitchen cabinetry</option>
+                                <option value="TV &amp; media cabinets" data-i18n="ui.interestMedia">TV &amp; media cabinets</option>
+                                <option value="Walk-in closets" data-i18n="ui.interestClosets">Walk-in closets</option>
+                                <option value="Display &amp; wine cabinets" data-i18n="ui.interestDisplay">Display &amp; wine cabinets</option>
+                                <option value="Interior doors" data-i18n="ui.interestDoors">Interior doors</option>
+                                <option value="Whole-home customisation" data-i18n="ui.interestWhole">Whole-home customisation</option>
                             </select>
                         </div>
                     </div>
                     <div class="field">
-                        <label for="cMessage">Project details</label>
-                        <textarea id="cMessage" name="message" rows="4" placeholder="Room types, approximate dimensions, style preference, timeline..."></textarea>
+                        <label for="cMessage" data-i18n="ui.formMessage">Project details</label>
+                        <textarea id="cMessage" name="message" rows="4" placeholder="Room types, approximate dimensions, style preference, timeline..." data-i18n-ph="ui.phMessage"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-lg" id="contactSubmit">Send enquiry</button>
-                    <p class="form-note">We respect your privacy. Your details are only used to prepare your quote.</p>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" id="contactSubmit" data-i18n="ui.send">Send enquiry</button>
+                    <p class="form-note" data-i18n="ui.privacy">We respect your privacy. Your details are only used to prepare your quote.</p>
                     <div class="form-feedback" id="contactFeedback" role="status" aria-live="polite"></div>
                 </form>
             </div>
@@ -254,7 +256,7 @@
             </div>
             <div class="footer-cols">
                 <div class="footer-col">
-                    <h4>Explore</h4>
+                    <h4 data-i18n="ui.footerExplore">Explore</h4>
                     <ul>
                         <li><a href="#materials">Materials</a></li>
                         <li><a href="#craft">Craftsmanship</a></li>
@@ -264,17 +266,17 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Products</h4>
+                    <h4 data-i18n="ui.footerProducts">Products</h4>
                     <ul>
-                        <li><a href="#categories">Kitchen cabinetry</a></li>
-                        <li><a href="#categories">Walk-in closets</a></li>
-                        <li><a href="#categories">Media cabinets</a></li>
-                        <li><a href="#categories">Interior doors</a></li>
-                        <li><a href="#categories">Whole-home</a></li>
+                        <li><a href="#categories" data-i18n="ui.prodKitchen">Kitchen cabinetry</a></li>
+                        <li><a href="#categories" data-i18n="ui.prodClosets">Walk-in closets</a></li>
+                        <li><a href="#categories" data-i18n="ui.prodMedia">Media cabinets</a></li>
+                        <li><a href="#categories" data-i18n="ui.prodDoors">Interior doors</a></li>
+                        <li><a href="#categories" data-i18n="ui.prodWhole">Whole-home</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4 data-i18n="ui.footerContact">Contact</h4>
                     <ul class="footer-contact" id="footerContact"></ul>
                 </div>
             </div>
@@ -289,13 +291,13 @@
 <!-- ============ Mobile sticky bar ============ -->
 <div class="mobile-bar">
     <a class="mobile-bar-btn" id="mobileWhatsapp" href="#" target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+        <i class="fa-brands fa-whatsapp"></i><span data-i18n="ui.barWhatsapp">WhatsApp</span>
     </a>
     <a class="mobile-bar-btn" id="mobileCall" href="tel:+8617814674328">
-        <i class="fa-solid fa-phone"></i><span>Call</span>
+        <i class="fa-solid fa-phone"></i><span data-i18n="ui.barCall">Call</span>
     </a>
     <button class="mobile-bar-btn mobile-bar-btn--primary" data-open-lead>
-        <i class="fa-solid fa-pen-to-square"></i><span>Free quote</span>
+        <i class="fa-solid fa-pen-to-square"></i><span data-i18n="ui.barQuote">Free quote</span>
     </button>
 </div>
 
@@ -318,20 +320,20 @@
 
             <form id="leadForm" class="lead-form" novalidate>
                 <div class="field">
-                    <label for="lName">Full name <em>*</em></label>
+                    <label for="lName"><span data-i18n="ui.leadName">Full name</span> <em>*</em></label>
                     <input type="text" id="lName" name="name" placeholder="John Smith" autocomplete="name" required>
                 </div>
                 <div class="field">
-                    <label for="lPhone">Phone / WhatsApp <em>*</em></label>
+                    <label for="lPhone"><span data-i18n="ui.leadPhone">Phone / WhatsApp</span> <em>*</em></label>
                     <input type="tel" id="lPhone" name="phone" placeholder="+1 555 000 0000" autocomplete="tel" required>
                 </div>
                 <div class="field">
-                    <label for="lCountry">Country / region <em>*</em></label>
+                    <label for="lCountry"><span data-i18n="ui.leadCountry">Country / region</span> <em>*</em></label>
                     <select id="lCountry" name="country" required>
                         <option value="">Select your country</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block btn-lg" id="leadSubmit">Send my details</button>
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="leadSubmit" data-i18n="ui.leadSubmit">Send my details</button>
                 <p class="form-note" id="leadModalNote">We reply on WhatsApp or phone within 24 hours.</p>
                 <div class="form-feedback" id="leadFeedback" role="status" aria-live="polite"></div>
             </form>
@@ -352,6 +354,6 @@
 <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
 
 <script src="js/countries.js?v=20261109"></script>
-<script src="js/site.js?v=20261110"></script>
+<script src="js/site.js?v=20261112"></script>
 </body>
 </html>

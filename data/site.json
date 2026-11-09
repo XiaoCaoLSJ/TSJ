@@ -4,6 +4,94 @@
     "description": "Premium custom cabinetry made in our own factory: E0/ENF plywood cores, seamless PUR edge banding, Blum hardware, 0.1 mm precision. 20–40% below retail studios. Shipped to 120+ countries.",
     "updatedAt": "2026-11-09"
   },
+  "i18n": {
+    "source": "en",
+    "languages": [
+      {
+        "code": "en",
+        "label": "English"
+      },
+      {
+        "code": "es",
+        "label": "Español"
+      },
+      {
+        "code": "ar",
+        "label": "العربية",
+        "dir": "rtl"
+      },
+      {
+        "code": "fr",
+        "label": "Français"
+      },
+      {
+        "code": "de",
+        "label": "Deutsch"
+      },
+      {
+        "code": "ru",
+        "label": "Русский"
+      },
+      {
+        "code": "pt",
+        "label": "Português"
+      },
+      {
+        "code": "zh",
+        "label": "中文"
+      }
+    ]
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "navMaterials": "Materials",
+    "navCraft": "Craft",
+    "navPricing": "Pricing",
+    "navCollections": "Collections",
+    "navProjects": "Projects",
+    "navContact": "Contact",
+    "quote": "Get a free quote",
+    "formName": "Full name",
+    "formPhone": "Phone / WhatsApp",
+    "formEmail": "Email",
+    "formCountry": "Country / region",
+    "formRegion": "City / state",
+    "formInterest": "Product interest",
+    "formMessage": "Project details",
+    "phName": "John Smith",
+    "phPhone": "+1 555 000 0000",
+    "phEmail": "john@example.com",
+    "phCountry": "Select your country",
+    "phRegion": "City or state",
+    "phInterest": "Select a category",
+    "phMessage": "Room types, approximate dimensions, style preference, timeline...",
+    "send": "Send enquiry",
+    "privacy": "We respect your privacy. Your details are only used to prepare your quote.",
+    "footerExplore": "Explore",
+    "footerProducts": "Products",
+    "footerContact": "Contact",
+    "prodKitchen": "Kitchen cabinetry",
+    "prodClosets": "Walk-in closets",
+    "prodMedia": "Media cabinets",
+    "prodDoors": "Interior doors",
+    "prodWhole": "Whole-home",
+    "interestKitchen": "Kitchen cabinetry",
+    "interestMedia": "TV & media cabinets",
+    "interestClosets": "Walk-in closets",
+    "interestDisplay": "Display & wine cabinets",
+    "interestDoors": "Interior doors",
+    "interestWhole": "Whole-home customisation",
+    "barWhatsapp": "WhatsApp",
+    "barCall": "Call",
+    "barQuote": "Free quote",
+    "leadName": "Full name",
+    "leadPhone": "Phone / WhatsApp",
+    "leadCountry": "Country / region",
+    "leadSubmit": "Send my details",
+    "proofFactory": "Own factory since 2010",
+    "proofCountries": "120+ countries",
+    "proofPrices": "20–40% below retail"
+  },
   "brand": {
     "mark": "T",
     "name": "TSJ",

@@ -1,0 +1,599 @@
+{
+  "_meta": {
+    "lang": "de",
+    "source": "en",
+    "engine": "google-gtx + mymemory fallback",
+    "generatedAt": "2026-11-09T07:31:51.288Z",
+    "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
+    "auto": {
+      "meta.title": "9ccf8dd7",
+      "meta.description": "020908cb",
+      "meta.updatedAt": "791e2e14",
+      "ui.skip": "c7af44e6",
+      "ui.navMaterials": "d3ccdb89",
+      "ui.navCraft": "c8f02361",
+      "ui.navPricing": "b4d17ded",
+      "ui.navCollections": "9ae6a966",
+      "ui.navProjects": "64fda4d7",
+      "ui.navContact": "73ac94c3",
+      "ui.quote": "f9d637c2",
+      "ui.formName": "9010932f",
+      "ui.formPhone": "ed504c20",
+      "ui.formEmail": "43352167",
+      "ui.formCountry": "1a3a3920",
+      "ui.formRegion": "d4a2fd42",
+      "ui.formInterest": "112a2576",
+      "ui.formMessage": "5e13f188",
+      "ui.phName": "9ca62dc7",
+      "ui.phPhone": "28c7db60",
+      "ui.phEmail": "091b0ca1",
+      "ui.phCountry": "69d0557e",
+      "ui.phRegion": "f2f7c692",
+      "ui.phInterest": "571309be",
+      "ui.phMessage": "5437a0b1",
+      "ui.send": "2326e532",
+      "ui.privacy": "caabb44d",
+      "ui.footerExplore": "4d9eb2dc",
+      "ui.footerProducts": "cb2c4cad",
+      "ui.footerContact": "73ac94c3",
+      "ui.prodKitchen": "ecc07cb6",
+      "ui.prodClosets": "3215cff5",
+      "ui.prodMedia": "cc5d6d6c",
+      "ui.prodDoors": "c25f49c4",
+      "ui.prodWhole": "ff614338",
+      "ui.interestKitchen": "ecc07cb6",
+      "ui.interestMedia": "6ed5f7aa",
+      "ui.interestClosets": "3215cff5",
+      "ui.interestDisplay": "758c9f59",
+      "ui.interestDoors": "c25f49c4",
+      "ui.interestWhole": "96966c9c",
+      "ui.barWhatsapp": "b1332787",
+      "ui.barCall": "341dd0c9",
+      "ui.barQuote": "561539cb",
+      "ui.leadName": "9010932f",
+      "ui.leadPhone": "ed504c20",
+      "ui.leadCountry": "1a3a3920",
+      "ui.leadSubmit": "86f852c9",
+      "ui.proofFactory": "587338fe",
+      "ui.proofCountries": "3585f9d5",
+      "ui.proofPrices": "8a3745e9",
+      "brand.name": "3b569e0e",
+      "brand.tagline": "88b1d188",
+      "contact.address": "72086f27",
+      "contact.hours": "b923f4bc",
+      "leadSettings.successMessage": "52d99c5f",
+      "leadSettings.errorMessage": "4491c7dc",
+      "popup.badge": "a26a1dad",
+      "popup.title": "93886ceb",
+      "popup.desc": "a615f8bc",
+      "popup.submitText": "86f852c9",
+      "popup.note": "fd467cad",
+      "popup.successTitle": "4a4d5d92",
+      "popup.successDesc": "7f11dd5b",
+      "hero.slides.0.eyebrow": "4acb2c2f",
+      "hero.slides.0.title": "53328d22",
+      "hero.slides.0.titleAccent": "24259cb5",
+      "hero.slides.0.desc": "6e1ff08a",
+      "hero.slides.0.primaryText": "f9d637c2",
+      "hero.slides.0.primaryHref": "fd3ed73a",
+      "hero.slides.0.secondaryText": "63976176",
+      "hero.slides.0.secondaryHref": "1c1d9bdc",
+      "hero.slides.1.eyebrow": "0673dcd1",
+      "hero.slides.1.title": "88a985d9",
+      "hero.slides.1.titleAccent": "ea276677",
+      "hero.slides.1.desc": "513a1140",
+      "hero.slides.1.primaryText": "5a0dbc7c",
+      "hero.slides.1.primaryHref": "fd3ed73a",
+      "hero.slides.1.secondaryText": "f3963ad0",
+      "hero.slides.1.secondaryHref": "ab333eff",
+      "hero.slides.2.eyebrow": "909ed376",
+      "hero.slides.2.title": "206c66d8",
+      "hero.slides.2.titleAccent": "756f2056",
+      "hero.slides.2.desc": "496eb3f1",
+      "hero.slides.2.primaryText": "7ba26d16",
+      "hero.slides.2.primaryHref": "0927ef74",
+      "hero.slides.2.secondaryText": "f52e7b01",
+      "hero.slides.2.secondaryHref": "f871c70a",
+      "materials.eyebrow": "0673dcd1",
+      "materials.title": "633671d8",
+      "materials.titleAccent": "e9f53010",
+      "materials.desc": "77dcdb76",
+      "materials.cards.0.title": "e8c8b87f",
+      "materials.cards.0.desc": "ff4e2b83",
+      "materials.cards.1.title": "98dab952",
+      "materials.cards.1.desc": "9ae59b1d",
+      "materials.cards.2.title": "dd6cb082",
+      "materials.cards.2.desc": "a2e9ac83",
+      "materials.cards.3.title": "4100885f",
+      "materials.cards.3.desc": "ed18e27c",
+      "materials.cards.4.title": "310d9372",
+      "materials.cards.4.desc": "fe26f769",
+      "materials.cards.5.title": "b597334a",
+      "materials.cards.5.desc": "f886bba7",
+      "materials.badges.0": "9afa9819",
+      "materials.badges.1": "5d0666ea",
+      "materials.badges.2": "a7b09ed6",
+      "materials.badges.3": "0b0c612d",
+      "materials.badges.4": "eb7b1e09",
+      "materials.badges.5": "fd3fd958",
+      "craft.eyebrow": "845c6070",
+      "craft.title": "b1396986",
+      "craft.titleAccent": "a7f8d435",
+      "craft.desc": "ba956860",
+      "craft.details.0.title": "975f6b05",
+      "craft.details.0.desc": "5194e9b7",
+      "craft.details.1.title": "b804d5f7",
+      "craft.details.1.desc": "82bfc8e1",
+      "craft.details.2.title": "5f77b224",
+      "craft.details.2.desc": "de4fe51d",
+      "craft.details.3.title": "a7fcdda7",
+      "craft.details.3.desc": "fb65db47",
+      "craft.details.4.title": "e0aaf072",
+      "craft.details.4.desc": "06906145",
+      "pricing.eyebrow": "6165c6fb",
+      "pricing.title": "6535a776",
+      "pricing.titleAccent": "c413228b",
+      "pricing.desc": "6951d93c",
+      "pricing.columnA": "1b3a4c08",
+      "pricing.columnB": "8a24d27d",
+      "pricing.rows.0.item": "fefef8d5",
+      "pricing.rows.1.item": "2d2b582f",
+      "pricing.rows.2.item": "54207143",
+      "pricing.rows.3.item": "134e1e38",
+      "pricing.bullets.0": "583c68bb",
+      "pricing.bullets.1": "1fee084d",
+      "pricing.bullets.2": "d1184a6a",
+      "pricing.bullets.3": "f2d08e9e",
+      "pricing.note": "3336437a",
+      "collections.eyebrow": "5a69f2fd",
+      "collections.title": "c38dc5f7",
+      "collections.titleAccent": "c937ed80",
+      "collections.desc": "b1b52311",
+      "collections.cards.0.tag": "ba872bcf",
+      "collections.cards.0.title": "9fa18fa7",
+      "collections.cards.0.link": "fd3ed73a",
+      "collections.cards.1.tag": "b2947d9b",
+      "collections.cards.1.title": "78c64c37",
+      "collections.cards.1.link": "fd3ed73a",
+      "collections.cards.2.tag": "c9dcf817",
+      "collections.cards.2.title": "1595fdd0",
+      "collections.cards.2.link": "fd3ed73a",
+      "categories.eyebrow": "66e5a657",
+      "categories.title": "257fa34c",
+      "categories.titleAccent": "256e8c71",
+      "categories.desc": "f9c124d0",
+      "categories.items.0.title": "6ed5f7aa",
+      "categories.items.0.desc": "41a01c2a",
+      "categories.items.1.title": "3215cff5",
+      "categories.items.1.desc": "ec3baf14",
+      "categories.items.2.title": "ecc07cb6",
+      "categories.items.2.desc": "27b6e07d",
+      "categories.items.3.title": "758c9f59",
+      "categories.items.3.desc": "9a89e2f1",
+      "categories.items.4.title": "c25f49c4",
+      "categories.items.4.desc": "04301287",
+      "categories.ctaTitle": "96966c9c",
+      "categories.ctaDesc": "2a5e9040",
+      "categories.ctaButton": "aee6d147",
+      "portfolio.eyebrow": "4a638376",
+      "portfolio.title": "d691897c",
+      "portfolio.titleAccent": "3918027a",
+      "portfolio.desc": "d8007fd1",
+      "portfolio.items.0.location": "263d0c7e",
+      "portfolio.items.0.title": "25222c64",
+      "portfolio.items.0.units": "c53f801d",
+      "portfolio.items.1.location": "5cf10bfb",
+      "portfolio.items.1.title": "9abb848e",
+      "portfolio.items.1.units": "a2ba904e",
+      "portfolio.items.2.location": "65e98669",
+      "portfolio.items.2.title": "6fdc971d",
+      "portfolio.items.2.units": "6fbedbc6",
+      "portfolio.items.3.location": "1c3065ac",
+      "portfolio.items.3.title": "d6a046d1",
+      "portfolio.items.3.units": "c0feb326",
+      "portfolio.items.4.location": "1c3065ac",
+      "portfolio.items.4.title": "1847ecc2",
+      "portfolio.items.4.units": "eb2f14d0",
+      "why.eyebrow": "3109aff4",
+      "why.title": "c3cc4f94",
+      "why.titleAccent": "10fd29f4",
+      "why.desc": "89202847",
+      "why.badgeValue": "e6c63d5f",
+      "why.badgeText": "0bf7a855",
+      "why.items.0.title": "32f7352f",
+      "why.items.0.desc": "0a06dcd2",
+      "why.items.1.title": "23360723",
+      "why.items.1.desc": "55621475",
+      "why.items.2.title": "ce75d183",
+      "why.items.2.desc": "b8329a25",
+      "why.items.3.title": "823ee134",
+      "why.items.3.desc": "aab533f6",
+      "process.eyebrow": "189c0889",
+      "process.title": "47301246",
+      "process.titleAccent": "bb395521",
+      "process.desc": "d7555cfc",
+      "process.steps.0.title": "698f9965",
+      "process.steps.0.desc": "fdd45e60",
+      "process.steps.1.title": "c647d315",
+      "process.steps.1.desc": "af657696",
+      "process.steps.2.title": "8ffe8b17",
+      "process.steps.2.desc": "08f9ee1b",
+      "process.steps.3.title": "fa53d4dd",
+      "process.steps.3.desc": "0095ac0c",
+      "cta.title": "f046b198",
+      "cta.desc": "a8eabc94",
+      "cta.button": "5d779e40",
+      "cta.emailButton": "7e3b6f01",
+      "contactSection.eyebrow": "65d4952d",
+      "contactSection.title": "7da1fbd8",
+      "contactSection.titleAccent": "a6a6bf83",
+      "contactSection.desc": "fae567a3",
+      "contactSection.formTitle": "432887d9",
+      "contactSection.formDesc": "07c10e1a",
+      "footer.about": "a322516f",
+      "footer.copyright": "818b75c9"
+    }
+  },
+  "meta": {
+    "title": "TSJ – Maßgeschneiderte Möbel direkt ab Werk | Bessere Boards, präzises Handwerk",
+    "description": "Hochwertige, maßgeschneiderte Möbel aus unserer eigenen Fabrik: E0/ENF-Sperrholzkerne, nahtlose PUR-Kantenbänder, Blum-Beschläge, 0,1 mm Präzision. 20–40 % unter Einzelhandelsstudios. Versand in über 120 Länder.",
+    "updatedAt": "09.11.2026"
+  },
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "navMaterials": "Materialien",
+    "navCraft": "Handwerk",
+    "navPricing": "Preise",
+    "navCollections": "Sammlungen",
+    "navProjects": "Projekte",
+    "navContact": "Kontakt",
+    "quote": "Holen Sie sich ein kostenloses Angebot",
+    "formName": "Vollständiger Name",
+    "formPhone": "Telefon / WhatsApp",
+    "formEmail": "E-Mail",
+    "formCountry": "Land/Region",
+    "formRegion": "Stadt/Bundesland",
+    "formInterest": "Produktinteresse",
+    "formMessage": "Projektdetails",
+    "phName": "John Smith",
+    "phPhone": "+1 555 000 0000",
+    "phEmail": "john@example.com",
+    "phCountry": "Wählen Sie Ihr Land aus",
+    "phRegion": "Stadt oder Bundesstaat",
+    "phInterest": "Wählen Sie eine Kategorie aus",
+    "phMessage": "Zimmertypen, ungefähre Abmessungen, Stilpräferenz, Zeitplan ...",
+    "send": "Anfrage senden",
+    "privacy": "Wir respektieren Ihre Privatsphäre. Ihre Daten werden ausschließlich zur Erstellung Ihres Angebots verwendet.",
+    "footerExplore": "Erkunden",
+    "footerProducts": "Produkte",
+    "footerContact": "Kontakt",
+    "prodKitchen": "Küchenschränke",
+    "prodClosets": "Begehbare Kleiderschränke",
+    "prodMedia": "Medienschränke",
+    "prodDoors": "Innentüren",
+    "prodWhole": "Ganzes Haus",
+    "interestKitchen": "Küchenschränke",
+    "interestMedia": "TV- und Medienschränke",
+    "interestClosets": "Begehbare Kleiderschränke",
+    "interestDisplay": "Ausstellungs- und Weinschränke",
+    "interestDoors": "Innentüren",
+    "interestWhole": "Anpassung für das ganze Haus",
+    "barWhatsapp": "WhatsApp",
+    "barCall": "Anruf",
+    "barQuote": "Kostenloses Angebot",
+    "leadName": "Vollständiger Name",
+    "leadPhone": "Telefon / WhatsApp",
+    "leadCountry": "Land/Region",
+    "leadSubmit": "Senden Sie meine Daten",
+    "proofFactory": "Eigene Fabrik seit 2010",
+    "proofCountries": "Über 120 Länder",
+    "proofPrices": "20–40 % unter dem Einzelhandel"
+  },
+  "brand": {
+    "name": "TSJ",
+    "tagline": "Maßgeschneiderte Möbel, direkt ab Werk"
+  },
+  "contact": {
+    "address": "Foshan, Guangdong, China",
+    "hours": "Mo–Sa · 09:00–18:00 (GMT+8)"
+  },
+  "leadSettings": {
+    "successMessage": "Vielen Dank – Ihre Daten wurden gesendet. Ein Projektspezialist wird sich innerhalb von 24 Stunden mit Ihnen in Verbindung setzen.",
+    "errorMessage": "Wir konnten nicht automatisch senden. Bitte tippen Sie auf WhatsApp oder senden Sie uns eine E-Mail. Wir werden Ihnen umgehend antworten."
+  },
+  "popup": {
+    "badge": "Kostenloses Design + Angebot · 24-Stunden-Antwort",
+    "title": "Erhalten Sie Ihren Direktpreis ab Werk",
+    "desc": "Hinterlassen Sie Ihren Namen, Ihre Telefonnummer und Ihre Region. Ein Projektspezialist sendet Ihnen ein maßgeschneidertes Angebot – unverbindlich, kein Spam.",
+    "submitText": "Senden Sie meine Daten",
+    "note": "Wir antworten innerhalb von 24 Stunden per WhatsApp oder Telefon.",
+    "successTitle": "Details erhalten – vielen Dank!",
+    "successDesc": "Unser Spezialist wird sich innerhalb von 24 Stunden bei Ihnen melden. Möchten Sie jetzt lieber reden? Schreiben Sie uns eine Nachricht auf WhatsApp."
+  },
+  "hero": {
+    "slides": [
+      {
+        "eyebrow": "Direkt ab Werk seit 2010",
+        "title": "Bessere Boards. Präzisionshandwerk.",
+        "titleAccent": "Fabrikpreise.",
+        "desc": "18-mm-E0-Sperrholzkerne, nahtlose PUR-Kantenbänder und 0,1-mm-Verbindungen – hergestellt in unserer eigenen 32.000 m² großen Fabrik und direkt an Ihre Haustür geliefert.",
+        "primaryText": "Holen Sie sich ein kostenloses Angebot",
+        "primaryHref": "#Kontakt",
+        "secondaryText": "Siehe Materialien & Handwerk",
+        "secondaryHref": "#Materialien"
+      },
+      {
+        "eyebrow": "Materialqualität",
+        "title": "Der Vorstand im Inneren entscheidet",
+        "titleAccent": "wie lange es dauert",
+        "desc": "Feuchtigkeitsbeständige, formaldehydsichere E0 / ENF-Platten mit 4H+-Oberflächen – getestet für 20 Jahre täglichen Familiengebrauch.",
+        "primaryText": "Sprechen Sie mit einem Spezialisten",
+        "primaryHref": "#Kontakt",
+        "secondaryText": "Unser Prozess",
+        "secondaryHref": "#Verfahren"
+      },
+      {
+        "eyebrow": "Sparen Sie 20–40 %",
+        "title": "Kein Ausstellungsraum. Keine Zwischenhändler.",
+        "titleAccent": "Nur unser Preis.",
+        "desc": "Sie kaufen in der Fabrik, die es herstellt – gleiche Spezifikation, detailliertes Angebot, bis zu 40 % unter dem Preis von Einzelhandelsküchenstudios.",
+        "primaryText": "Siehe Preisvergleich",
+        "primaryHref": "#Preise",
+        "secondaryText": "Unsere Projekte",
+        "secondaryHref": "#portfolio"
+      }
+    ]
+  },
+  "materials": {
+    "eyebrow": "Materialqualität",
+    "title": "Ihre Schränke sind nur so gut wie",
+    "titleAccent": "die Platine im Inneren",
+    "desc": "Die meisten Zitate verbergen die Spezifikation. Wir veröffentlichen es. Jede Karkasse, Kante und Oberfläche unten ist das, was wir tatsächlich liefern – und woran Ihr Angebot gemessen wird.",
+    "cards": [
+      {
+        "title": "Mehrschichtiger Sperrholzkern",
+        "desc": "18 mm Hartholzsperrholz, kreuzweise geschichtet in 11 Lagen. Doppelt so hohe Schraubenhaltekraft wie Spanplatten, sodass Türen jahrelang ausgerichtet bleiben."
+      },
+      {
+        "title": "Feuchtigkeitsbeständiger grüner Kern",
+        "desc": "720 kg/m³ HDF mit wachsgetränktem Kern für Badezimmer, Waschküchen und Waschtische. 24-Stunden-Wasserquellung unter 8 %."
+      },
+      {
+        "title": "E0 / ENF Formaldehyd",
+        "desc": "Emission ≤ 0,025 mg/m³ – niedriger als bei den meisten als „grün“ verkauften Paneelen. Sicher für Kinderzimmer, Schlafzimmer und geschlossene Küchen."
+      },
+      {
+        "title": "Nahtlose PUR-Kantenanleimung",
+        "desc": "1 mm ABS-Kante, reaktiver PUR-Hotmelt, bündig lasergeschnitten. Keine Klebefuge, kein Abheben – selbst bei 60 % Luftfeuchtigkeit."
+      },
+      {
+        "title": "Blum & Hettich-Hardware",
+        "desc": "Scharniere und Schienen wurden auf 80.000 Öffnungs-Schließ-Zyklen getestet. Soft-Close an jeder Tür und Schublade – Standard, kein Upgrade."
+      },
+      {
+        "title": "Im Ofen getrocknetes Massivholz",
+        "desc": "Türen aus Eiche, Walnuss und Esche, die auf einen Feuchtigkeitsgehalt von 8–10 % getrocknet und mit schwimmenden Zapfen verbunden sind, um saisonale Risse zu verhindern."
+      }
+    ],
+    "badges": [
+      "CARB P2",
+      "E0 / ENF",
+      "ISO 9001:2015",
+      "FSC®-Mischung",
+      "SGS-geprüft",
+      "D4 wasserdicht"
+    ]
+  },
+  "craft": {
+    "eyebrow": "Handwerkskunst",
+    "title": "Präzision, die Sie messen können,",
+    "titleAccent": "Finish, das man fühlen kann",
+    "desc": "Möbelbau wird in Millimetern und Leimlinien gewonnen oder verloren. Genau so steuert unsere Produktionslinie beides.",
+    "details": [
+      {
+        "title": "Nestschnitt mit abgestimmter Maserung",
+        "desc": "Die Platten werden auf CNC-Betten auf 0,1 mm geschachtelt und die Türfronten werden an die Maserung angepasst, bevor ein einzelnes Brett geschnitten wird."
+      },
+      {
+        "title": "Nahtlose PUR-Kanten",
+        "desc": "Jede Kante wird mit reaktivem PUR verklebt, bündig zugeschnitten und dann von Hand unter Streiflicht geprüft – keine sichtbare Klebefuge."
+      },
+      {
+        "title": "Vor dem Packen trocken anziehen",
+        "desc": "Jeder Schrank wird nach Raum zusammengebaut, ausgerichtet und beschriftet und dann flach verpackt mit ISTA-3A-Eckenschutz."
+      },
+      {
+        "title": "Handbearbeitete Oberflächen",
+        "desc": "Matter PET- und PU-Lack werden zwischen den Schichten geschliffen, um eine 4H+-Oberfläche und 2.000 Stunden UV-Lichtbeständigkeit zu gewährleisten."
+      },
+      {
+        "title": "Zwölf Abmeldungen",
+        "desc": "Von der Kartonannahme bis zur Kartonversiegelung zwölf Kontrollpunkte. Eine ausgefallene Einheit wird neu aufgebaut – nie gepatcht."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Preisvorteil",
+    "title": "Gleiche Spezifikation,",
+    "titleAccent": "bis zu 40 % weniger",
+    "desc": "Keine Ausstellungsraummiete, keine Händlermarge, keine Markenprämie. Sie zahlen für Verpflegung, Hardware und Arbeit – und können jede Zeile davon sehen.",
+    "columnA": "Typisches Einzelhandelsstudio",
+    "columnB": "TSJ direkt ab Werk",
+    "rows": [
+      {
+        "item": "Küche – 10 Fuß L-Form (12 Einheiten)"
+      },
+      {
+        "item": "Begehbarer Kleiderschrank – 8 Fuß langes Regal"
+      },
+      {
+        "item": "Medienwand – 3,2 m"
+      },
+      {
+        "item": "Rundum-Haus-Paket"
+      }
+    ],
+    "bullets": [
+      "Sie kaufen in der Fabrik, die es herstellt – keine Ausstellungsraummiete, keine Händlermarge, keine Markenprämie.",
+      "Die Angebote werden nach Kabinett aufgeschlüsselt, sodass Sie Zeile für Zeile mit jedem lokalen Studio vergleichen können.",
+      "Durch die Containerkonsolidierung wird die Fracht pro Einheit niedrig gehalten, und wir bieten Tür-zu-Tür-Angebote mit Zollbestimmungen an.",
+      "Ihr Preis ist 60 Tage lang gesperrt – und wir tauschen nach Ihrer Bestellung niemals ein günstigeres Board ein."
+    ],
+    "note": "Richtpreise für 2026 in USD für vergleichbare Spezifikationen. Das endgültige Angebot hängt von Größe, Ausführung und Hardware ab."
+  },
+  "collections": {
+    "eyebrow": "Kollektion 2026",
+    "title": "Neuankömmlinge,",
+    "titleAccent": "zeitloser Reiz",
+    "desc": "Durchdacht konstruierte Stücke, die den Stauraum maximieren, ohne die Linienführung des Raumes zu beeinträchtigen.",
+    "cards": [
+      {
+        "tag": "Küche",
+        "title": "Moderne europäische Küche",
+        "link": "#Kontakt"
+      },
+      {
+        "tag": "Wohnzimmer",
+        "title": "Integrierte Medienwand",
+        "link": "#Kontakt"
+      },
+      {
+        "tag": "Schlafzimmer",
+        "title": "Suite mit begehbarem Kleiderschrank",
+        "link": "#Kontakt"
+      }
+    ]
+  },
+  "categories": {
+    "eyebrow": "Was wir herstellen",
+    "title": "Maßgeschneiderte Möbel für",
+    "titleAccent": "Jede Ecke",
+    "desc": "Von der Küche bis zum Schrank entwerfen und bauen wir Möbel, die zu Ihrem Raum, Ihrem Klima und Ihrem Leben passen.",
+    "items": [
+      {
+        "title": "TV- und Medienschränke",
+        "desc": "Unterhaltungszentren rund um Ihren Bildschirm, mit Kabelführung und großzügigem verstecktem Stauraum."
+      },
+      {
+        "title": "Begehbare Kleiderschränke",
+        "desc": "Boutique-würdige Kleiderschränke mit verstellbaren Schienen, Schubladen und integrierter Beleuchtung."
+      },
+      {
+        "title": "Küchenschränke",
+        "desc": "Komplette Küchensysteme – Schränke, Arbeitsplatten und Zubehör als eine Einheit konzipiert."
+      },
+      {
+        "title": "Ausstellungs- und Weinschränke",
+        "desc": "Statement-Aufbewahrung, die Ihre Sammlung präsentiert und alles schön organisiert hält."
+      },
+      {
+        "title": "Innentüren",
+        "desc": "Maßgeschneiderte Türen, die jedem Raum Wärme, Privatsphäre und architektonischen Charakter verleihen."
+      }
+    ],
+    "ctaTitle": "Anpassung für das ganze Haus",
+    "ctaDesc": "Kleiderschränke, Waschtische, Einbauschränke, Bücherregale, Wäscheschränke, Wandverkleidungen, Fußleisten – jede Oberfläche, jeder Raum, eine Dielenspezifikation.",
+    "ctaButton": "Starten Sie Ihr Projekt"
+  },
+  "portfolio": {
+    "eyebrow": "Unsere Arbeit",
+    "title": "Hausbesitzer vertrauen darauf",
+    "titleAccent": "auf der ganzen Welt",
+    "desc": "Jedes Jahr liefern wir maßgeschneiderte Möbel an Tausende von Haushalten auf der ganzen Welt – einschließlich Projekten in den Vereinigten Staaten und Kanada.",
+    "items": [
+      {
+        "location": "Deutschland",
+        "title": "Benutzerdefinierte Bücherregalbibliothek",
+        "units": "973 Einheiten"
+      },
+      {
+        "location": "Kanada",
+        "title": "Moderne Küchensuite",
+        "units": "495 Einheiten"
+      },
+      {
+        "location": "Australien",
+        "title": "Renovierung des gesamten Hauses",
+        "units": "608 Einheiten"
+      },
+      {
+        "location": "Vereinigte Staaten",
+        "title": "Ausbau einer Luxusvilla",
+        "units": "693 Einheiten"
+      },
+      {
+        "location": "Vereinigte Staaten",
+        "title": "Individuelles Küstenhaus",
+        "units": "354 Einheiten"
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "Der TSJ-Unterschied",
+    "title": "Warum Hausbesitzer",
+    "titleAccent": "Wählen Sie uns",
+    "desc": "Überprüfbare Materialien, direkte Preise ab Werk und ein Spezialist von der ersten Zeichnung bis zur endgültigen Scharniereinstellung.",
+    "badgeValue": "120+",
+    "badgeText": "Länder geliefert",
+    "items": [
+      {
+        "title": "Preise direkt ab Werk",
+        "desc": "Sparen Sie 20–40 %, indem Sie direkt bei der Quelle kaufen. Kein Ausstellungsraum, kein Zwischenhändler, kein Einzelhandelsaufschlag – ein detailliertes, ehrliches Angebot."
+      },
+      {
+        "title": "Einfachheit aus einer Hand",
+        "desc": "Design, Herstellung, Versand und Installationsberatung werden von einem Team durchgeführt. Sie koordinieren niemals fünf Anbieter."
+      },
+      {
+        "title": "Engagierter Spezialist",
+        "desc": "Ein benannter Projektspezialist, Tür-zu-Tür-Versand mit Sendungsverfolgung und detaillierter Installationssupport auf Abruf."
+      },
+      {
+        "title": "16 Jahre Meisterschaft",
+        "desc": "Seit 2010 haben wir ein Produkt weiterentwickelt: Möbel. Unsere Boards, Kanten und Hardware liegen alle über dem Industriestandard."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Der Prozess",
+    "title": "Vom Grundriss",
+    "titleAccent": "bis zum fertigen Zuhause",
+    "desc": "Ein einfacher, transparenter Prozess, der auf Sie zugeschnitten ist.",
+    "steps": [
+      {
+        "title": "Teilen Sie Ihre Vision",
+        "desc": "Senden Sie Ihren Grundriss, Inspirationsfotos und Anforderungen. Wir besprechen Stil, Budget und Zeitplan."
+      },
+      {
+        "title": "Design & Angebot",
+        "desc": "Unser Team erstellt detaillierte Zeichnungen und ein detailliertes Angebot – in der Regel innerhalb von 3–5 Werktagen."
+      },
+      {
+        "title": "Basteln und versenden",
+        "desc": "Ihre Möbel werden präzisionsgefertigt, qualitätsgeprüft und mit vollständiger Sendungsverfolgung von Tür zu Tür versendet."
+      },
+      {
+        "title": "Installieren und genießen",
+        "desc": "Erhalten Sie detaillierte Installationsanleitungen und Live-Support und genießen Sie dann Ihr wunderschön verwandeltes Zuhause."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Sind Sie bereit, Ihr Zuhause zu verwandeln?",
+    "desc": "Senden Sie uns Ihren Grundriss und wir erstellen unverbindlich einen individuellen Entwurf und ein Angebot.",
+    "button": "Holen Sie sich Ihr kostenloses Angebot",
+    "emailButton": "Schicken Sie uns direkt eine E-Mail"
+  },
+  "contactSection": {
+    "eyebrow": "Nehmen Sie Kontakt auf",
+    "title": "Fangen wir an",
+    "titleAccent": "das Gespräch",
+    "desc": "Ganz gleich, ob Sie eine Komplettrenovierung Ihres Hauses oder die Erneuerung eines einzelnen Zimmers planen, unser Team steht Ihnen gerne zur Seite. Füllen Sie das Formular aus oder kontaktieren Sie uns direkt.",
+    "formTitle": "Fordern Sie ein Angebot an",
+    "formDesc": "Erzählen Sie uns von Ihrem Projekt und wir werden uns innerhalb von 24 Stunden bei Ihnen melden."
+  },
+  "footer": {
+    "about": "Hochwertige, maßgefertigte Möbel für Privathaushalte in den Vereinigten Staaten, Kanada und darüber hinaus. Direkt ab Werk Qualität seit 2010.",
+    "copyright": "© 2026 TSJ. Alle Rechte vorbehalten."
+  }
+}

@@ -34,6 +34,7 @@
         { key: 'brand', label: '品牌标识', icon: 'fa-solid fa-tag' },
         { key: 'contact', label: '联系方式', icon: 'fa-solid fa-address-book' },
         { key: 'leadSettings', label: '邮件 / 线索接收', icon: 'fa-solid fa-envelope-open-text' },
+        { key: 'i18n', label: '多语言 / 翻译', icon: 'fa-solid fa-language' },
         { key: 'popup', label: '10 秒弹窗', icon: 'fa-solid fa-window-restore' },
         { key: 'hero', label: '首屏轮播', icon: 'fa-solid fa-images' },
         { key: 'stats', label: '数据统计', icon: 'fa-solid fa-chart-simple' },
@@ -106,6 +107,8 @@
         sha: null,
         view: 'meta',
         gh: Object.assign({}, DEFAULT_GH),
+        i18n: {},
+        editLang: '',
         dirty: false,
         remoteOk: false,
         lastSaved: null
@@ -466,6 +469,9 @@
             renderSidebar();
             setView(state.view in json ? state.view : 'meta');
             updateSaveState();
+            return loadI18nFiles().then(function () {
+                if (state.view === 'i18n') renderPanel();
+            });
         }).catch(function (err) {
             console.error(err);
             setStatus('error', '读取内容失败：' + err.message + '（请检查「连接与发布」）');
@@ -514,6 +520,11 @@
         if (state.view === 'github') {
             title.textContent = '连接与发布';
             renderGithub(panel);
+            return;
+        }
+        if (state.view === 'i18n') {
+            title.textContent = '多语言 / 翻译';
+            renderI18n(panel);
             return;
         }
         if (state.view === 'json') {
@@ -1225,6 +1236,398 @@
                 try { json = JSON.parse(text); } catch (e) { /* ignore */ }
                 if (!res.ok) throw new Error((json && json.message) || text || ('HTTP ' + res.status));
                 return { json: json, text: text };
+            });
+        });
+    }
+
+    /* ------------------------------------------------------------------
+     * Multi-language
+     * ---------------------------------------------------------------- */
+    var I18N_DIR = 'data/i18n/';
+
+    function fnv(str) {
+        var h = 0x811c9dc5;
+        for (var i = 0; i < str.length; i++) {
+            h ^= str.charCodeAt(i);
+            h = Math.imul(h, 0x01000193) >>> 0;
+        }
+        var hex = h.toString(16);
+        return '00000000'.slice(hex.length) + hex;
+    }
+
+    function langList() {
+        var cfg = state.config && state.config.i18n;
+        var list = (cfg && cfg.languages) || [];
+        return list.length ? list : [{ code: 'en', label: 'English' }];
+    }
+
+    function sourceLang() {
+        var cfg = state.config && state.config.i18n;
+        return (cfg && cfg.source) || 'en';
+    }
+
+    function collectText(node, keys, out) {
+        if (Array.isArray(node)) {
+            node.forEach(function (v, i) { collectText(v, keys.concat(i), out); });
+            return;
+        }
+        if (node && typeof node === 'object') {
+            Object.keys(node).forEach(function (k) {
+                if (k === '_meta') return;
+                collectText(node[k], keys.concat(k), out);
+            });
+            return;
+        }
+        if (typeof node === 'string' && node.trim() && node.trim().length > 1) {
+            out.push({ keys: keys, text: node });
+        }
+    }
+
+    function textPaths() {
+        var out = [];
+        collectText(state.config, [], out);
+        return out;
+    }
+
+    function getDeep(obj, keys) {
+        var cur = obj;
+        for (var i = 0; i < keys.length; i++) {
+            if (cur === null || cur === undefined) return undefined;
+            cur = cur[keys[i]];
+        }
+        return cur;
+    }
+
+    function setDeep(obj, keys, value) {
+        var cur = obj;
+        for (var i = 0; i < keys.length - 1; i++) {
+            var k = keys[i];
+            if (cur[k] === undefined || cur[k] === null || typeof cur[k] !== 'object') {
+                cur[k] = typeof keys[i + 1] === 'number' ? [] : {};
+            }
+            cur = cur[k];
+        }
+        cur[keys[keys.length - 1]] = value;
+        return obj;
+    }
+
+    function translationEntry(code) {
+        if (!state.i18n[code]) state.i18n[code] = { json: {}, sha: null };
+        return state.i18n[code];
+    }
+
+    function loadI18nFiles() {
+        var langs = langList().filter(function (l) { return l.code !== sourceLang(); });
+        var remote = state.gh.token && state.gh.token.length > 20;
+        state.i18n = {};
+        state.i18nLoading = true;
+        return Promise.all(langs.map(function (l) {
+            var path = I18N_DIR + l.code + '.json';
+            var req;
+            if (remote) {
+                req = fetch(ghUrl(path) + '?ref=' + encodeURIComponent(state.gh.branch || 'main') + '&t=' + Date.now(), {
+                    headers: ghHeaders(), cache: 'no-store'
+                }).then(function (res) {
+                    return res.ok ? res.json() : null;
+                }).then(function (data) {
+                    return { json: data ? JSON.parse(fromB64(data.content)) : {}, sha: data ? data.sha : null };
+                });
+            } else {
+                req = fetch('../' + path + '?v=' + Date.now(), { cache: 'no-store' })
+                    .then(function (res) { return res.ok ? res.json() : {}; })
+                    .then(function (json) { return { json: json || {}, sha: null }; });
+            }
+            return req.catch(function () { return { json: {}, sha: null }; }).then(function (r) {
+                state.i18n[l.code] = { json: r.json, sha: r.sha };
+            });
+        })).then(function () { state.i18nLoading = false; });
+    }
+
+    function i18nText(code) {
+        return JSON.stringify(translationEntry(code).json, null, 2) + '\n';
+    }
+
+    function saveI18nFile(code) {
+        var text = i18nText(code);
+        if (!state.gh.token) {
+            downloadText(code + '.json', text);
+            return Promise.reject(new Error('未连接仓库，已下载 ' + code + '.json'));
+        }
+        return putFile(I18N_DIR + code + '.json', text, 'content: update ' + code + ' translations');
+    }
+
+    function downloadText(name, text) {
+        var blob = new Blob([text], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = name;
+        a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+    }
+
+    function coverage(code) {
+        var entry = state.i18n[code];
+        if (!entry) return 0;
+        var paths = textPaths();
+        if (!paths.length) return 0;
+        var done = 0;
+        paths.forEach(function (item) {
+            var v = getDeep(entry.json, item.keys);
+            if (typeof v === 'string' && v.trim()) done++;
+        });
+        return Math.round((done / paths.length) * 100);
+    }
+
+    /* one request carries up to 20 strings (client=dict-chrome-ex returns an array) */
+    function translateBatch(texts, tl) {
+        var query = texts.map(function (t) { return '&q=' + encodeURIComponent(t); }).join('');
+        var url = 'https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl=' +
+            encodeURIComponent(sourceLang()) + '&tl=' + encodeURIComponent(tl) + query;
+        return fetch(url).then(function (res) {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+        }).then(function (data) {
+            if (!Array.isArray(data) || data.length !== texts.length) throw new Error('翻译服务返回格式异常');
+            return data.map(function (v) { return String(Array.isArray(v) ? v[0] : v); });
+        });
+    }
+
+    function syncTranslations(force, onProgress) {
+        var langs = langList().filter(function (l) { return l.code !== sourceLang(); });
+        var paths = textPaths();
+        var stats = { done: 0, failed: 0, langs: [] };
+
+        function runLang(i) {
+            if (i >= langs.length) return Promise.resolve(stats);
+            var l = langs[i];
+            var entry = translationEntry(l.code);
+            var auto = (entry.json._meta && entry.json._meta.auto) || {};
+            var todo = [];
+
+            paths.forEach(function (item) {
+                var p = item.keys.join('.');
+                var cur = getDeep(entry.json, item.keys);
+                var h = fnv(item.text);
+                if (force || !cur || (auto[p] && auto[p] !== h)) todo.push({ item: item, p: p, h: h });
+            });
+
+            onProgress('正在翻译 ' + l.label + '（' + todo.length + ' 条）…');
+            if (!todo.length) {
+                stats.langs.push(l.label + '：已是最新');
+                return runLang(i + 1);
+            }
+
+            var idx = 0;
+            function step() {
+                if (idx >= todo.length) return Promise.resolve();
+                var chunk = todo.slice(idx, idx + 20);
+                idx += 20;
+                return translateBatch(chunk.map(function (c) { return c.item.text; }), l.code)
+                    .then(function (out) {
+                        chunk.forEach(function (c, k) {
+                            setDeep(entry.json, c.item.keys, out[k] || c.item.text);
+                            auto[c.p] = c.h;
+                            stats.done++;
+                        });
+                    })
+                    .catch(function (err) {
+                        console.warn('[i18n] batch failed', l.code, err);
+                        stats.failed += chunk.length;
+                    })
+                    .then(function () {
+                        onProgress('正在翻译 ' + l.label + '：' + Math.min(idx, todo.length) + ' / ' + todo.length);
+                        return new Promise(function (r) { setTimeout(r, 200); }).then(step);
+                    });
+            }
+
+            return step().then(function () {
+                entry.json._meta = entry.json._meta || {};
+                entry.json._meta.lang = l.code;
+                entry.json._meta.source = sourceLang();
+                entry.json._meta.auto = auto;
+                entry.json._meta.generatedAt = new Date().toISOString();
+                state.i18n[l.code] = entry;
+                stats.langs.push(l.label + '：' + todo.length + ' 条已更新');
+                return saveI18nFile(l.code).catch(function (e) {
+                    console.warn(e);
+                    stats.failed++;
+                });
+            }).then(function () { return runLang(i + 1); });
+        }
+
+        return runLang(0);
+    }
+
+    function renderI18n(panel) {
+        if (state.editLang) {
+            renderI18nEditor(panel);
+            return;
+        }
+
+        var source = sourceLang();
+        var langs = langList();
+
+        var card = document.createElement('section');
+        card.className = 'card';
+        var rows = langs.map(function (l) {
+            var isSource = l.code === source;
+            var pct = isSource ? 100 : coverage(l.code);
+            var color = pct >= 95 ? '#2f7d4f' : (pct >= 60 ? '#a15c1f' : '#b3402f');
+            return '<tr>' +
+                '<td><b>' + esc(l.label) + '</b> <span class="chip">' + esc(l.code) + '</span>' +
+                (isSource ? ' <span class="chip chip--brand">源语言</span>' : '') + '</td>' +
+                '<td style="color:' + color + ';font-weight:700">' + pct + '%</td>' +
+                '<td>' + (isSource ? '<span class="muted">在左侧菜单逐项编辑</span>' :
+                    '<button class="btn btn-ghost btn-sm" data-edit="' + esc(l.code) + '">编辑译文</button>') + '</td>' +
+                '</tr>';
+        }).join('');
+
+        card.innerHTML =
+            '<div class="card-head"><h3>语言与译文覆盖率</h3></div>' +
+            '<p class="muted">前台页面右上角有语言切换器，访客的语言会自动匹配。源语言里的文案是母版，其它语言只保存译文；' +
+            '<b>没翻译的字段会自动显示母版文案</b>，不会出现空白。</p>' +
+            '<table class="price-table" style="min-width:0"><thead><tr><th>语言</th><th style="width:90px">完成度</th><th style="width:170px">操作</th></tr></thead>' +
+            '<tbody>' + rows + '</tbody></table>' +
+            '<p class="hint">语言列表在「多语言 / 翻译」下方的 JSON 或左侧「高级（JSON）」的 <code>i18n.languages</code> 中维护，可增删语言。</p>';
+
+        panel.appendChild(card);
+        $$('[data-edit]', card).forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                state.editLang = btn.getAttribute('data-edit');
+                renderPanel();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        var syncCard = document.createElement('section');
+        syncCard.className = 'card';
+        syncCard.innerHTML =
+            '<div class="card-head"><h3>一键更新译文</h3></div>' +
+            '<p class="muted">只改母版（比如英文或中文），点下面的按钮，系统会把<b>新增或改动过的字段</b>自动机器翻译到其它语言并发布。' +
+            '已经人工改过的译文不会被覆盖。</p>' +
+            '<div class="row-actions">' +
+            '<button class="btn btn-primary btn-sm" id="i18nSync"><i class="fa-solid fa-wand-magic-sparkles"></i> 同步译文到所有语言</button>' +
+            '<label class="check"><input type="checkbox" id="i18nForce"> 全部重译（会覆盖人工修改）</label>' +
+            '</div>' +
+            '<p class="hint" id="i18nProgress">机器翻译只作为初稿，认证参数、尺寸、报价等关键内容建议人工校对一遍。</p>';
+
+        panel.appendChild(syncCard);
+
+        var btn = $('#i18nSync');
+        var note = $('#i18nProgress');
+        btn.addEventListener('click', function () {
+            var force = $('#i18nForce').checked;
+            if (force && !confirm('确定要重新翻译所有语言？人工修改的译文会被覆盖。')) return;
+            if (!state.gh.token) { toast('请先连接仓库（连接与发布）才能保存译文', 'error'); return; }
+            btn.disabled = true;
+            btn.classList.add('is-loading');
+            note.textContent = '准备中…';
+            syncTranslations(force, function (msg) { note.textContent = msg; })
+                .then(function (stats) {
+                    note.textContent = '完成：更新 ' + stats.done + ' 条' + (stats.failed ? '，失败 ' + stats.failed + ' 条' : '') +
+                        '（' + stats.langs.join('；') + '）';
+                    toast('译文已同步并发布，约 30–60 秒后前台生效', 'success');
+                    renderPanel();
+                })
+                .catch(function (err) {
+                    note.textContent = '同步失败：' + err.message;
+                    toast('同步失败：' + err.message, 'error');
+                })
+                .then(function () {
+                    btn.disabled = false;
+                    btn.classList.remove('is-loading');
+                });
+        });
+    }
+
+    function renderI18nEditor(panel) {
+        var code = state.editLang;
+        var entry = translationEntry(code);
+        var info = null;
+        langList().forEach(function (l) { if (l.code === code) info = l; });
+        var paths = textPaths();
+
+        var head = document.createElement('section');
+        head.className = 'card';
+        head.innerHTML =
+            '<div class="card-head"><h3>' + esc(info ? info.label : code) + ' 译文</h3>' +
+            '<div><button class="btn btn-ghost btn-sm" id="i18nBack">返回语言列表</button></div></div>' +
+            '<p class="muted">左侧灰色文字是母版原文，右侧填写译文。留空表示沿用母版文案。' +
+            '保存后点击「保存译文」发布；也可以先回列表用「一键同步」用机翻打底。</p>' +
+            '<div class="row-actions"><button class="btn btn-primary btn-sm" id="i18nSave">保存译文</button>' +
+            '<label class="check"><input type="checkbox" id="i18nOnlyEmpty"> 只看未翻译</label></div>';
+        panel.appendChild(head);
+
+        $('#i18nBack').addEventListener('click', function () {
+            state.editLang = '';
+            renderPanel();
+        });
+
+        var list = document.createElement('section');
+        list.className = 'card';
+        panel.appendChild(list);
+
+        function draw(onlyEmpty) {
+            list.innerHTML = '';
+            var groups = {};
+            paths.forEach(function (item) {
+                var top = String(item.keys[0]);
+                var cur = getDeep(entry.json, item.keys) || '';
+                if (onlyEmpty && typeof cur === 'string' && cur.trim()) return;
+                groups[top] = groups[top] || [];
+                groups[top].push({ item: item, cur: cur });
+            });
+
+            Object.keys(groups).forEach(function (top) {
+                var block = document.createElement('div');
+                block.className = 'i18n-block';
+                var title = document.createElement('h4');
+                title.textContent = labelFor(top);
+                block.appendChild(title);
+
+                groups[top].forEach(function (row) {
+                    var wrap = document.createElement('div');
+                    wrap.className = 'i18n-row';
+                    var src = document.createElement('div');
+                    src.className = 'i18n-src';
+                    src.textContent = row.item.text;
+                    var input = document.createElement(row.item.text.length > 70 ? 'textarea' : 'input');
+                    if (input.tagName === 'TEXTAREA') input.rows = 2;
+                    input.className = 'i18n-input';
+                    input.value = typeof row.cur === 'string' ? row.cur : '';
+                    input.placeholder = row.item.text;
+                    input.addEventListener('input', function () {
+                        setDeep(entry.json, row.item.keys, input.value);
+                        var meta = entry.json._meta = entry.json._meta || {};
+                        meta.lang = code;
+                        meta.source = sourceLang();
+                        if (meta.auto) delete meta.auto[row.item.keys.join('.')];
+                    });
+                    wrap.appendChild(src);
+                    wrap.appendChild(input);
+                    block.appendChild(wrap);
+                });
+
+                if (block.querySelector('.i18n-row')) list.appendChild(block);
+            });
+        }
+
+        draw(false);
+
+        $('#i18nOnlyEmpty').addEventListener('change', function () {
+            draw(this.checked);
+        });
+
+        $('#i18nSave').addEventListener('click', function () {
+            var btn = this;
+            btn.disabled = true;
+            saveI18nFile(code).then(function () {
+                toast('译文已发布，约 30–60 秒后前台生效', 'success');
+                renderPanel();
+            }).catch(function (err) {
+                toast('保存失败：' + err.message, 'error');
+            }).then(function () {
+                btn.disabled = false;
             });
         });
     }

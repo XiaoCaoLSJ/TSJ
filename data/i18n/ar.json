@@ -1,0 +1,599 @@
+{
+  "_meta": {
+    "lang": "ar",
+    "source": "en",
+    "engine": "google-gtx + mymemory fallback",
+    "generatedAt": "2026-11-09T07:31:47.655Z",
+    "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
+    "auto": {
+      "meta.title": "9ccf8dd7",
+      "meta.description": "020908cb",
+      "meta.updatedAt": "791e2e14",
+      "ui.skip": "c7af44e6",
+      "ui.navMaterials": "d3ccdb89",
+      "ui.navCraft": "c8f02361",
+      "ui.navPricing": "b4d17ded",
+      "ui.navCollections": "9ae6a966",
+      "ui.navProjects": "64fda4d7",
+      "ui.navContact": "73ac94c3",
+      "ui.quote": "f9d637c2",
+      "ui.formName": "9010932f",
+      "ui.formPhone": "ed504c20",
+      "ui.formEmail": "43352167",
+      "ui.formCountry": "1a3a3920",
+      "ui.formRegion": "d4a2fd42",
+      "ui.formInterest": "112a2576",
+      "ui.formMessage": "5e13f188",
+      "ui.phName": "9ca62dc7",
+      "ui.phPhone": "28c7db60",
+      "ui.phEmail": "091b0ca1",
+      "ui.phCountry": "69d0557e",
+      "ui.phRegion": "f2f7c692",
+      "ui.phInterest": "571309be",
+      "ui.phMessage": "5437a0b1",
+      "ui.send": "2326e532",
+      "ui.privacy": "caabb44d",
+      "ui.footerExplore": "4d9eb2dc",
+      "ui.footerProducts": "cb2c4cad",
+      "ui.footerContact": "73ac94c3",
+      "ui.prodKitchen": "ecc07cb6",
+      "ui.prodClosets": "3215cff5",
+      "ui.prodMedia": "cc5d6d6c",
+      "ui.prodDoors": "c25f49c4",
+      "ui.prodWhole": "ff614338",
+      "ui.interestKitchen": "ecc07cb6",
+      "ui.interestMedia": "6ed5f7aa",
+      "ui.interestClosets": "3215cff5",
+      "ui.interestDisplay": "758c9f59",
+      "ui.interestDoors": "c25f49c4",
+      "ui.interestWhole": "96966c9c",
+      "ui.barWhatsapp": "b1332787",
+      "ui.barCall": "341dd0c9",
+      "ui.barQuote": "561539cb",
+      "ui.leadName": "9010932f",
+      "ui.leadPhone": "ed504c20",
+      "ui.leadCountry": "1a3a3920",
+      "ui.leadSubmit": "86f852c9",
+      "ui.proofFactory": "587338fe",
+      "ui.proofCountries": "3585f9d5",
+      "ui.proofPrices": "8a3745e9",
+      "brand.name": "3b569e0e",
+      "brand.tagline": "88b1d188",
+      "contact.address": "72086f27",
+      "contact.hours": "b923f4bc",
+      "leadSettings.successMessage": "52d99c5f",
+      "leadSettings.errorMessage": "4491c7dc",
+      "popup.badge": "a26a1dad",
+      "popup.title": "93886ceb",
+      "popup.desc": "a615f8bc",
+      "popup.submitText": "86f852c9",
+      "popup.note": "fd467cad",
+      "popup.successTitle": "4a4d5d92",
+      "popup.successDesc": "7f11dd5b",
+      "hero.slides.0.eyebrow": "4acb2c2f",
+      "hero.slides.0.title": "53328d22",
+      "hero.slides.0.titleAccent": "24259cb5",
+      "hero.slides.0.desc": "6e1ff08a",
+      "hero.slides.0.primaryText": "f9d637c2",
+      "hero.slides.0.primaryHref": "fd3ed73a",
+      "hero.slides.0.secondaryText": "63976176",
+      "hero.slides.0.secondaryHref": "1c1d9bdc",
+      "hero.slides.1.eyebrow": "0673dcd1",
+      "hero.slides.1.title": "88a985d9",
+      "hero.slides.1.titleAccent": "ea276677",
+      "hero.slides.1.desc": "513a1140",
+      "hero.slides.1.primaryText": "5a0dbc7c",
+      "hero.slides.1.primaryHref": "fd3ed73a",
+      "hero.slides.1.secondaryText": "f3963ad0",
+      "hero.slides.1.secondaryHref": "ab333eff",
+      "hero.slides.2.eyebrow": "909ed376",
+      "hero.slides.2.title": "206c66d8",
+      "hero.slides.2.titleAccent": "756f2056",
+      "hero.slides.2.desc": "496eb3f1",
+      "hero.slides.2.primaryText": "7ba26d16",
+      "hero.slides.2.primaryHref": "0927ef74",
+      "hero.slides.2.secondaryText": "f52e7b01",
+      "hero.slides.2.secondaryHref": "f871c70a",
+      "materials.eyebrow": "0673dcd1",
+      "materials.title": "633671d8",
+      "materials.titleAccent": "e9f53010",
+      "materials.desc": "77dcdb76",
+      "materials.cards.0.title": "e8c8b87f",
+      "materials.cards.0.desc": "ff4e2b83",
+      "materials.cards.1.title": "98dab952",
+      "materials.cards.1.desc": "9ae59b1d",
+      "materials.cards.2.title": "dd6cb082",
+      "materials.cards.2.desc": "a2e9ac83",
+      "materials.cards.3.title": "4100885f",
+      "materials.cards.3.desc": "ed18e27c",
+      "materials.cards.4.title": "310d9372",
+      "materials.cards.4.desc": "fe26f769",
+      "materials.cards.5.title": "b597334a",
+      "materials.cards.5.desc": "f886bba7",
+      "materials.badges.0": "9afa9819",
+      "materials.badges.1": "5d0666ea",
+      "materials.badges.2": "a7b09ed6",
+      "materials.badges.3": "0b0c612d",
+      "materials.badges.4": "eb7b1e09",
+      "materials.badges.5": "fd3fd958",
+      "craft.eyebrow": "845c6070",
+      "craft.title": "b1396986",
+      "craft.titleAccent": "a7f8d435",
+      "craft.desc": "ba956860",
+      "craft.details.0.title": "975f6b05",
+      "craft.details.0.desc": "5194e9b7",
+      "craft.details.1.title": "b804d5f7",
+      "craft.details.1.desc": "82bfc8e1",
+      "craft.details.2.title": "5f77b224",
+      "craft.details.2.desc": "de4fe51d",
+      "craft.details.3.title": "a7fcdda7",
+      "craft.details.3.desc": "fb65db47",
+      "craft.details.4.title": "e0aaf072",
+      "craft.details.4.desc": "06906145",
+      "pricing.eyebrow": "6165c6fb",
+      "pricing.title": "6535a776",
+      "pricing.titleAccent": "c413228b",
+      "pricing.desc": "6951d93c",
+      "pricing.columnA": "1b3a4c08",
+      "pricing.columnB": "8a24d27d",
+      "pricing.rows.0.item": "fefef8d5",
+      "pricing.rows.1.item": "2d2b582f",
+      "pricing.rows.2.item": "54207143",
+      "pricing.rows.3.item": "134e1e38",
+      "pricing.bullets.0": "583c68bb",
+      "pricing.bullets.1": "1fee084d",
+      "pricing.bullets.2": "d1184a6a",
+      "pricing.bullets.3": "f2d08e9e",
+      "pricing.note": "3336437a",
+      "collections.eyebrow": "5a69f2fd",
+      "collections.title": "c38dc5f7",
+      "collections.titleAccent": "c937ed80",
+      "collections.desc": "b1b52311",
+      "collections.cards.0.tag": "ba872bcf",
+      "collections.cards.0.title": "9fa18fa7",
+      "collections.cards.0.link": "fd3ed73a",
+      "collections.cards.1.tag": "b2947d9b",
+      "collections.cards.1.title": "78c64c37",
+      "collections.cards.1.link": "fd3ed73a",
+      "collections.cards.2.tag": "c9dcf817",
+      "collections.cards.2.title": "1595fdd0",
+      "collections.cards.2.link": "fd3ed73a",
+      "categories.eyebrow": "66e5a657",
+      "categories.title": "257fa34c",
+      "categories.titleAccent": "256e8c71",
+      "categories.desc": "f9c124d0",
+      "categories.items.0.title": "6ed5f7aa",
+      "categories.items.0.desc": "41a01c2a",
+      "categories.items.1.title": "3215cff5",
+      "categories.items.1.desc": "ec3baf14",
+      "categories.items.2.title": "ecc07cb6",
+      "categories.items.2.desc": "27b6e07d",
+      "categories.items.3.title": "758c9f59",
+      "categories.items.3.desc": "9a89e2f1",
+      "categories.items.4.title": "c25f49c4",
+      "categories.items.4.desc": "04301287",
+      "categories.ctaTitle": "96966c9c",
+      "categories.ctaDesc": "2a5e9040",
+      "categories.ctaButton": "aee6d147",
+      "portfolio.eyebrow": "4a638376",
+      "portfolio.title": "d691897c",
+      "portfolio.titleAccent": "3918027a",
+      "portfolio.desc": "d8007fd1",
+      "portfolio.items.0.location": "263d0c7e",
+      "portfolio.items.0.title": "25222c64",
+      "portfolio.items.0.units": "c53f801d",
+      "portfolio.items.1.location": "5cf10bfb",
+      "portfolio.items.1.title": "9abb848e",
+      "portfolio.items.1.units": "a2ba904e",
+      "portfolio.items.2.location": "65e98669",
+      "portfolio.items.2.title": "6fdc971d",
+      "portfolio.items.2.units": "6fbedbc6",
+      "portfolio.items.3.location": "1c3065ac",
+      "portfolio.items.3.title": "d6a046d1",
+      "portfolio.items.3.units": "c0feb326",
+      "portfolio.items.4.location": "1c3065ac",
+      "portfolio.items.4.title": "1847ecc2",
+      "portfolio.items.4.units": "eb2f14d0",
+      "why.eyebrow": "3109aff4",
+      "why.title": "c3cc4f94",
+      "why.titleAccent": "10fd29f4",
+      "why.desc": "89202847",
+      "why.badgeValue": "e6c63d5f",
+      "why.badgeText": "0bf7a855",
+      "why.items.0.title": "32f7352f",
+      "why.items.0.desc": "0a06dcd2",
+      "why.items.1.title": "23360723",
+      "why.items.1.desc": "55621475",
+      "why.items.2.title": "ce75d183",
+      "why.items.2.desc": "b8329a25",
+      "why.items.3.title": "823ee134",
+      "why.items.3.desc": "aab533f6",
+      "process.eyebrow": "189c0889",
+      "process.title": "47301246",
+      "process.titleAccent": "bb395521",
+      "process.desc": "d7555cfc",
+      "process.steps.0.title": "698f9965",
+      "process.steps.0.desc": "fdd45e60",
+      "process.steps.1.title": "c647d315",
+      "process.steps.1.desc": "af657696",
+      "process.steps.2.title": "8ffe8b17",
+      "process.steps.2.desc": "08f9ee1b",
+      "process.steps.3.title": "fa53d4dd",
+      "process.steps.3.desc": "0095ac0c",
+      "cta.title": "f046b198",
+      "cta.desc": "a8eabc94",
+      "cta.button": "5d779e40",
+      "cta.emailButton": "7e3b6f01",
+      "contactSection.eyebrow": "65d4952d",
+      "contactSection.title": "7da1fbd8",
+      "contactSection.titleAccent": "a6a6bf83",
+      "contactSection.desc": "fae567a3",
+      "contactSection.formTitle": "432887d9",
+      "contactSection.formDesc": "07c10e1a",
+      "footer.about": "a322516f",
+      "footer.copyright": "818b75c9"
+    }
+  },
+  "meta": {
+    "title": "TSJ - الخزائن المخصصة مباشرة من المصنع | لوحات أفضل، وحرفية دقيقة",
+    "description": "خزانات مخصصة متميزة مصنوعة في مصنعنا: نوى الخشب الرقائقي E0/ENF، ونطاق حافة PUR غير ملحوم، وأجهزة Blum، ودقة 0.1 مم. 20-40% أقل من استوديوهات البيع بالتجزئة. يتم شحنها إلى أكثر من 120 دولة.",
+    "updatedAt": "2026-11-09"
+  },
+  "ui": {
+    "skip": "انتقل إلى المحتوى",
+    "navMaterials": "مواد",
+    "navCraft": "حرفة",
+    "navPricing": "التسعير",
+    "navCollections": "المجموعات",
+    "navProjects": "المشاريع",
+    "navContact": "اتصال",
+    "quote": "احصل على عرض أسعار مجاني",
+    "formName": "الاسم الكامل",
+    "formPhone": "هاتف / واتساب",
+    "formEmail": "بريد إلكتروني",
+    "formCountry": "البلد / المنطقة",
+    "formRegion": "المدينة / الولاية",
+    "formInterest": "مصلحة المنتج",
+    "formMessage": "تفاصيل المشروع",
+    "phName": "جون سميث",
+    "phPhone": "+1 555 000 0000",
+    "phEmail": "جون@example.com",
+    "phCountry": "اختر بلدك",
+    "phRegion": "المدينة أو الولاية",
+    "phInterest": "حدد فئة",
+    "phMessage": "أنواع الغرف، الأبعاد التقريبية، تفضيلات النمط، الجدول الزمني...",
+    "send": "إرسال الاستفسار",
+    "privacy": "نحن نحترم خصوصيتك. يتم استخدام التفاصيل الخاصة بك فقط لإعداد عرض الأسعار الخاص بك.",
+    "footerExplore": "يستكشف",
+    "footerProducts": "منتجات",
+    "footerContact": "اتصال",
+    "prodKitchen": "خزائن المطبخ",
+    "prodClosets": "حجرات ملابس",
+    "prodMedia": "خزائن الوسائط",
+    "prodDoors": "أبواب داخلية",
+    "prodWhole": "المنزل بالكامل",
+    "interestKitchen": "خزائن المطبخ",
+    "interestMedia": "خزائن التلفزيون والوسائط",
+    "interestClosets": "حجرات ملابس",
+    "interestDisplay": "خزائن العرض والنبيذ",
+    "interestDoors": "أبواب داخلية",
+    "interestWhole": "تخصيص المنزل بالكامل",
+    "barWhatsapp": "واتساب",
+    "barCall": "يتصل",
+    "barQuote": "اقتباس مجاني",
+    "leadName": "الاسم الكامل",
+    "leadPhone": "هاتف / واتساب",
+    "leadCountry": "البلد / المنطقة",
+    "leadSubmit": "أرسل بياناتي",
+    "proofFactory": "مصنع خاص منذ عام 2010",
+    "proofCountries": "أكثر من 120 دولة",
+    "proofPrices": "20-40% أقل من التجزئة"
+  },
+  "brand": {
+    "name": "TSJ",
+    "tagline": "خزانة مخصصة، مباشرة من المصنع"
+  },
+  "contact": {
+    "address": "فوشان، قوانغدونغ، الصين",
+    "hours": "الإثنين – السبت · 09:00–18:00 (GMT+8)"
+  },
+  "leadSettings": {
+    "successMessage": "شكرا لك - تم إرسال التفاصيل الخاصة بك. سيتصل بك أحد متخصصي المشروع خلال 24 ساعة.",
+    "errorMessage": "لم نتمكن من الإرسال تلقائيًا. الرجاء النقر على WhatsApp أو مراسلتنا عبر البريد الإلكتروني وسنقوم بالرد على الفور."
+  },
+  "popup": {
+    "badge": "تصميم مجاني + عرض أسعار · الرد خلال 24 ساعة",
+    "title": "احصل على سعر المصنع مباشرة",
+    "desc": "اترك اسمك ورقم هاتفك والمنطقة. سيرسل لك أحد متخصصي المشروع عرض أسعار محسوبًا - دون أي التزام أو بريد عشوائي.",
+    "submitText": "أرسل بياناتي",
+    "note": "نقوم بالرد على الواتس اب أو الهاتف خلال 24 ساعة.",
+    "successTitle": "تم استلام التفاصيل – شكرًا لك!",
+    "successDesc": "سوف يتواصل معك المتخصص لدينا خلال 24 ساعة. تفضل التحدث الآن؟ راسلنا على الواتساب."
+  },
+  "hero": {
+    "slides": [
+      {
+        "eyebrow": "المصنع مباشرة منذ عام 2010",
+        "title": "لوحات أفضل. حرفة دقيقة.",
+        "titleAccent": "أسعار المصنع.",
+        "desc": "نوى من الخشب الرقائقي E0 مقاس 18 مم، ونطاق حافة PUR سلس ونجارة 0.1 مم - تم تصنيعها في مصنعنا الخاص الذي تبلغ مساحته 32000 متر مربع ويتم شحنها مباشرة إلى باب منزلك.",
+        "primaryText": "احصل على عرض أسعار مجاني",
+        "primaryHref": "#اتصال",
+        "secondaryText": "انظر المواد والحرف",
+        "secondaryHref": "#مواد"
+      },
+      {
+        "eyebrow": "جودة المواد",
+        "title": "المجلس في الداخل يقرر",
+        "titleAccent": "كم من الوقت يستمر",
+        "desc": "ألواح E0 / ENF مقاومة للرطوبة وآمنة للفورمالديهايد مع أسطح 4H+ - تم اختبارها لمدة 20 عامًا من الاستخدام العائلي اليومي.",
+        "primaryText": "تحدث إلى أحد المتخصصين",
+        "primaryHref": "#اتصال",
+        "secondaryText": "عمليتنا",
+        "secondaryHref": "#عملية"
+      },
+      {
+        "eyebrow": "وفر 20-40%",
+        "title": "لا صالة عرض. لا وسطاء.",
+        "titleAccent": "فقط سعرنا.",
+        "desc": "يمكنك الشراء من المصنع الذي يقوم ببنائه - نفس المواصفات، وعرض أسعار مفصل، بخصم يصل إلى 40% أقل من استوديوهات المطبخ بالتجزئة.",
+        "primaryText": "انظر مقارنة الأسعار",
+        "primaryHref": "#التسعير",
+        "secondaryText": "مشاريعنا",
+        "secondaryHref": "#مَلَفّ"
+      }
+    ]
+  },
+  "materials": {
+    "eyebrow": "جودة المواد",
+    "title": "خزائنك جيدة فقط مثل",
+    "titleAccent": "المجلس في الداخل",
+    "desc": "معظم الاقتباسات تخفي المواصفات. نحن ننشره. كل هيكل وحافة وطبقة نهائية أدناه هي ما نقوم بشحنه بالفعل - وما يتم قياس عرض أسعارك عليه.",
+    "cards": [
+      {
+        "title": "قلب الخشب الرقائقي متعدد الطبقات",
+        "desc": "خشب رقائقي من الخشب الصلب مقاس 18 مم، مصفح بشكل متقاطع في 11 طبقة. ضعف قوة تثبيت البراغي التي تتمتع بها الألواح الحبيبية، بحيث تبقى الأبواب متماسكة لسنوات."
+      },
+      {
+        "title": "قلب أخضر مقاوم للرطوبة",
+        "desc": "720 كجم/م3 HDF مع قلب مملوء بالشمع للحمامات وغرف الغسيل والمغاسل. تورم مائي لمدة 24 ساعة أقل من 8%."
+      },
+      {
+        "title": "E0 / ENF الفورمالديهايد",
+        "desc": "الانبعاثات ≥ 0.025 مجم/م3 - أقل من معظم الألواح المباعة على أنها \"خضراء\". آمن للحضانات وغرف النوم والمطابخ المغلقة."
+      },
+      {
+        "title": "ربط حافة PUR سلس",
+        "desc": "حافة ABS مقاس 1 مم، مادة PUR متفاعلة تذوب بالحرارة، مشذبة بالليزر. لا يوجد خط صمغ، ولا رفع - حتى عند نسبة رطوبة 60%."
+      },
+      {
+        "title": "أجهزة بلوم وهيتيش",
+        "desc": "تم اختبار المفصلات والعدائين حتى 80.000 دورة إغلاق مفتوحة. إغلاق ناعم على كل باب ودرج - قياسي، وليس ترقية."
+      },
+      {
+        "title": "خشب صلب مجفف بالفرن",
+        "desc": "تم تجفيف أبواب البلوط والجوز والرماد حتى تصل نسبة الرطوبة إلى 8-10%، وتم دمجها مع لسان عائم لوقف التشقق الموسمي."
+      }
+    ],
+    "badges": [
+      "كارب P2",
+      "إي0 / إنف",
+      "الأيزو 9001:2015",
+      "مزيج FSC®",
+      "تم اختباره بواسطة SGS",
+      "D4 مقاوم للماء"
+    ]
+  },
+  "craft": {
+    "eyebrow": "براعة",
+    "title": "الدقة التي يمكنك قياسها،",
+    "titleAccent": "الانتهاء يمكنك أن تشعر",
+    "desc": "يتم ربح أو خسارة الخزائن بالملليمتر وخطوط الغراء. هذا هو بالضبط كيف يتحكم خط الإنتاج لدينا في كليهما.",
+    "details": [
+      {
+        "title": "قطع العش مع الحبوب المطابقة",
+        "desc": "يتم تركيب الألواح على أسرة CNC بسماكة 0.1 مم، وتكون واجهات الأبواب مطابقة للحبيبات قبل قطع لوح واحد."
+      },
+      {
+        "title": "حواف PUR سلسة",
+        "desc": "يتم ربط كل حافة بمادة PUR التفاعلية، ويتم تشذيبها، ثم يتم فحصها يدويًا تحت ضوء التجريف - لا يوجد خط صمغ مرئي."
+      },
+      {
+        "title": "مناسب للتجفيف قبل التعبئة",
+        "desc": "يتم تجميع كل خزانة ومحاذاتها وتصنيفها حسب الغرفة، ثم يتم تعبئتها بشكل مسطح بحماية الزاوية ISTA-3A."
+      },
+      {
+        "title": "الأسطح المصنوعة يدويًا",
+        "desc": "يتم صنفرة طلاء البولي إيثيلين تيرفثالات والبولي يوريثان غير اللامع بين الطبقات للحصول على سطح 4H+ ومقاومة بهتان الأشعة فوق البنفسجية لمدة 2000 ساعة."
+      },
+      {
+        "title": "اثنا عشر تسجيل خروج",
+        "desc": "من مدخل اللوحة إلى ختم الكرتون، اثنتي عشرة نقطة تفتيش. الوحدة التي تفشل يُعاد بناؤها، ولا يتم إصلاحها أبدًا."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "ميزة السعر",
+    "title": "نفس المواصفات ,",
+    "titleAccent": "ما يصل إلى 40٪ أقل",
+    "desc": "لا يوجد إيجار صالة عرض، ولا هامش للتاجر، ولا قسط للعلامة التجارية. أنت تدفع مقابل اللوحة والأجهزة والعمالة - ويمكنك رؤية كل سطر منها.",
+    "columnA": "استوديو بيع بالتجزئة نموذجي",
+    "columnB": "مصنع TSJ مباشرة",
+    "rows": [
+      {
+        "item": "المطبخ - 10 قدم على شكل حرف L (12 وحدة)"
+      },
+      {
+        "item": "خزانة ملابس - مسافة 8 أقدام"
+      },
+      {
+        "item": "جدار الوسائط — 3.2 م"
+      },
+      {
+        "item": "حزمة المنزل كله"
+      }
+    ],
+    "bullets": [
+      "أنت تشتري من المصنع الذي يبنيها - بدون إيجار صالة عرض، ولا هامش للتاجر، ولا قسط للعلامة التجارية.",
+      "يتم تفصيل الأسعار حسب الخزانة، حتى تتمكن من المقارنة سطرًا بسطر مع أي استوديو محلي.",
+      "يؤدي تجميع الحاويات إلى إبقاء الشحن منخفضًا لكل وحدة، ونقوم بنقل الأسعار من الباب إلى الباب مع توجيهات الواجبات.",
+      "يتم تأمين السعر الخاص بك لمدة 60 يومًا - ولا نقوم أبدًا بتبديل لوحة أرخص بعد طلبك."
+    ],
+    "note": "الأسعار الإرشادية لعام 2026 بالدولار الأمريكي للمواصفات القابلة للمقارنة. يعتمد السعر النهائي على الحجم والتشطيب والأجهزة."
+  },
+  "collections": {
+    "eyebrow": "مجموعة 2026",
+    "title": "الوافدون الجدد،",
+    "titleAccent": "نداء الخالدة",
+    "desc": "قطع مصممة بعناية تعمل على زيادة مساحة التخزين دون المساس بخط الغرفة.",
+    "cards": [
+      {
+        "tag": "مطبخ",
+        "title": "المطبخ الأوروبي الحديث",
+        "link": "#اتصال"
+      },
+      {
+        "tag": "غرفة الجلوس",
+        "title": "جدار الوسائط المدمج",
+        "link": "#اتصال"
+      },
+      {
+        "tag": "غرفة نوم",
+        "title": "جناح خزانة الملابس",
+        "link": "#اتصال"
+      }
+    ]
+  },
+  "categories": {
+    "eyebrow": "ما نصنعه",
+    "title": "خزانة مخصصة ل",
+    "titleAccent": "كل زاوية",
+    "desc": "من المطبخ إلى الخزانة، نقوم بتصميم وبناء الخزائن التي تناسب مساحتك ومناخك وحياتك.",
+    "items": [
+      {
+        "title": "خزائن التلفزيون والوسائط",
+        "desc": "مراكز الترفيه مصممة حول شاشتك، مع توجيه الكابلات ومساحة تخزين مخفية كبيرة."
+      },
+      {
+        "title": "حجرات ملابس",
+        "desc": "دواليب ملابس مناسبة للبوتيك مع سكك قابلة للتعديل وأدراج وإضاءة مدمجة."
+      },
+      {
+        "title": "خزائن المطبخ",
+        "desc": "أنظمة المطبخ الكاملة - الخزائن وأسطح العمل والإكسسوارات مصممة كوحدة واحدة."
+      },
+      {
+        "title": "خزائن العرض والنبيذ",
+        "desc": "تخزين مميز يعرض مجموعتك ويحافظ على كل شيء منظمًا بشكل جميل."
+      },
+      {
+        "title": "أبواب داخلية",
+        "desc": "أبواب مصنوعة خصيصًا تضفي الدفء والخصوصية والطابع المعماري على كل غرفة."
+      }
+    ],
+    "ctaTitle": "تخصيص المنزل بالكامل",
+    "ctaDesc": "خزائن الملابس، وطاولات الزينة، والغرف الطينية المدمجة، وخزائن الكتب، وخزائن الغسيل، وألواح الجدران، وألواح الحواف - كل سطح، وكل غرفة، ومواصفات لوحة واحدة.",
+    "ctaButton": "ابدأ مشروعك"
+  },
+  "portfolio": {
+    "eyebrow": "عملنا",
+    "title": "موثوق بها من قبل أصحاب المنازل",
+    "titleAccent": "في جميع أنحاء العالم",
+    "desc": "نقوم كل عام بتسليم الخزائن المخصصة لآلاف المنازل في جميع أنحاء العالم - بما في ذلك المشاريع في جميع أنحاء الولايات المتحدة وكندا.",
+    "items": [
+      {
+        "location": "ألمانيا",
+        "title": "مكتبة خزانة الكتب المخصصة",
+        "units": "973 وحدة"
+      },
+      {
+        "location": "كندا",
+        "title": "جناح المطبخ الحديث",
+        "units": "495 وحدة"
+      },
+      {
+        "location": "أستراليا",
+        "title": "تجديد المنزل بالكامل",
+        "units": "608 وحدة"
+      },
+      {
+        "location": "الولايات المتحدة",
+        "title": "بناء فيلا فاخرة",
+        "units": "693 وحدة"
+      },
+      {
+        "location": "الولايات المتحدة",
+        "title": "منزل مخصص الساحلية",
+        "units": "354 وحدة"
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "الفرق TSJ",
+    "title": "لماذا أصحاب المنازل",
+    "titleAccent": "اختر لنا",
+    "desc": "مواد يمكن التحقق منها، وتسعير المصنع مباشرة، ومتخصص واحد من الرسم الأول إلى التعديل النهائي للمفصلة.",
+    "badgeValue": "120+",
+    "badgeText": "تسليم البلدان",
+    "items": [
+      {
+        "title": "التسعير المباشر للمصنع",
+        "desc": "وفر 20-40% عن طريق الشراء من المصدر. لا توجد صالة عرض، ولا وسيط، ولا توجد علامات تجارية للبيع بالتجزئة - عرض أسعار مفصل وصادق."
+      },
+      {
+        "title": "بساطة وقفة واحدة",
+        "desc": "يتم التعامل مع إرشادات التصميم والتصنيع والشحن والتركيب بواسطة فريق واحد. أنت لا تنسق أبدًا بين خمسة بائعين."
+      },
+      {
+        "title": "متخصص متخصص",
+        "desc": "متخصص مشروع محدد، شحن من الباب إلى الباب مع تتبع، ودعم تركيب مفصل عند الطلب."
+      },
+      {
+        "title": "16 عاما من الإتقان",
+        "desc": "منذ عام 2010 قمنا بتحسين منتج واحد: الخزائن. تم تحديد جميع اللوحات والحواف والأجهزة الخاصة بنا أعلى من معايير الصناعة."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "العملية",
+    "title": "من مخطط الأرضية",
+    "titleAccent": "إلى الانتهاء من المنزل",
+    "desc": "عملية بسيطة وشفافة مصممة من أجلك.",
+    "steps": [
+      {
+        "title": "شارك رؤيتك",
+        "desc": "أرسل مخطط الطابق الخاص بك والصور والمتطلبات الملهمة. سنناقش الأسلوب والميزانية والجدول الزمني."
+      },
+      {
+        "title": "التصميم والاقتباس",
+        "desc": "يقوم فريقنا بإنشاء رسومات تفصيلية وعروض أسعار مفصلة — عادةً في غضون 3 إلى 5 أيام عمل."
+      },
+      {
+        "title": "حرفة وسفينة",
+        "desc": "يتم تصنيع خزانتك بدقة، ويتم فحص جودتها وشحنها من الباب إلى الباب مع تتبع كامل."
+      },
+      {
+        "title": "التثبيت والتمتع به",
+        "desc": "احصل على أدلة التثبيت المفصلة والدعم المباشر، ثم استمتع بمنزلك المتحول بشكل جميل."
+      }
+    ]
+  },
+  "cta": {
+    "title": "على استعداد لتحويل منزلك؟",
+    "desc": "أرسل لنا مخطط الطابق الخاص بك وسنقوم بإنشاء تصميم شخصي وعرض أسعار - بدون التزام.",
+    "button": "احصل على الاقتباس المجاني الخاص بك",
+    "emailButton": "راسلنا عبر البريد الإلكتروني مباشرة"
+  },
+  "contactSection": {
+    "eyebrow": "تواصل معنا",
+    "title": "لنبدأ",
+    "titleAccent": "المحادثة",
+    "desc": "سواء كنت تخطط لتجديد المنزل بالكامل أو تجديد غرفة فردية، فإن فريقنا جاهز للمساعدة. املأ النموذج أو تواصل معنا مباشرة.",
+    "formTitle": "طلب عرض أسعار",
+    "formDesc": "أخبرنا عن مشروعك وسنقوم بالرد عليك خلال 24 ساعة."
+  },
+  "footer": {
+    "about": "خزائن مخصصة متميزة مصممة للمنازل في جميع أنحاء الولايات المتحدة وكندا وخارجها. جودة المصنع مباشرة منذ عام 2010.",
+    "copyright": "© 2026 تي إس جيه. جميع الحقوق محفوظة."
+  }
+}
