@@ -3,7 +3,7 @@
     "lang": "zh",
     "source": "en",
     "engine": "google-gtx + mymemory fallback",
-    "generatedAt": "2026-11-09T07:31:54.303Z",
+    "generatedAt": "2026-11-09T07:47:27.636Z",
     "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
     "auto": {
       "meta.title": "9ccf8dd7",
@@ -70,7 +70,7 @@
       "popup.note": "fd467cad",
       "popup.successTitle": "4a4d5d92",
       "popup.successDesc": "7f11dd5b",
-      "hero.slides.0.eyebrow": "4acb2c2f",
+      "hero.slides.0.eyebrow": "8fe7610e",
       "hero.slides.0.title": "53328d22",
       "hero.slides.0.titleAccent": "24259cb5",
       "hero.slides.0.desc": "6e1ff08a",
@@ -313,7 +313,7 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "2010年起厂家直销",
+        "eyebrow": "自 2010 年起工厂直营 · 32,000 m²",
         "title": "更好的板材。精密的工艺。",
         "titleAccent": "出厂价。",
         "desc": "18 毫米 E0 胶合板芯材、无缝 PUR 封边和 0.1 毫米细木工 — 在我们自己的 32,000 平方米工厂中建造，并直接运送到您家门口。",
