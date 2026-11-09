@@ -3,7 +3,7 @@
     "lang": "ru",
     "source": "en",
     "engine": "google-gtx + mymemory fallback",
-    "generatedAt": "2026-11-09T07:47:19.575Z",
+    "generatedAt": "2026-11-09T08:39:20.031Z",
     "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
     "auto": {
       "meta.title": "9ccf8dd7",
@@ -57,6 +57,13 @@
       "ui.proofFactory": "587338fe",
       "ui.proofCountries": "3585f9d5",
       "ui.proofPrices": "8a3745e9",
+      "ui.pricingProject": "7b5fea5e",
+      "ui.pricingSave": "4d2d5d68",
+      "ui.priceSwipeHint": "cb122a5b",
+      "ui.priceWhyTitle": "238f6f30",
+      "ui.priceCtaTitle": "6aa98ad7",
+      "ui.priceCtaDesc": "64881b8b",
+      "ui.priceCtaButton": "9d4f8a23",
       "brand.name": "3b569e0e",
       "brand.tagline": "88b1d188",
       "contact.address": "72086f27",
@@ -70,7 +77,7 @@
       "popup.note": "fd467cad",
       "popup.successTitle": "4a4d5d92",
       "popup.successDesc": "7f11dd5b",
-      "hero.slides.0.eyebrow": "8fe7610e",
+      "hero.slides.0.eyebrow": "4acb2c2f",
       "hero.slides.0.title": "53328d22",
       "hero.slides.0.titleAccent": "24259cb5",
       "hero.slides.0.desc": "6e1ff08a",
@@ -287,7 +294,14 @@
     "leadSubmit": "Отправить мои данные",
     "proofFactory": "Собственный завод с 2010 года.",
     "proofCountries": "120+ стран",
-    "proofPrices": "на 20–40 % ниже розничной цены"
+    "proofPrices": "на 20–40 % ниже розничной цены",
+    "pricingProject": "Проект",
+    "pricingSave": "Сохранять",
+    "priceSwipeHint": "Смахните таблицу вбок, чтобы сравнить все столбцы →",
+    "priceWhyTitle": "Почему цена ниже",
+    "priceCtaTitle": "Хотите свой точный номер?",
+    "priceCtaDesc": "Отправьте план помещения или несколько фотографий — вы получите подробное ценовое предложение в течение 3–5 рабочих дней.",
+    "priceCtaButton": "Получить мою цитату"
   },
   "brand": {
     "name": "ТСЖ",
@@ -313,7 +327,7 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "Прямые поставки с завода с 2010 г. · 32 000 м²",
+        "eyebrow": "Прямая поставка с фабрики с 2010 года.",
         "title": "Лучше доски. Точное ремесло.",
         "titleAccent": "Заводские цены.",
         "desc": "Сердечники из фанеры E0 толщиной 18 мм, бесшовная кромка из полиуретана и столярные изделия толщиной 0,1 мм — изготовлены на нашей собственной фабрике площадью 32 000 м² и доставлены прямо к вашей двери.",

@@ -3,7 +3,7 @@
     "lang": "zh",
     "source": "en",
     "engine": "google-gtx + mymemory fallback",
-    "generatedAt": "2026-11-09T07:47:27.636Z",
+    "generatedAt": "2026-11-09T08:39:22.498Z",
     "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
     "auto": {
       "meta.title": "9ccf8dd7",
@@ -57,6 +57,13 @@
       "ui.proofFactory": "587338fe",
       "ui.proofCountries": "3585f9d5",
       "ui.proofPrices": "8a3745e9",
+      "ui.pricingProject": "7b5fea5e",
+      "ui.pricingSave": "4d2d5d68",
+      "ui.priceSwipeHint": "cb122a5b",
+      "ui.priceWhyTitle": "238f6f30",
+      "ui.priceCtaTitle": "6aa98ad7",
+      "ui.priceCtaDesc": "64881b8b",
+      "ui.priceCtaButton": "9d4f8a23",
       "brand.name": "3b569e0e",
       "brand.tagline": "88b1d188",
       "contact.address": "72086f27",
@@ -70,7 +77,7 @@
       "popup.note": "fd467cad",
       "popup.successTitle": "4a4d5d92",
       "popup.successDesc": "7f11dd5b",
-      "hero.slides.0.eyebrow": "8fe7610e",
+      "hero.slides.0.eyebrow": "4acb2c2f",
       "hero.slides.0.title": "53328d22",
       "hero.slides.0.titleAccent": "24259cb5",
       "hero.slides.0.desc": "6e1ff08a",
@@ -287,7 +294,14 @@
     "leadSubmit": "提交我的信息",
     "proofFactory": "自2010年起拥有自己的工厂",
     "proofCountries": "120多个国家",
-    "proofPrices": "比零售价低 20–40%"
+    "proofPrices": "比零售价低 20–40%",
+    "pricingProject": "项目",
+    "pricingSave": "节省",
+    "priceSwipeHint": "横向滑动表格以比较所有列 →",
+    "priceWhyTitle": "为什么价格比较低",
+    "priceCtaTitle": "想要你的确切号码吗？",
+    "priceCtaDesc": "发送平面图或几张照片 - 您将在 3-5 个工作日内获得详细报价。",
+    "priceCtaButton": "获取我的报价"
   },
   "brand": {
     "name": "TSJ",
@@ -313,7 +327,7 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "自 2010 年起工厂直营 · 32,000 m²",
+        "eyebrow": "2010年起厂家直销",
         "title": "更好的板材。精密的工艺。",
         "titleAccent": "出厂价。",
         "desc": "18 毫米 E0 胶合板芯材、无缝 PUR 封边和 0.1 毫米细木工 — 在我们自己的 32,000 平方米工厂中建造，并直接运送到您家门口。",

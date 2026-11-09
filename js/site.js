@@ -62,6 +62,11 @@
         if (node && value != null) node.textContent = value;
     }
     /* ---------------- i18n ---------------- */
+    function ui(key, fallback) {
+        var v = SITE && SITE.ui ? SITE.ui[key] : '';
+        return (typeof v === 'string' && v) ? v : fallback;
+    }
+
     function langList() {
         var langs = (MASTER && MASTER.i18n && MASTER.i18n.languages) || [];
         return langs.length ? langs : [{ code: 'en', label: 'English' }];
@@ -90,9 +95,14 @@
 
     function mergeDeep(base, over) {
         if (Array.isArray(base) && Array.isArray(over)) {
-            return base.map(function (item, i) {
-                return over[i] === undefined ? item : mergeDeep(item, over[i]);
-            });
+            var len = Math.max(base.length, over.length);
+            var out = [];
+            for (var i = 0; i < len; i++) {
+                if (over[i] === undefined) out.push(base[i]);
+                else if (base[i] === undefined) out.push(over[i]);
+                else out.push(mergeDeep(base[i], over[i]));
+            }
+            return out;
         }
         if (base && typeof base === 'object' && over && typeof over === 'object') {
             var out = {};
@@ -447,16 +457,16 @@
             '<div class="pricing-wrap">' +
             '<div class="price-table-wrap reveal">' +
             '<table class="price-table"><thead><tr>' +
-            '<th>Project</th><th>' + esc(p.columnA || 'Retail') + '</th><th>' + esc(p.columnB || 'TSJ') + '</th><th>Save</th>' +
+            '<th>' + esc(ui('pricingProject', 'Project')) + '</th><th>' + esc(p.columnA || 'Retail') + '</th><th>' + esc(p.columnB || 'TSJ') + '</th><th>' + esc(ui('pricingSave', 'Save')) + '</th>' +
             '</tr></thead><tbody>' + rows + '</tbody></table>' +
             (p.note ? '<p class="price-note">' + esc(p.note) + '</p>' : '') +
             '</div>' +
-            '<p class="price-scroll-hint">Swipe the table sideways to compare all columns →</p>' +
+            '<p class="price-scroll-hint">' + esc(ui('priceSwipeHint', 'Swipe the table sideways to compare all columns →')) + '</p>' +
             '<div class="price-side">' +
-            '<div class="price-bullets reveal"><h3>Why the price is lower</h3><ul>' + bullets + '</ul></div>' +
-            '<div class="price-cta reveal"><h4>Want your exact number?</h4>' +
-            '<p>Send a floor plan or a few photos — you get an itemised quote in 3–5 business days.</p>' +
-            '<button class="btn btn-block" data-open-lead>Get my quote</button></div>' +
+            '<div class="price-bullets reveal"><h3>' + esc(ui('priceWhyTitle', 'Why the price is lower')) + '</h3><ul>' + bullets + '</ul></div>' +
+            '<div class="price-cta reveal"><h4>' + esc(ui('priceCtaTitle', 'Want your exact number?')) + '</h4>' +
+            '<p>' + esc(ui('priceCtaDesc', 'Send a floor plan or a few photos — you get an itemised quote in 3–5 business days.')) + '</p>' +
+            '<button class="btn btn-block" data-open-lead>' + esc(ui('priceCtaButton', 'Get my quote')) + '</button></div>' +
             '</div></div>';
     }
 

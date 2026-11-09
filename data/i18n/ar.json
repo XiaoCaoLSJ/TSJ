@@ -3,7 +3,7 @@
     "lang": "ar",
     "source": "en",
     "engine": "google-gtx + mymemory fallback",
-    "generatedAt": "2026-11-09T07:47:04.280Z",
+    "generatedAt": "2026-11-09T08:39:13.079Z",
     "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
     "auto": {
       "meta.title": "9ccf8dd7",
@@ -57,6 +57,13 @@
       "ui.proofFactory": "587338fe",
       "ui.proofCountries": "3585f9d5",
       "ui.proofPrices": "8a3745e9",
+      "ui.pricingProject": "7b5fea5e",
+      "ui.pricingSave": "4d2d5d68",
+      "ui.priceSwipeHint": "cb122a5b",
+      "ui.priceWhyTitle": "238f6f30",
+      "ui.priceCtaTitle": "6aa98ad7",
+      "ui.priceCtaDesc": "64881b8b",
+      "ui.priceCtaButton": "9d4f8a23",
       "brand.name": "3b569e0e",
       "brand.tagline": "88b1d188",
       "contact.address": "72086f27",
@@ -70,7 +77,7 @@
       "popup.note": "fd467cad",
       "popup.successTitle": "4a4d5d92",
       "popup.successDesc": "7f11dd5b",
-      "hero.slides.0.eyebrow": "8fe7610e",
+      "hero.slides.0.eyebrow": "4acb2c2f",
       "hero.slides.0.title": "53328d22",
       "hero.slides.0.titleAccent": "24259cb5",
       "hero.slides.0.desc": "6e1ff08a",
@@ -287,7 +294,14 @@
     "leadSubmit": "أرسل بياناتي",
     "proofFactory": "مصنع خاص منذ عام 2010",
     "proofCountries": "أكثر من 120 دولة",
-    "proofPrices": "20-40% أقل من التجزئة"
+    "proofPrices": "20-40% أقل من التجزئة",
+    "pricingProject": "مشروع",
+    "pricingSave": "يحفظ",
+    "priceSwipeHint": "اسحب الجدول إلى الجانبين لمقارنة جميع الأعمدة ←",
+    "priceWhyTitle": "لماذا السعر أقل",
+    "priceCtaTitle": "هل تريد رقمك بالضبط؟",
+    "priceCtaDesc": "أرسل مخططًا للطابق أو بعض الصور - وستحصل على عرض أسعار مفصل خلال 3 إلى 5 أيام عمل.",
+    "priceCtaButton": "احصل على الاقتباس الخاص بي"
   },
   "brand": {
     "name": "TSJ",
@@ -313,7 +327,7 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "المصنع مباشرة منذ عام 2010 · 32000 متر مربع",
+        "eyebrow": "المصنع مباشرة منذ عام 2010",
         "title": "لوحات أفضل. حرفة دقيقة.",
         "titleAccent": "أسعار المصنع.",
         "desc": "نوى من الخشب الرقائقي E0 مقاس 18 مم، ونطاق حافة PUR سلس ونجارة 0.1 مم - تم تصنيعها في مصنعنا الخاص الذي تبلغ مساحته 32000 متر مربع ويتم شحنها مباشرة إلى باب منزلك.",

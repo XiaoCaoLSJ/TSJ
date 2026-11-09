@@ -90,7 +90,14 @@
     "leadSubmit": "Send my details",
     "proofFactory": "Own factory since 2010",
     "proofCountries": "120+ countries",
-    "proofPrices": "20–40% below retail"
+    "proofPrices": "20–40% below retail",
+    "pricingProject": "Project",
+    "pricingSave": "Save",
+    "priceSwipeHint": "Swipe the table sideways to compare all columns →",
+    "priceWhyTitle": "Why the price is lower",
+    "priceCtaTitle": "Want your exact number?",
+    "priceCtaDesc": "Send a floor plan or a few photos — you get an itemised quote in 3–5 business days.",
+    "priceCtaButton": "Get my quote"
   },
   "brand": {
     "mark": "T",
@@ -131,7 +138,7 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "Factory direct since 2010 · 32,000 m²",
+        "eyebrow": "Factory direct since 2010",
         "title": "Better boards. Precision craft.",
         "titleAccent": "Factory prices.",
         "desc": "18 mm E0 plywood cores, seamless PUR edge banding and 0.1 mm joinery — built in our own 32,000 m² factory and shipped straight to your door.",

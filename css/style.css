@@ -1531,3 +1531,12 @@ p { color: var(--ink-soft); }
 [dir="rtl"] .price-table td:nth-child(2),
 [dir="rtl"] .price-table td:nth-child(3),
 [dir="rtl"] .price-table td:nth-child(4) { text-align: left; }
+
+/* longer translations in non-English locales need a little more room in the header */
+@media (max-width: 1200px) {
+    .header-phone span { display: none; }
+    .header-phone { padding: 8px 10px; }
+    .header-actions { gap: 10px; }
+    .header-actions .btn { padding-inline: 14px; }
+}
+.header-actions .btn { white-space: nowrap; }

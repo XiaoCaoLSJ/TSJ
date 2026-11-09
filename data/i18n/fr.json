@@ -3,7 +3,7 @@
     "lang": "fr",
     "source": "en",
     "engine": "google-gtx + mymemory fallback",
-    "generatedAt": "2026-11-09T07:47:09.874Z",
+    "generatedAt": "2026-11-09T08:39:16.750Z",
     "note": "Machine-translated first draft. Human review recommended for specs and certifications.",
     "auto": {
       "meta.title": "9ccf8dd7",
@@ -57,6 +57,13 @@
       "ui.proofFactory": "587338fe",
       "ui.proofCountries": "3585f9d5",
       "ui.proofPrices": "8a3745e9",
+      "ui.pricingProject": "7b5fea5e",
+      "ui.pricingSave": "4d2d5d68",
+      "ui.priceSwipeHint": "cb122a5b",
+      "ui.priceWhyTitle": "238f6f30",
+      "ui.priceCtaTitle": "6aa98ad7",
+      "ui.priceCtaDesc": "64881b8b",
+      "ui.priceCtaButton": "9d4f8a23",
       "brand.name": "3b569e0e",
       "brand.tagline": "88b1d188",
       "contact.address": "72086f27",
@@ -70,7 +77,7 @@
       "popup.note": "fd467cad",
       "popup.successTitle": "4a4d5d92",
       "popup.successDesc": "7f11dd5b",
-      "hero.slides.0.eyebrow": "8fe7610e",
+      "hero.slides.0.eyebrow": "4acb2c2f",
       "hero.slides.0.title": "53328d22",
       "hero.slides.0.titleAccent": "24259cb5",
       "hero.slides.0.desc": "6e1ff08a",
@@ -287,7 +294,14 @@
     "leadSubmit": "Envoyer mes coordonnées",
     "proofFactory": "Propre usine depuis 2010",
     "proofCountries": "120+ pays",
-    "proofPrices": "20 à 40 % en dessous du prix de détail"
+    "proofPrices": "20 à 40 % en dessous du prix de détail",
+    "pricingProject": "Projet",
+    "pricingSave": "Sauvegarder",
+    "priceSwipeHint": "Faites glisser le tableau latéralement pour comparer toutes les colonnes →",
+    "priceWhyTitle": "Pourquoi le prix est plus bas",
+    "priceCtaTitle": "Vous voulez votre numéro exact ?",
+    "priceCtaDesc": "Envoyez un plan d'étage ou quelques photos : vous obtenez un devis détaillé en 3 à 5 jours ouvrables.",
+    "priceCtaButton": "Obtenir mon devis"
   },
   "brand": {
     "name": "TSJ",
@@ -313,7 +327,7 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "Direct usine depuis 2010 · 32 000 m²",
+        "eyebrow": "Direct usine depuis 2010",
         "title": "De meilleures planches. Artisanat de précision.",
         "titleAccent": "Prix ​​d'usine.",
         "desc": "Âmes en contreplaqué E0 de 18 mm, chants PUR sans soudure et menuiserie de 0,1 mm — construits dans notre propre usine de 32 000 m² et expédiés directement à votre porte.",
