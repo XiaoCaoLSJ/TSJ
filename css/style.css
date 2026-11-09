@@ -1532,11 +1532,18 @@ p { color: var(--ink-soft); }
 [dir="rtl"] .price-table td:nth-child(3),
 [dir="rtl"] .price-table td:nth-child(4) { text-align: left; }
 
-/* longer translations in non-English locales need a little more room in the header */
-@media (max-width: 1200px) {
+/* longer translations in non-English locales need more room in the header */
+.header-actions { flex: 0 0 auto; }
+.header-actions .btn { white-space: nowrap; }
+.nav { min-width: 0; }
+@media (max-width: 1500px) {
+    .header-inner { gap: 16px; }
     .header-phone span { display: none; }
     .header-phone { padding: 8px 10px; }
     .header-actions { gap: 10px; }
     .header-actions .btn { padding-inline: 14px; }
+    .nav-link { padding-inline: 9px; }
 }
-.header-actions .btn { white-space: nowrap; }
+@media (max-width: 1150px) {
+    .header-phone { display: none; }
+}
