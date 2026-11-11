@@ -20,7 +20,7 @@
     var FALLBACK = {
         meta: { title: 'TSJ — Factory-Direct Custom Cabinetry', description: '' },
         brand: { mark: 'T', name: 'TSJ', tagline: 'Custom cabinetry, factory direct' },
-        contact: { email: 'lsjxiaocao@163.com', phone: '+86 178 1467 4328', whatsapp: '8617814674328' },
+        contact: { email: 'lsjxiaocao@163.com', phone: '178 1467 4328', whatsapp: '8617814674328' },
         leadSettings: { recipientEmail: 'lsjxiaocao@163.com', provider: 'formsubmit' },
         hero: {
             slides: [{
@@ -317,9 +317,17 @@
         setText('#brandTagline', brand.tagline || '');
     }
 
+    /* keep the dialling link working even when the number is displayed without a country code */
+    function dialUrl(phone) {
+        var raw = String(phone || '').replace(/[^\d+]/g, '');
+        if (!raw) return 'tel:';
+        if (raw.charAt(0) !== '+') raw = '+' + (raw.indexOf('86') === 0 ? raw : '86' + raw);
+        return 'tel:' + raw;
+    }
+
     function renderContact() {
         var c = SITE.contact || {};
-        var phoneHref = 'tel:' + (c.phone || '').replace(/\s+/g, '');
+        var phoneHref = dialUrl(c.phone);
 
         var headerPhone = $('#headerPhone');
         if (headerPhone) {
@@ -608,7 +616,7 @@
             '<i class="fa-brands fa-whatsapp"></i><div><span>WhatsApp</span><strong>' + esc(contact.phone || '') + '</strong></div></a>' +
             '<a class="contact-method" href="' + esc(mailLink()) + '">' +
             '<i class="fa-regular fa-envelope"></i><div><span>Email</span><strong>' + esc(contact.email || '') + '</strong></div></a>' +
-            '<a class="contact-method" href="tel:' + esc((contact.phone || '').replace(/\s+/g, '')) + '">' +
+            '<a class="contact-method" href="' + esc(dialUrl(contact.phone)) + '">' +
             '<i class="fa-solid fa-phone"></i><div><span>Phone</span><strong>' + esc(contact.phone || '') + '</strong></div></a>';
     }
 
