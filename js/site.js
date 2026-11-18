@@ -16,6 +16,25 @@
     var LEAD_BUSY = false;
     var SLIDER_TIMER = null;
 
+    /* ---- Admin visual-editor preview bridge ---- */
+    var PREVIEW_MODE = /([?&])preview=1(?:&|$)/.test(location.search);
+    var EDIT_BLOCKS = [
+        { key: 'header',      sel: '.site-header',  label: '顶部导航 / 品牌' },
+        { key: 'hero',        sel: '#home',         label: '首屏轮播' },
+        { key: 'stats',       sel: '.stat-bar',     label: '数据统计' },
+        { key: 'materials',   sel: '#materials',    label: '板材质量' },
+        { key: 'craft',       sel: '#craft',        label: '做工细节' },
+        { key: 'pricing',     sel: '#pricing',      label: '价格优势' },
+        { key: 'collections', sel: '#collections',  label: '系列展示' },
+        { key: 'categories',  sel: '#categories',   label: '产品分类' },
+        { key: 'portfolio',   sel: '#portfolio',    label: '案例展示' },
+        { key: 'why',         sel: '#about',        label: '我们的优势' },
+        { key: 'process',     sel: '#process',      label: '服务流程' },
+        { key: 'cta',         sel: '.cta-band',     label: '行动号召' },
+        { key: 'contact',     sel: '#contact',      label: '联系板块' },
+        { key: 'footer',      sel: '.site-footer',  label: '页脚' }
+    ];
+
     /* Minimal fallback so the page is never blank if the JSON cannot load */
     var FALLBACK = {
         meta: { title: 'TSJ — Factory-Direct Custom Cabinetry', description: '' },
@@ -667,10 +686,12 @@
     }
 
     /* ---------------- slider ---------------- */
+    var SLIDER_API = null;
     function initSlider() {
         var slides = $$('.hero-slide');
         var dots = $$('.hero-dot');
         if (SLIDER_TIMER) { clearInterval(SLIDER_TIMER); SLIDER_TIMER = null; }
+        SLIDER_API = null;
         if (slides.length < 2) return;
 
         var index = 0;
@@ -690,36 +711,48 @@
             setTimeout(function () { locked = false; }, 700);
         }
 
+        function step(delta) { go(index + delta); }
         function start() {
             stop();
-            timer = setInterval(function () { go(index + 1); }, 7000);
+            timer = setInterval(function () { step(1); }, 7000);
             SLIDER_TIMER = timer;
         }
         function stop() { if (timer) clearInterval(timer); timer = null; }
 
+        SLIDER_API = { step: step, go: go, start: start, stop: stop };
+
         var prev = $('#heroPrev');
         var next = $('#heroNext');
-        if (prev) prev.addEventListener('click', function () { go(index - 1); start(); });
-        if (next) next.addEventListener('click', function () { go(index + 1); start(); });
+        if (prev && !prev.dataset.sliderBound) {
+            prev.dataset.sliderBound = '1';
+            prev.addEventListener('click', function () { if (SLIDER_API) { SLIDER_API.step(-1); SLIDER_API.start(); } });
+        }
+        if (next && !next.dataset.sliderBound) {
+            next.dataset.sliderBound = '1';
+            next.addEventListener('click', function () { if (SLIDER_API) { SLIDER_API.step(1); SLIDER_API.start(); } });
+        }
 
         dots.forEach(function (dot) {
+            if (dot.dataset.sliderBound) return;
+            dot.dataset.sliderBound = '1';
             dot.addEventListener('click', function () {
-                go(parseInt(dot.getAttribute('data-index'), 10));
-                start();
+                if (!SLIDER_API) return;
+                SLIDER_API.go(parseInt(dot.getAttribute('data-index'), 10));
+                SLIDER_API.start();
             });
         });
 
         var hero = $('.hero');
         if (hero && !hero.dataset.sliderBound) {
             hero.dataset.sliderBound = '1';
-            hero.addEventListener('mouseenter', stop);
-            hero.addEventListener('mouseleave', start);
+            hero.addEventListener('mouseenter', function () { if (SLIDER_API) SLIDER_API.stop(); });
+            hero.addEventListener('mouseleave', function () { if (SLIDER_API) SLIDER_API.start(); });
 
             var startX = 0;
             hero.addEventListener('touchstart', function (e) { startX = e.changedTouches[0].clientX; }, { passive: true });
             hero.addEventListener('touchend', function (e) {
                 var diff = startX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) { go(index + (diff > 0 ? 1 : -1)); start(); }
+                if (Math.abs(diff) > 50 && SLIDER_API) { SLIDER_API.step(diff > 0 ? 1 : -1); SLIDER_API.start(); }
             }, { passive: true });
         }
 
@@ -848,6 +881,7 @@
         });
 
         var p = SITE.popup || {};
+        if (PREVIEW_MODE) return;
         if (!popupAllowed()) return;
 
         var delay = Math.max(1, parseInt(p.delaySeconds, 10) || 10);
@@ -1142,17 +1176,102 @@
         revealize();
     }
 
+    /* ---------------- admin visual editor bridge ---------------- */
+    function previewStyle() {
+        var css =
+            '.tsj-edit-handle{position:absolute;top:6px;right:6px;z-index:9998;display:inline-flex;align-items:center;gap:5px;' +
+            'padding:6px 10px;border-radius:999px;background:#2A2724;color:#fff;font:600 12px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;' +
+            'box-shadow:0 4px 16px rgba(0,0,0,.28);cursor:pointer;opacity:.92;border:1px solid rgba(255,255,255,.25)}' +
+            '.tsj-edit-handle:hover{background:var(--brand,#8B7355);opacity:1}' +
+            '.tsj-block-outline{outline:2px dashed #C4A882!important;outline-offset:-2px;cursor:default}' +
+            '.tsj-preview-banner{position:fixed;top:0;left:0;right:0;z-index:10000;display:flex;align-items:center;justify-content:center;gap:8px;' +
+            'padding:7px 12px;background:#2A2724;color:#F3EDE4;font:600 12px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;' +
+            'box-shadow:0 2px 12px rgba(0,0,0,.25)}';
+        var s = document.createElement('style');
+        s.id = 'tsjPreviewStyle';
+        s.textContent = css;
+        document.head.appendChild(s);
+    }
+
+    function scrollToBlock(key) {
+        var target = null;
+        if (key === 'hero') target = $('.hero');
+        else if (key === 'stats') target = $('.stat-bar');
+        else if (key === 'cta') target = $('.cta-band');
+        else if (key === 'footer') target = $('.site-footer');
+        else if (key === 'header') target = $('.site-header');
+        else if (key === 'contact') target = $('#contact');
+        else target = document.getElementById(key);
+        if (!target) return;
+        var y = target.getBoundingClientRect().top + window.pageYOffset - 12;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        $$('.tsj-block-outline').forEach(function (el) { el.classList.remove('tsj-block-outline'); });
+        target.classList.add('tsj-block-outline');
+        setTimeout(function () { target.classList.remove('tsj-block-outline'); }, 1800);
+    }
+
+    function injectEditHandles() {
+        if (window.__tsjHandlesInjected) return;
+        window.__tsjHandlesInjected = true;
+        EDIT_BLOCKS.forEach(function (b) {
+            var el = $(b.sel);
+            if (!el) return;
+            var prev = el.style.position;
+            if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'tsj-edit-handle';
+            btn.setAttribute('data-block', b.key);
+            btn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> 编辑' + b.label;
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                try { parent.postMessage({ source: 'tsj-preview', type: 'edit', block: b.key }, '*'); } catch (err) { /* ignore */ }
+            });
+            el.appendChild(btn);
+        });
+    }
+
+    function initPreviewBridge() {
+        if (!PREVIEW_MODE) return;
+        window.addEventListener('message', function (e) {
+            var d = e.data;
+            if (!d || d.source !== 'tsj-admin') return;
+            if (d.type === 'previewConfig' && d.config) {
+                MASTER = mergeDeep(FALLBACK, d.config);
+                SITE = mergeDeep(MASTER, OVERLAY || {});
+                window.TSJ_SITE = SITE;
+                render();
+                if (d.block) scrollToBlock(d.block);
+            } else if (d.type === 'focus' && d.block) {
+                scrollToBlock(d.block);
+            }
+        });
+    }
+
     function boot(master) {
         MASTER = master;
         SOURCE_LANG = (MASTER.i18n && MASTER.i18n.source) || 'en';
         LANG = resolveLang();
         applyLangAttributes();
-        return loadOverlay(LANG).then(function (over) {
+        var applyOverlay = function (over) {
             OVERLAY = over;
             SITE = mergeDeep(MASTER, OVERLAY);
             window.TSJ_SITE = SITE;
             render();
-        });
+            if (PREVIEW_MODE) {
+                var banner = document.createElement('div');
+                banner.className = 'tsj-preview-banner';
+                banner.innerHTML = '<i class="fa-solid fa-eye"></i> 草稿预览中 — 修改不会生效，直到在后台点击「保存并发布」';
+                document.body.appendChild(banner);
+                document.body.style.paddingTop = '38px';
+                previewStyle();
+                injectEditHandles();
+                try { parent.postMessage({ source: 'tsj-preview', type: 'ready' }, '*'); } catch (err) { /* ignore */ }
+            }
+        };
+        if (PREVIEW_MODE) return Promise.resolve().then(function () { applyOverlay({}); });
+        return loadOverlay(LANG).then(applyOverlay);
     }
 
     function load() {
@@ -1172,6 +1291,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         initNav();
+        initPreviewBridge();
         load();
     });
 })();

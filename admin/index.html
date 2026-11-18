@@ -74,6 +74,46 @@
         </header>
 
         <div class="status-bar" id="statusBar"></div>
+
+        <div class="visual-view" id="visualView" hidden>
+            <div class="visual-toolbar">
+                <div class="visual-toolbar-left">
+                    <span class="visual-chip"><i class="fa-solid fa-pen-to-square"></i> 可视化编辑</span>
+                    <select id="visualBlockSelect" class="visual-select" aria-label="选择要编辑的区块"></select>
+                    <button class="btn btn-ghost btn-sm" id="visualRefreshBtn" title="重新加载预览">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+                <div class="visual-toolbar-right">
+                    <label class="visual-check"><input type="checkbox" id="visualAutoPreview" checked> 实时预览</label>
+                    <button class="btn btn-ghost btn-sm" id="visualOpenBtn"><i class="fa-solid fa-arrow-up-right-from-square"></i> 新窗口预览</button>
+                </div>
+            </div>
+            <div class="visual-body">
+                <div class="visual-stage">
+                    <div class="visual-stage-head">
+                        <span class="visual-dots"><i></i><i></i><i></i></span>
+                        <span class="visual-url" id="visualUrl">../?preview=1</span>
+                        <span class="visual-device">
+                            <button type="button" class="is-active" data-device="desktop" title="桌面"><i class="fa-solid fa-desktop"></i></button>
+                            <button type="button" data-device="tablet" title="平板"><i class="fa-solid fa-tablet-alt"></i></button>
+                            <button type="button" data-device="mobile" title="手机"><i class="fa-solid fa-mobile-screen"></i></button>
+                        </span>
+                    </div>
+                    <div class="visual-frame-wrap">
+                        <iframe id="previewFrame" class="preview-frame" src="../?preview=1" title="网站预览"></iframe>
+                    </div>
+                </div>
+                <aside class="visual-inspector">
+                    <div class="visual-inspector-head">
+                        <h3 id="visualBlockTitle">选择一个区块</h3>
+                        <p id="visualBlockDesc">在左侧网页中点击任意区块上的「编辑」按钮，或从上方下拉框选择。</p>
+                    </div>
+                    <div class="visual-inspector-body" id="visualInspector"></div>
+                </aside>
+            </div>
+        </div>
+
         <div class="panel" id="panel"></div>
         <div class="panel-foot">
             <button class="btn btn-primary" id="saveBtnBottom">保存并发布</button>
@@ -85,6 +125,6 @@
 <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
 
 <script src="vault.js?v=20261109"></script>
-    <script src="admin.js?v=20261113"></script>
+    <script src="admin.js?v=20261118b"></script>
 </body>
 </html>

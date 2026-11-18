@@ -51,6 +51,39 @@
         { key: 'footer', label: '页脚', icon: 'fa-solid fa-shoe-prints' }
     ];
 
+    /* Visual editor: maps a webpage block to one or more site.json keys */
+    var VISUAL_BLOCKS = [
+        { key: 'header', label: '顶部导航 / 品牌', icon: 'fa-solid fa-heading', keys: ['brand', 'contact'],
+          desc: 'Logo、品牌名、顶部电话与 WhatsApp 链接。' },
+        { key: 'hero', label: '首屏轮播', icon: 'fa-solid fa-images', keys: ['hero'],
+          desc: '首屏大图、标题、按钮。点击左侧轮播区域即可定位。' },
+        { key: 'stats', label: '数据统计条', icon: 'fa-solid fa-chart-simple', keys: ['stats'],
+          desc: '首屏下方的数字展示条（年数、面积、国家数等）。' },
+        { key: 'materials', label: '板材质量', icon: 'fa-solid fa-layer-group', keys: ['materials'],
+          desc: '卖点卡片、规格表、认证标签与配图。' },
+        { key: 'craft', label: '做工细节', icon: 'fa-solid fa-ruler-combined', keys: ['craft'],
+          desc: '精度数据与工艺说明。' },
+        { key: 'pricing', label: '价格优势', icon: 'fa-solid fa-tags', keys: ['pricing'],
+          desc: '价格对比表、定价说明与免责声明。' },
+        { key: 'collections', label: '系列展示', icon: 'fa-solid fa-couch', keys: ['collections'],
+          desc: '产品系列卡片。' },
+        { key: 'categories', label: '产品分类', icon: 'fa-solid fa-border-all', keys: ['categories'],
+          desc: '产品分类卡片与底部引导按钮。' },
+        { key: 'portfolio', label: '案例展示', icon: 'fa-solid fa-camera-retro', keys: ['portfolio'],
+          desc: '项目案例图片与说明。' },
+        { key: 'why', label: '我们的优势', icon: 'fa-solid fa-award', keys: ['why'],
+          desc: '优势列表、配图与角标数字。' },
+        { key: 'process', label: '服务流程', icon: 'fa-solid fa-list-ol', keys: ['process'],
+          desc: '服务步骤说明。' },
+        { key: 'cta', label: '行动号召', icon: 'fa-solid fa-bullhorn', keys: ['cta'],
+          desc: '页面底部的横幅文案与按钮。' },
+        { key: 'contact', label: '联系板块', icon: 'fa-solid fa-comments',
+          keys: ['contactSection', 'contact', 'leadSettings'],
+          desc: '左侧联系信息、右侧询盘表单文案与线索接收设置。' },
+        { key: 'footer', label: '页脚', icon: 'fa-solid fa-shoe-prints', keys: ['footer', 'brand', 'contact'],
+          desc: '页脚简介、联系方式与版权信息。' }
+    ];
+
     var LABELS = {
         meta: '基础信息', hero: '首屏内容', materials: '板材内容', craft: '做工内容',
         pricing: '价格内容', collections: '系列内容', categories: '产品分类内容',
@@ -105,7 +138,9 @@
     var state = {
         config: null,
         sha: null,
-        view: 'meta',
+        view: 'visual',
+        visualBlock: null,
+        visualPreviewReady: false,
         gh: Object.assign({}, DEFAULT_GH),
         i18n: {},
         editLang: '',
@@ -393,11 +428,14 @@
         var known = {};
         SECTIONS.forEach(function (s) { known[s.key] = true; });
 
-        var html = SECTIONS.map(function (s) {
-            var disabled = state.config && !(s.key in state.config);
-            return '<button class="side-item" data-view="' + s.key + '"' + (disabled ? ' data-missing="1"' : '') + '>' +
-                '<i class="' + s.icon + '"></i> ' + esc(s.label) + '</button>';
-        }).join('');
+        var html = '<button class="side-item side-item--visual" data-view="visual">' +
+            '<i class="fa-solid fa-wand-magic-sparkles"></i> 可视化编辑</button>' +
+            '<div class="side-divider"><span>按字段编辑</span></div>' +
+            SECTIONS.map(function (s) {
+                var disabled = state.config && !(s.key in state.config);
+                return '<button class="side-item" data-view="' + s.key + '"' + (disabled ? ' data-missing="1"' : '') + '>' +
+                    '<i class="' + s.icon + '"></i> ' + esc(s.label) + '</button>';
+            }).join('');
 
         if (state.config) {
             Object.keys(state.config).forEach(function (key) {
@@ -415,10 +453,25 @@
 
     function setView(view) {
         state.view = view;
+        if (view !== 'visual') hideVisualEditor();
         $$('.side-item').forEach(function (b) {
             b.classList.toggle('is-active', b.getAttribute('data-view') === view);
         });
         renderPanel();
+    }
+
+    function visualBlock(key) {
+        return VISUAL_BLOCKS.filter(function (b) { return b.key === key; })[0];
+    }
+
+    function sendPreviewConfig(block) {
+        var frame = $('#previewFrame');
+        if (!frame || !frame.contentWindow || !state.config) return;
+        try {
+            frame.contentWindow.postMessage({
+                source: 'tsj-admin', type: 'previewConfig', config: state.config, block: block || null
+            }, '*');
+        } catch (e) { /* ignore */ }
     }
 
     /* ------------------------------------------------------------------
@@ -467,7 +520,9 @@
             state.config = json;
             state.dirty = false;
             renderSidebar();
-            setView(state.view in json ? state.view : 'meta');
+            var restore = (state.view === 'visual' || state.view in json) ? state.view : 'visual';
+            if (restore !== 'visual') hideVisualEditor();
+            setView(restore);
             updateSaveState();
             return loadI18nFiles().then(function () {
                 if (state.view === 'i18n') renderPanel();
@@ -492,9 +547,15 @@
 
     function updateSaveState() {
         var hint = state.dirty ? '有未发布的修改' : '内容已同步';
-        $('#panelSub').textContent = state.dirty
-            ? '有未发布的修改 — 点击「保存并发布」后生效。'
-            : (state.lastSaved ? '上次发布：' + state.lastSaved : '修改后点击「保存并发布」，网页刷新即可看到最新内容。');
+        if (state.view === 'visual') {
+            $('#panelSub').textContent = state.dirty
+                ? '草稿已更新（仅预览，尚未发布）— 确认无误后点「保存并发布」。'
+                : '点击网页中的区块即可编辑；改动实时反映在预览中，确认后再点「保存并发布」。';
+        } else {
+            $('#panelSub').textContent = state.dirty
+                ? '有未发布的修改 — 点击「保存并发布」后生效。'
+                : (state.lastSaved ? '上次发布：' + state.lastSaved : '修改后点击「保存并发布」，网页刷新即可看到最新内容。');
+        }
 
         if (!state.gh.token) {
             setStatus('warn', window.TSJ_VAULT
@@ -517,6 +578,11 @@
         var title = $('#panelTitle');
         panel.innerHTML = '';
 
+        if (state.view === 'visual') {
+            title.textContent = '可视化编辑';
+            renderVisualEditor();
+            return;
+        }
         if (state.view === 'github') {
             title.textContent = '连接与发布';
             renderGithub(panel);
@@ -554,6 +620,139 @@
                 area.style.height = Math.min(area.scrollHeight + 2, 420) + 'px';
             });
         });
+    }
+
+    /* ------------------------------------------------------------------
+     * Visual editor
+     * ---------------------------------------------------------------- */
+    function renderVisualEditor() {
+        var view = $('#visualView');
+        var panel = $('#panel');
+        var foot = $('.panel-foot');
+        view.hidden = false;
+        panel.style.display = 'none';
+        if (foot) foot.style.display = 'none';
+        $('#panelSub').textContent = '点击网页中的区块即可编辑；改动实时反映在预览中，确认后再点「保存并发布」。';
+
+        var select = $('#visualBlockSelect');
+        if (!select.options.length) {
+            select.innerHTML = VISUAL_BLOCKS.map(function (b) {
+                return '<option value="' + b.key + '">' + esc(b.label) + '</option>';
+            }).join('');
+        }
+        var current = state.visualBlock && visualBlock(state.visualBlock) ? state.visualBlock : VISUAL_BLOCKS[0].key;
+        state.visualBlock = current;
+        select.value = current;
+
+        if (!state.visualBound) {
+            state.visualBound = true;
+            bindVisualEditor();
+        }
+        selectBlock(current);
+        updateSaveState();
+    }
+
+    function hideVisualEditor() {
+        var view = $('#visualView');
+        if (view) view.hidden = true;
+        var panel = $('#panel');
+        if (panel) panel.style.display = '';
+        var foot = $('.panel-foot');
+        if (foot) foot.style.display = '';
+    }
+
+    function bindVisualEditor() {
+        $('#visualBlockSelect').addEventListener('change', function () {
+            selectBlock(this.value, true);
+        });
+        $('#visualRefreshBtn').addEventListener('click', function () {
+            var frame = $('#previewFrame');
+            state.visualPreviewReady = false;
+            frame.src = '../?preview=1&t=' + Date.now();
+        });
+        $('#visualOpenBtn').addEventListener('click', function () {
+            window.open('../?preview=1', '_blank', 'noopener');
+        });
+        $('#visualAutoPreview').addEventListener('change', function () {
+            if (this.checked) sendPreviewConfig(state.visualBlock);
+        });
+        $$('.visual-device button').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                $$('.visual-device button').forEach(function (b) { b.classList.remove('is-active'); });
+                btn.classList.add('is-active');
+                var device = btn.getAttribute('data-device');
+                var wrap = $('.visual-frame-wrap');
+                wrap.classList.toggle('is-tablet', device === 'tablet');
+                wrap.classList.toggle('is-mobile', device === 'mobile');
+            });
+        });
+        var frame = $('#previewFrame');
+        frame.addEventListener('load', function () {
+            state.visualPreviewReady = true;
+            setTimeout(function () { sendPreviewConfig(state.visualBlock); }, 60);
+        });
+        window.addEventListener('message', function (e) {
+            var d = e.data;
+            if (!d || d.source !== 'tsj-preview') return;
+            if (d.type === 'ready' && state.view === 'visual') {
+                state.visualPreviewReady = true;
+                sendPreviewConfig(state.visualBlock);
+            } else if (d.type === 'edit' && d.block) {
+                var b = visualBlock(d.block);
+                if (b && state.view === 'visual') {
+                    selectBlock(d.block, false);
+                }
+            }
+        });
+
+        try {
+            var doc = frame.contentDocument;
+            if (doc && doc.readyState === 'complete') {
+                state.visualPreviewReady = true;
+                setTimeout(function () { sendPreviewConfig(state.visualBlock); }, 80);
+            }
+        } catch (e) { /* cross-origin, ignore */ }
+    }
+
+    function selectBlock(key, focusPreview) {
+        var b = visualBlock(key);
+        if (!b) return;
+        state.visualBlock = key;
+        $('#visualBlockSelect').value = key;
+        $('#visualBlockTitle').textContent = b.label;
+        $('#visualBlockDesc').textContent = b.desc || '';
+
+        var box = $('#visualInspector');
+        box.innerHTML = '';
+        if (!state.config) {
+            box.innerHTML = '<p class="muted">内容尚未加载。</p>';
+            return;
+        }
+        b.keys.forEach(function (dataKey, idx) {
+            if (!(dataKey in state.config)) return;
+            if (b.keys.length > 1) {
+                var head = document.createElement('div');
+                head.className = 'visual-subhead';
+                head.textContent = labelFor(dataKey);
+                box.appendChild(head);
+            }
+            box.appendChild(buildNode(dataKey, state.config[dataKey], [dataKey]));
+            if (idx < b.keys.length - 1) {
+                var sep = document.createElement('div');
+                sep.className = 'visual-subsep';
+                box.appendChild(sep);
+            }
+        });
+        if (key === 'contact' && typeof testCard === 'function') box.appendChild(testCard());
+
+        requestAnimationFrame(function () {
+            $$('#visualInspector textarea').forEach(function (area) {
+                area.style.height = 'auto';
+                area.style.height = Math.min(area.scrollHeight + 2, 420) + 'px';
+            });
+        });
+
+        if (focusPreview !== false && state.visualPreviewReady) sendPreviewConfig(key);
     }
 
     function buildNode(key, value, path) {
@@ -795,9 +994,15 @@
         return box;
     }
 
+    var visualSyncTimer = null;
     function touched() {
         state.dirty = true;
         updateSaveState();
+        if (state.view === 'visual' && state.visualPreviewReady &&
+            $('#visualAutoPreview') && $('#visualAutoPreview').checked) {
+            clearTimeout(visualSyncTimer);
+            visualSyncTimer = setTimeout(function () { sendPreviewConfig(state.visualBlock); }, 220);
+        }
     }
 
     /* ------------------------------------------------------------------
